@@ -1,0 +1,10 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+	{% for project in projects %}
+	    <article>
+	        <h2><a href="{% url 'project_detail' pk=project.pk %}">{{ project.title }}</a></h2>
+	        <p>{{ project.text|linebreaksbr }}</p>
+	    </article>
+	{% endfor %}
+{% endblock %}
