@@ -9,11 +9,11 @@ class Post(models.Model):
 	text = models.TextField()
 	created_date = models.DateTimeField(default=timezone.now)
 	published_date = models.DateTimeField(blank=True, null=True)
-	slug = models.SlugField(max_length=50, unique=True)
+	# slug = models.SlugField(max_length=50, unique=True)
 
 	def publish(self):
 		self.published_date = timezone.now()
-		self.slug = slugify(self.title)
+		# self.slug = slugify(self.title)
 		self.save()
 
 	def was_published_recently(self):
