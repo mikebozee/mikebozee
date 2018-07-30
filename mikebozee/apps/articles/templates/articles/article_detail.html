@@ -1,0 +1,11 @@
+{% extends 'articles/articles_base.html' %}
+
+{% block content %}
+	<article>
+		{% if article.published_date %}
+	    	<p>published: {{ article.published_date }}</p>
+	    {% endif %}
+	    <h2>{{ article.title }}</h2>
+	    <p>{{ article.text|linebreaksbr }}</p>
+	</article>
+{% endblock %}

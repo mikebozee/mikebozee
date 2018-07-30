@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.blog',
+    'apps.articles',
     'apps.portfolio',
 ]
 
@@ -58,7 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'blog/blog_base.html',
+            'articles/articles_base.html',
             os.path.join(PROJECT_ROOT, 'templates').replace('\\','/'),
         ],
         'APP_DIRS': True,
