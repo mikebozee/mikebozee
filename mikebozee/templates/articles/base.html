@@ -1,11 +1,9 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="{% static 'css/articles.css' %}">
-	</head>
-	<body>
-		{% block content %}
-		{% endblock %}
-	</body>
-</html>
+{% block content %}
+	{% block article_list %}
+	{% endblock %}
+
+	{% block article_detail %}
+	{% endblock %}
+{% endblock %}

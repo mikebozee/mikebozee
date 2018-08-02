@@ -1,6 +1,6 @@
 {% extends 'projects/base.html' %}
 
-{% block content %}
+{% block project_list %}
 	{% for project in projects %}
 	    <article>
 	        <h2><a href="{% url 'project_detail' slug=project.slug %}">{{ project.title }}</a></h2>

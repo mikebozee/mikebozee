@@ -5,13 +5,8 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
 	</head>
 	<body>
-		<a href="{% url 'index' %}">Home</a>
-		{% for post in posts %}
-		    <article>
-		        <p>published: {{ post.published_date }}</p>
-		        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-		        <p>{{ post.text|linebreaksbr }}</p>
-		    </article>
-		{% endfor %}
+		<header>This is the global site header.</header>
+		{% block content %}
+		{% endblock %}
 	</body>
 </html>

@@ -1,6 +1,6 @@
 {% extends 'articles/base.html' %}
 
-{% block content %}
+{% block article_list %}
 	{% for article in articles %}
 	    <article>
 	        <p>{{ article.published_date|date:"M j, Y" }}</p>

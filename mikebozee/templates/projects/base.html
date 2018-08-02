@@ -1,11 +1,9 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="{% static 'css/projects.css' %}">
-	</head>
-	<body>
-		{% block content %}
-		{% endblock %}
-	</body>
-</html>
+{% block content %}
+	{% block project_list %}
+	{% endblock %}
+
+	{% block project_detail %}
+	{% endblock %}
+{% endblock %}
