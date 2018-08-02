@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.articles',
     'apps.projects',
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -58,9 +59,10 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'articles/articles_base.html',
-            'projects/projects_base.html',
-            os.path.join(PROJECT_ROOT, 'templates').replace('\\','/'),
+            # 'articles/articles_base.html',
+            # 'projects/projects_base.html',
+            # os.path.join(PROJECT_ROOT, 'templates').replace('\\','/'),
+            os.path.join(BASE_DIR, 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {

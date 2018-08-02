@@ -2,6 +2,8 @@ from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
 
+from taggit.managers import TaggableManager
+
 
 class Article(models.Model):
 	author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
@@ -10,6 +12,8 @@ class Article(models.Model):
 	created_date = models.DateTimeField(default=timezone.now)
 	published_date = models.DateTimeField(blank=True, null=True)
 	slug = models.SlugField(max_length=50, unique=True)
+
+	tags = TaggableManager()
 
 	def __str__(self):
 		return self.title

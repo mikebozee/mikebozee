@@ -1,9 +1,9 @@
-{% extends 'articles/articles_base.html' %}
+{% extends 'articles/base.html' %}
 
 {% block content %}
 	{% for article in articles %}
 	    <article>
-	        <p>published: {{ article.published_date }}</p>
+	        <p>{{ article.published_date|date:"M j, Y" }}</p>
 	        <h2><a href="{% url 'article_detail' slug=article.slug %}">{{ article.title }}</a></h2>
 	        <p>{{ article.text|linebreaksbr }}</p>
 	    </article>
