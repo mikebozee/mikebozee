@@ -4,4 +4,4 @@ from django.utils import timezone
 
 def index(request):
 	# return HttpResponse("Testing 123.")
-	return render(request, '..templates/base.html', {})
+	return render(request, 'base.html', {})
