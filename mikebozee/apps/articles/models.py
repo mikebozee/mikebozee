@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
 
+# from ckeditor.fields import RichTextField
 from taggit.managers import TaggableManager
 
 
