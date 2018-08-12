@@ -1,11 +1,20 @@
 {% extends 'articles/base.html' %}
 
 {% block article_list %}
-	{% for article in articles %}
-	    <article>
-	        <p>{{ article.published_date|date:"M j, Y" }}</p>
-	        <h2><a href="{% url 'article_detail' slug=article.slug %}">{{ article.title }}</a></h2>
-	        <p>{{ article.text|linebreaksbr }}</p>
-	    </article>
-	{% endfor %}
+	<section class="articles">
+		{% for article in articles %}
+			<a class="article-link" href="{% url 'article_detail' slug=article.slug %}">
+		    	<article class="article">
+		    		<!-- {% if article.image %}
+		    			<img class="article-image" src="../../media/{{ article.image }}">
+		    		{% endif %} -->
+		    		<div class="article-body">
+				        <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span>
+				        <h2 class="article-title">{{ article.title }}</h2>
+				        <p class="article-text">{{ article.text|safe|linebreaksbr }}</p>
+			    	</div>
+		    	</article>
+		    </a>
+		{% endfor %}
+	</section>
 {% endblock %}

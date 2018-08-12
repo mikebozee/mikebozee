@@ -6,6 +6,6 @@
 	    	<p>{{ article.published_date|date:"M j, Y" }}</p>
 	    {% endif %}
 	    <h2>{{ article.title }}</h2>
-	    <p>{{ article.text|linebreaksbr }}</p>
+	    <p>{{ article.text|safe }}</p>
 	</article>
 {% endblock %}

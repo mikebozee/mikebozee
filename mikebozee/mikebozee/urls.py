@@ -13,9 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('articles/', include('articles.urls'))
 """
-from django.conf.urls import include
+
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import include, path, re_path
 
 from . import views
 
@@ -24,4 +26,7 @@ urlpatterns = [
     path('articles/', include('apps.articles.urls')),
     path('projects/', include('apps.projects.urls')),
     path('admin/', admin.site.urls),
+    re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

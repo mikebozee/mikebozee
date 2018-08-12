@@ -125,24 +125,29 @@ USE_L10N = True
 USE_TZ = True
 
 
-# CKEditor
-CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'
-CKEDITOR_UPLOAD_PATH = "uploads/"
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'Custom',
-        'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline'],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-            ['Link', 'Unlink', 'Anchor'],
-            ['RemoveFormat', 'Source']
-        ]
-    }
-}
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
 STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static'), )
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+
+# CKEditor
+CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_CONFIGS = {
+    'default': {
+        # 'toolbar': 'Custom',
+        # 'toolbar_Custom': [
+        #     ['Bold', 'Italic', 'Underline'],
+        #     ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+        #     ['Link', 'Unlink', 'Anchor'],
+        #     ['RemoveFormat', 'Source', 'Image']
+        # ]
+        'toolbar': 'Full',
+    }
+}
