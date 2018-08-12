@@ -27,7 +27,7 @@ body {
 	justify-content: flex-start;
 }
 
-.article-link {
+.article {
 	display: inline-block;
 	text-decoration: none;
 	margin: 15px;
@@ -42,18 +42,9 @@ body {
 	flex-grow: 0;
 	background-color: #fff;
 	color: #202124;
-}
-
-.article {
-	text-decoration: none;
-}
-
-.article-image {
-	width: 100%;
-}
-
-.article-body {
-	/*padding: 20px;*/
+	display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
 }
 
 .published-date {
@@ -63,9 +54,11 @@ body {
 .article-title {
 	text-transform: uppercase;
 	font-size: 2.5rem;
+	line-height: 1.25;
 	color: #202124;
 	font-weight: 300;
 	margin: 1rem 0 1.5rem 0;
+	flex-grow: 1;
 }
 
 .article-text {
@@ -74,4 +67,15 @@ body {
 
 .article-text > p {
 	line-height: 1.7;
+}
+
+.article-image {
+	width: 100%;
+	margin: auto 0 0 0;
+	align-self: flex-end;
+	background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 0;
+    padding-top: 56.25%;
 }

@@ -3,16 +3,12 @@
 {% block article_list %}
 	<section class="articles">
 		{% for article in articles %}
-			<a class="article-link" href="{% url 'article_detail' slug=article.slug %}">
-		    	<article class="article">
-		    		<div class="article-body">
-				        <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span>
-				        <h2 class="article-title">{{ article.title }}</h2>
-			    	</div>
-			    	{% if article.image %}
-		    			<img class="article-image" src="../../media/{{ article.image }}">
-		    		{% endif %}
-		    	</article>
+			<a class="article" href="{% url 'article_detail' slug=article.slug %}">
+		        <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span>
+		        <h2 class="article-title">{{ article.title }}</h2>
+		    	{% if article.image %}
+		    		<div class="article-image" style="background-image: url('../../media/{{ article.image }}');"></div>
+	    		{% endif %}
 		    </a>
 		{% endfor %}
 	</section>
