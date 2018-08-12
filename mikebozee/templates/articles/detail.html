@@ -1,11 +1,16 @@
 {% extends 'articles/base.html' %}
 
 {% block article_detail %}
-	<article>
-		{% if article.published_date %}
-	    	<p>{{ article.published_date|date:"M j, Y" }}</p>
-	    {% endif %}
-	    <h2>{{ article.title }}</h2>
-	    <p>{{ article.text|safe }}</p>
-	</article>
+	<a class="article-link" href="{% url 'article_detail' slug=article.slug %}">
+    	<article class="article">
+    		<!-- {% if article.image %}
+    			<img class="article-image" src="../../media/{{ article.image }}">
+    		{% endif %} -->
+    		<div class="article-body">
+		        <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span>
+		        <h2 class="article-title">{{ article.title }}</h2>
+		        <div class="article-text">{{ article.text|safe }}</div>
+	    	</div>
+    	</article>
+    </a>
 {% endblock %}
