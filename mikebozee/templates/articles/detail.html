@@ -1,12 +1,14 @@
 {% extends 'articles/base.html' %}
 
-{% block article_detail %}
-	<article class="article">
-        <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span>
-        <h2 class="article-title">{{ article.title }}</h2>
-    	{% if article.image %}
-    		<div class="article-image" style="background-image: url('../../media/{{ article.image }}');"></div>
-		{% endif %}
-		<div class="article-text">{{ article.text|safe }}</div>
-    </article>
-{% endblock %}
+<section class="article-wrapper">
+	{% block article_detail %}
+		<article class="article">
+	        <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span>
+	        <h2 class="article-title">{{ article.title }}</h2>
+	    	{% if article.image %}
+	    		<div class="article-image" style="background-image: url('../../media/{{ article.image }}');"></div>
+			{% endif %}
+			<div class="article-text">{{ article.text|safe }}</div>
+	    </article>
+	{% endblock %}
+</section>

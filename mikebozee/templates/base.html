@@ -7,19 +7,10 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 	</head>
 	<body>
-		<header>This is the global site header.</header>
+		<header class="header">
+			<a class="logo-link"href="{% url 'index' %}">Mike Bozee</a>
+		</header>
 		{% block content %}
-			<section class="articles">
-				{% for article in articles %}
-					<a class="article" href="{% url 'article_detail' slug=article.slug %}">
-				        <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span>
-				        <h2 class="article-title">{{ article.title }}</h2>
-				    	{% if article.image %}
-				    		<div class="article-image" style="background-image: url('../../media/{{ article.image }}');"></div>
-			    		{% endif %}
-				    </a>
-				{% endfor %}
-			</section>
 		{% endblock %}
 	</body>
 </html>
