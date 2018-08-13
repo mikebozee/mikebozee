@@ -30,7 +30,7 @@ body {
 .article {
 	display: inline-block;
 	text-decoration: none;
-	margin: 15px;
+	margin: 45px 15px;
 	width: 45%;
 	width: -webkit-calc(50% - 30px);
 	width: -moz-calc(50% - 30px);
