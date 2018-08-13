@@ -2,7 +2,7 @@
 
 {% block profile_list %}
 	{% for profile in profiles %}
-		<div>
+		<div style="margin: 0 auto; max-width: 800px;">
 			<a style="display: block;" href="{% url 'profile_detail' slug=profile.slug %}">{{ profile.first_name }} {{ profile.last_name }}</a>
 			<script type="IN/MemberProfile" data-id="http://www.linkedin.com/in/{{ profile.linkedin }}" data-format="inline" data-related="false"></script>
 		</div>
