@@ -1,0 +1,9 @@
+{% extends 'profiles/base.html' %}
+
+
+{% block profile_detail %}
+	<div>
+		{{ profile.first_name }} {{ profile.last_name }}
+		<script type="IN/MemberProfile" data-id="http://www.linkedin.com/in/{{ profile.linkedin }}" data-format="inline" data-related="false"></script>
+	</div>
+{% endblock %}

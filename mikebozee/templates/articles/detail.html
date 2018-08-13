@@ -1,7 +1,8 @@
 {% extends 'articles/base.html' %}
 
-<section class="article-wrapper">
-	{% block article_detail %}
+
+{% block article_detail %}
+	<section class="article-wrapper">
 		<article class="article">
 	        <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span>
 	        <h2 class="article-title">{{ article.title }}</h2>
@@ -10,5 +11,5 @@
 			{% endif %}
 			<div class="article-text">{{ article.text|safe }}</div>
 	    </article>
-	{% endblock %}
-</section>
+    </section>
+{% endblock %}
