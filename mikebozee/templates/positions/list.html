@@ -4,7 +4,7 @@
 	<section class="articles">
 		{% for position in positions %}
 			<a class="article" href="{% url 'position_detail' slug=position.slug %}">
-		        <h2 class="article-title">{{ position.title }}</h2>
+		        <h3 class="article-title">{{ position.title }}</h3>
 		    	{% if position.image %}
 		    		<div class="article-image" style="background-image: url('../../media/{{ position.image }}');"></div>
 	    		{% endif %}
