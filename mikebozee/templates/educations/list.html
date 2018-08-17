@@ -1,0 +1,14 @@
+{% extends 'educations/base.html' %}
+
+{% block education_list %}
+	<section class="articles">
+		{% for education in educations %}
+			<a class="article" href="{% url 'education_detail' slug=education.slug %}">
+		        <h2 class="article-title">{{ education.title }}</h2>
+		    	{% if education.image %}
+		    		<div class="article-image" style="background-image: url('../../media/{{ education.image }}');"></div>
+	    		{% endif %}
+		    </a>
+		{% endfor %}
+	</section>
+{% endblock %}

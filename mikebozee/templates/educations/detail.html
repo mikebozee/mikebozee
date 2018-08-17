@@ -1,0 +1,13 @@
+{% extends 'educations/base.html' %}
+
+{% block education_detail %}
+	<section class="article-wrapper">
+		<article class="article">
+	        <h2 class="article-title">{{ education.title }}</h2>
+	    	{% if education.image %}
+	    		<div class="article-image" style="background-image: url('../../media/{{ education.image }}');"></div>
+			{% endif %}
+			<div class="article-text">{{ education.text|safe }}</div>
+	    </article>
+    </section>
+{% endblock %}

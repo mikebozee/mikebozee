@@ -8,12 +8,11 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from taggit.managers import TaggableManager
 
 
-class Position(models.Model):
+class Education(models.Model):
 	title = models.CharField(max_length=100)
-	company = models.CharField(max_length=100)
+	institution = models.CharField(max_length=100)
 	location = models.CharField(max_length=50)
-	start_date = models.DateField()
-	end_date = models.DateField(default=datetime.date.today, blank=True, null=True)
+	date = models.DateField()
 	text = RichTextUploadingField()
 	created_date = models.DateTimeField(default=timezone.now)
 	slug = models.SlugField(max_length=50, unique=True)
@@ -28,7 +27,7 @@ class Position(models.Model):
 		slug = slugify(self.title + self.company)
 		unique_slug = slug
 		num = 1
-		while Position.objects.filter(slug=unique_slug).exists():
+		while Education.objects.filter(slug=unique_slug).exists():
 			unique_slug = '{}-{}'.format(slug, num)
 			num += 1
 		return unique_slug
