@@ -1,0 +1,13 @@
+{% extends 'positions/base.html' %}
+
+{% block position_detail %}
+	<section class="article-wrapper">
+		<article class="article">
+	        <h2 class="article-title">{{ position.title }}</h2>
+	    	{% if position.image %}
+	    		<div class="article-image" style="background-image: url('../../media/{{ position.image }}');"></div>
+			{% endif %}
+			<div class="article-text">{{ position.text|safe }}</div>
+	    </article>
+    </section>
+{% endblock %}

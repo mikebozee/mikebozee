@@ -12,34 +12,48 @@
 			<a class="logo-link"href="{% url 'index' %}">Mike Bozee</a>
 		</header>
 
-		{% block article_list %}
-			<section class="articles">
-				{% for article in articles|slice:":6" %}
-					<a class="article" href="{% url 'article_detail' slug=article.slug %}">
-				        <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span>
-				        <h2 class="article-title">{{ article.title }}</h2>
-				    	{% if article.image %}
-				    		<div class="article-image" style="background-image: url('../../media/{{ article.image }}');"></div>
-			    		{% endif %}
-				    </a>
-				{% endfor %}
-			</section>
-		{% endblock %}
-
-		{% block project_list %}
-			<section class="projects">
-				{% for project in projects|slice:":6" %}
-				    <a class="article" href="{% url 'project_detail' slug=project.slug %}">
-				        <h2 class="article-title">{{ project.title }}</h2>
-				    	{% if project.image %}
-				    		<div class="article-image" style="background-image: url('../../media/{{ project.image }}');"></div>
-			    		{% endif %}
-				    </a>
-				{% endfor %}
-			</section>
-		{% endblock %}
-
 		{% block content %}
+
+			{% block article_list %}
+				<section class="articles">
+					{% for article in articles|slice:":6" %}
+						<a class="article" href="{% url 'article_detail' slug=article.slug %}">
+					        <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span>
+					        <h2 class="article-title">{{ article.title }}</h2>
+					    	{% if article.image %}
+					    		<div class="article-image" style="background-image: url('../../media/{{ article.image }}');"></div>
+				    		{% endif %}
+					    </a>
+					{% endfor %}
+				</section>
+			{% endblock %}
+
+			{% block project_list %}
+				<section class="projects">
+					{% for project in projects|slice:":6" %}
+					    <a class="article" href="{% url 'project_detail' slug=project.slug %}">
+					        <h2 class="article-title">{{ project.title }}</h2>
+					    	{% if project.image %}
+					    		<div class="article-image" style="background-image: url('../../media/{{ project.image }}');"></div>
+				    		{% endif %}
+					    </a>
+					{% endfor %}
+				</section>
+			{% endblock %}
+
+			{% block position_list %}
+				<section class="projects">
+					{% for position in positions %}
+					    <a class="article" href="{% url 'position_detail' slug=position.slug %}">
+					        <h2 class="article-title">{{ position.title }}</h2>
+					    	{% if position.image %}
+					    		<div class="article-image" style="background-image: url('../../media/{{ position.image }}');"></div>
+				    		{% endif %}
+					    </a>
+					{% endfor %}
+				</section>
+			{% endblock %}
+
 		{% endblock %}
 
 	</body>

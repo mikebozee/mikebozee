@@ -1,0 +1,14 @@
+{% extends 'positions/base.html' %}
+
+{% block position_list %}
+	<section class="articles">
+		{% for position in positions %}
+			<a class="article" href="{% url 'position_detail' slug=position.slug %}">
+		        <h2 class="article-title">{{ position.title }}</h2>
+		    	{% if position.image %}
+		    		<div class="article-image" style="background-image: url('../../media/{{ position.image }}');"></div>
+	    		{% endif %}
+		    </a>
+		{% endfor %}
+	</section>
+{% endblock %}
