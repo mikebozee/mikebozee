@@ -151,6 +151,6 @@ CKEDITOR_CONFIGS = {
         #     ['Link', 'Unlink', 'Anchor'],
         #     ['RemoveFormat', 'Source', 'Image']
         # ]
-        'toolbar': 'Full',
+        'toolbar': 'Advanced',
     }
 }

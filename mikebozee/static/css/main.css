@@ -115,8 +115,31 @@ article.article {
 }
 
 .article-text * {
-	font-size: 1rem;
+	font-size: 1.5rem;
 	line-height: 1.7;
+}
+
+.article-text a {
+	font-weight: 700;
+	color: #39A0ED;
+	text-decoration: underline;
+	transition: color .3s ease-out,
+				background-color .3s ease-out;
+}
+
+.article-text a:visited {
+	color: #39A0ED;
+}
+
+.article-text a:hover,
+.article-text a:focus,
+.article-text a:active {
+	color: #fff;
+	background-color: #39A0ED;
+}
+
+.article-text p,
+.article-text li {
 	color: #202124;
 }
 
@@ -132,6 +155,10 @@ article.article {
 	font-weight: 700;
 	color: #13C4A3;
 	margin: 3rem 0 1rem 0;
+}
+
+.article-text > h2 {
+	font-size: 3rem;
 }
 
 .article-image {
