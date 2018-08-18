@@ -46,6 +46,16 @@ body {
 	padding: 0 5px;
 }
 
+h2.section-heading {
+	font-size: 5rem;
+	color: #4C6085;
+	color: rgba(76, 96, 133, .5);
+	text-transform: uppercase;
+	margin: 0;
+	padding: 0 10px;
+	font-weight: 700;
+}
+
 
 /*
  ARTICLES
@@ -115,6 +125,7 @@ article.article {
 }
 
 .article-text > h1,
+.article-text > h2,
 .article-text > h3 {
 	font-size: 1.8rem;
 	line-height: 1.3;

@@ -17,6 +17,7 @@
 			{% block content %}
 
 				{% block article_list %}
+					<h2 class="section-heading">Articles</h2>
 					<section class="articles">
 						{% for article in articles|slice:":6" %}
 							<a class="article" href="{% url 'article_detail' slug=article.slug %}">
@@ -31,6 +32,7 @@
 				{% endblock %}
 
 				{% block project_list %}
+					<h2 class="section-heading">Projects</h2>
 					<section class="projects">
 						{% for project in projects|slice:":6" %}
 						    <a class="article" href="{% url 'project_detail' slug=project.slug %}">
@@ -44,6 +46,7 @@
 				{% endblock %}
 
 				{% block position_list %}
+					<h2 class="section-heading">Positions</h2>
 					<section class="projects">
 						{% for position in positions %}
 						    <a class="article" href="{% url 'position_detail' slug=position.slug %}">
@@ -57,6 +60,7 @@
 				{% endblock %}
 
 				{% block education_list %}
+					<h2 class="section-heading">Education</h2>
 					<section class="projects">
 						{% for education in educations %}
 						    <a class="article" href="{% url 'education_detail' slug=education.slug %}">
