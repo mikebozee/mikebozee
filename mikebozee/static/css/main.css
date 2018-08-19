@@ -114,6 +114,22 @@ article.article {
 	flex-grow: 1;
 }
 
+.position-company {
+	font-size: 1.5rem;
+	line-height: 1.25;
+	color: #13C4A3;
+	font-weight: 400;
+	display: block;
+}
+
+.position-dates {
+	font-size: 1rem;
+	line-height: 1.25;
+	color: #202124;
+	font-weight: 400;
+	display: block;
+}
+
 .article-text * {
 	font-size: 1.5rem;
 	line-height: 1.7;

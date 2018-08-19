@@ -57,6 +57,15 @@
 						{% for position in positions %}
 						    <a class="article" href="{% url 'position_detail' slug=position.slug %}">
 						        <h3 class="article-title">{{ position.title }}</h3>
+						        <span class="position-company">{{ position.company }}</span>
+						        <span class="position-dates">
+						        	{{ position.start_date|date:"M Y" }} &mdash;
+						        	{% if position.end_date %}
+						        		{{ position.end_date|date:"M Y" }}
+					        		{% else %}
+					        			Present
+					        		{% endif %}
+						        </span>
 						    	{% if position.image %}
 						    		<div class="article-image" style="background-image: url('../../media/{{ position.image }}');"></div>
 					    		{% endif %}
