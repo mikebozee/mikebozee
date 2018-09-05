@@ -28,7 +28,15 @@ SECRET_KEY = 'mikebozee/secret_settings.SECRET_KEY'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    'localhost:8000',
+    '127.0.0.1',
+    '127.0.0.1:8000',
+    '34.209.212.33',
+    'elasticbeanstalk.com',
+    'http://mikebozee.us-west-2.elasticbeanstalk.com/',
+]
 
 
 # Application definition

@@ -1,8 +1,18 @@
 {% extends 'articles/base.html' %}
 
 {% block article_list %}
+{% for article in articles|slice:":1" %}
+	<!-- <a class="article" href="{% url 'article_detail' slug=article.slug %}" style="width: 100%; margin-left: 0; margin-right: 0;">
+        <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span>
+        <h3 class="article-title">{{ article.title }}</h3>
+    	{% if article.image %}
+    		<div class="article-image" style="background-image: url('../../media/{{ article.image }}');"></div>
+		{% endif %}
+    </a> -->
+{% endfor %}
+
 	<section class="articles">
-		{% for article in articles %}
+		{% for article in articles|slice:"1:" %}
 			<a class="article" href="{% url 'article_detail' slug=article.slug %}">
 		        <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span>
 		        <h3 class="article-title">{{ article.title }}</h3>
