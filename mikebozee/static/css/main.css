@@ -8,7 +8,7 @@ html {
 }
 
 body {
-	background-color: #fff;
+	/*background-color: #fff;*/
 	/*font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;*/
 	font-family: 'Alegreya Sans SC', 'Roboto Slab', Helvetica, Arial, sans-serif;
 	margin: 0;
@@ -16,11 +16,31 @@ body {
 	font-size: 18px;
 
 	/*background-color: #000cdd;*/
-	background-color: #000;
+	/*background-color: #000;*/
 	cursor: url('../../media/cursor-arrow-orange.svg') 1 1, default;
-	background-color: #ff0;
-	background-color: #8ADAD4;
+	/*background-color: #ff0;
+	background-color: #8ADAD4;*/
 	background-color: #F4DF6B;
+
+	position: relative;
+}
+
+body::before {
+	content: '';
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	padding-top: 66.6666%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url('../../media/splash-banner.png');
+	background-color: #F4DF6B;
+	background-blend-mode: luminosity;
+	opacity: .1;
 }
 
 a:hover,
@@ -70,7 +90,16 @@ a:active {
 	background-position: center;
 	background-repeat: no-repeat;
 	display: inline-block;
+	transition: border-radius .5s ease-out;
 	/*animation: headshot 5s infinite;*/
+}
+
+.headshot:hover,
+.headshot:focus,
+.headshot:active {
+	background-blend-mode: normal;
+	animation: none;
+	border-radius: 0;
 }
 
 /*
