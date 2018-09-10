@@ -175,13 +175,14 @@ article.article {
 	margin: 0;
 	display: block;
 	width: 100%;
-	/*padding: 1rem;*/
+	padding: 0 20px;
 	/*background-color: rgba(0,0,0,0.4);*/
 	font-size: 2rem;
 
 	/*color: #ff5419;*/
 	font-weight: 900;
-	color: #383FD2;
+	/*color: #383FD2;*/
+	color: rgba(0, 0, 0, .57);
 }
 
 .position-company {
@@ -261,6 +262,7 @@ article.article {
     background-blend-mode: luminosity;
     background-color: #F4DF6B;
     transition: background-color .3s ease-out;
+    box-shadow: inset 0 0 20px 20px #F4DF6B;
 }
 
 .article:hover .article-image {
