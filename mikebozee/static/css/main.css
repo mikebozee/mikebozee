@@ -43,6 +43,15 @@ body::before {
 	opacity: .1;
 }
 
+::selection {
+	background: #D73B4B;
+	color: #F4DF6B;
+}
+::-moz-selection {
+	background: #D73B4B;
+	color: #F4DF6B;
+}
+
 a:hover,
 a:focus,
 a:active {
@@ -60,6 +69,7 @@ a:active {
 	margin: 0 auto;
 	max-width: 1100px;
 	padding: 15px;
+	height: 184px;
 }
 
 .logo-link {
@@ -75,7 +85,7 @@ a:active {
 	color: #D73B4B;
 }
 
-.headshot {
+#headshot {
 	border-radius: 50%;
 	overflow: hidden;
 	width: 150px;
@@ -92,11 +102,16 @@ a:active {
 	display: inline-block;
 	transition: border-radius .5s ease-out;
 	/*animation: headshot 5s infinite;*/
+	cursor: pointer;
+	position: absolute;
+	top: 17px;
+	left: 17px;
+	transition: all .3s ease-out;
 }
 
-.headshot:hover,
-.headshot:focus,
-.headshot:active {
+#headshot:hover,
+#headshot:focus,
+#headshot:active {
 	background-blend-mode: normal;
 	animation: none;
 	border-radius: 0;
