@@ -9,10 +9,18 @@ html {
 
 body {
 	background-color: #fff;
-	font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+	/*font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;*/
+	font-family: 'Alegreya Sans SC', 'Roboto Slab', Helvetica, Arial, sans-serif;
 	margin: 0;
 	padding: 0;
 	font-size: 18px;
+
+	/*background-color: #000cdd;*/
+	background-color: #000;
+	cursor: url('https://cdn.shopify.com/s/files/1/0078/6569/6313/t/9/assets/baboon-cursor_arrow_orange.svg?9444971462395614017') 1 1, default;
+	background-color: #ff0;
+	background-color: #8ADAD4;
+	background-color: #F4DF6B;
 }
 
 /*https://colordrop.io/color.php?id=17797*/
@@ -35,6 +43,19 @@ body {
 	/*color: #36F1CD;*/
 	color: #13C4A3;
 	text-transform: uppercase;
+
+	color: #fff;
+	font-weight: 900;
+	color: #D73B4B;
+}
+
+.headshot {
+	border-radius: 50%;
+	overflow: hidden;
+	width: 150px;
+	/*-webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+	clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);*/
+	/*animation: shaper 4s infinite;*/
 }
 
 /*
@@ -88,19 +109,25 @@ h2.section-heading {
 	vertical-align: top;
 	align-self: stretch;
 	flex-grow: 0;
-	background-color: #fff;
+	/*background-color: #fff;*/
 	color: #202124;
 	display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
 
-    margin: 1px;
-    width: calc(33.3333% - 2px);
+    margin: 36px 12px 0 12px;
+    width: calc(25% - 24px);
     position: relative;
+
+    overflow: hidden;
 }
 
+/*.article:first-of-type {
+	width: calc(100% - 24px);
+}*/
+
 .article::before {
-	content: '';
+	/*content: '';*/
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -108,7 +135,15 @@ h2.section-heading {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(41, 47, 51, .3);
+	background-color: #000;
+	opacity: 0;
+	transition: opacity 150ms;
+}
+
+.article:hover::before,
+.article:focus::before,
+.article:active::before {
+	opacity: .75;
 }
 
 article.article {
@@ -132,17 +167,21 @@ article.article {
 	margin: 1rem 0 1.5rem 0;
 	flex-grow: 1;
 
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	text-shadow: 1px 1px rgba(0,0,0,0.5);
+	/*position: absolute;*/
+	/*bottom: 0;
+	left: 0;*/
+	/*text-shadow: 1px 1px rgba(0,0,0,0.5);*/
 	color: #fff;
 	margin: 0;
 	display: block;
 	width: 100%;
-	padding: 1rem;
-	background-color: rgba(0,0,0,0.4);
-	font-size: 1.5rem;
+	/*padding: 1rem;*/
+	/*background-color: rgba(0,0,0,0.4);*/
+	font-size: 2rem;
+
+	/*color: #ff5419;*/
+	font-weight: 900;
+	color: #383FD2;
 }
 
 .position-company {
@@ -164,6 +203,7 @@ article.article {
 .article-text * {
 	font-size: 1.5rem;
 	line-height: 1.7;
+	font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
 }
 
 .article-text a {
@@ -217,6 +257,46 @@ article.article {
     background-size: cover;
     height: 0;
     padding-top: 56.25%;
+    /*transition: -webkit-clip-path .3s ease-out, clip-path .3s ease-out;*/
+    background-blend-mode: luminosity;
+    background-color: #F4DF6B;
+    transition: background-color .3s ease-out;
+}
+
+.article:hover .article-image {
+	/*background-blend-mode: normal;*/
+	background-color: #8ADAD4;
+	/*-webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);*/
+	/*clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);*/
+}
+
+/*KEYFRAMES*/
+
+@keyframes shaper {
+  0% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  20% {
+    -webkit-clip-path: polygon(28% 0, 73% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(28% 0, 73% 0, 100% 100%, 0% 100%);
+  }
+  40% {
+    -webkit-clip-path: polygon(0 0, 100% 72%, 100% 100%, 0 35%);
+    clip-path: polygon(0 0, 100% 72%, 100% 100%, 0 35%);
+  }
+  60% {
+    -webkit-clip-path: polygon(50% 0, 50% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(50% 0, 50% 0, 100% 100%, 0% 100%);
+  }
+  80% {
+    -webkit-clip-path: polygon(0 70%, 100% 0, 100% 32%, 0 100%);
+    clip-path: polygon(0 70%, 100% 0, 100% 32%, 0 100%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
 }
 
 @media (max-width: 800px) {
