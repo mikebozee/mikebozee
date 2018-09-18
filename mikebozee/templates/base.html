@@ -3,8 +3,9 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700,900" rel="stylesheet">
+		<!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700,900" rel="stylesheet"> -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
 		<script
 			src="https://code.jquery.com/jquery-3.3.1.min.js"
 			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -21,19 +22,38 @@
 
 		<main id="main">
 
+			<div id="helloVue">
+				<h1>${ title }</h1>
+			</div>
+
 			{% block content %}
 
+				<!-- GRID -->
+
+				<section class="row">
+					<div class="cell">
+					</div>
+					<div class="cell">
+					</div>
+					<div class="cell">
+					</div>
+					<div class="cell">
+					</div>
+				</section>
+
+				<!-- GRID -->
+
 				{% block article_list %}
-					<a href="{% url 'article_list' %}">
+					<!-- <a href="{% url 'article_list' %}">
 						<h2 class="section-heading">Articles</h2>
-					</a>
+					</a> -->
 					<section class="articles">
 						{% for article in articles|slice:":6" %}
 							<a class="article" href="{% url 'article_detail' slug=article.slug %}">
-						        <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span>
-						        <h3 class="article-title">{{ article.title }}</h3>
+								<h3 class="article-title">{{ article.title }}</h3>
+						        <!-- <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span> -->
 						    	{% if article.image %}
-						    		<div class="article-image" style="background-image: url('../../media/{{ article.image }}');"></div>
+						    		<img class="article-image" src="../../media/{{ article.image }}">
 					    		{% endif %}
 						    </a>
 						{% endfor %}
@@ -125,4 +145,8 @@
 
 
 	</script>
+
+	<!-- Vue.js -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+	<script src="{% static 'js/app.js' %}" type="text/javascript"></script>
 </html>
