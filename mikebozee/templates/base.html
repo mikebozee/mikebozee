@@ -3,9 +3,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700,900" rel="stylesheet"> -->
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
 		<script
 			src="https://code.jquery.com/jquery-3.3.1.min.js"
 			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -17,20 +15,20 @@
 		<header class="header">
 			<!-- <h1>Aug 2018: continuous deployments in progress.</h1> -->
 			<a class="logo-link"href="{% url 'index' %}">Mike Bozee</a>
-			<div id="headshot"></div>
+			<img id="headshot" src="../../media/mike-bozee-headshot.jpg" alt="Mike Bozee headshot">
 		</header>
 
 		<main id="main">
 
-			<div id="helloVue">
+			<!-- <div id="helloVue">
 				<h1>${ title }</h1>
-			</div>
+			</div> -->
 
 			{% block content %}
 
 				<!-- GRID -->
 
-				<section class="row">
+				<!-- <section class="row">
 					<div class="cell">
 					</div>
 					<div class="cell">
@@ -39,37 +37,37 @@
 					</div>
 					<div class="cell">
 					</div>
-				</section>
+				</section> -->
 
 				<!-- GRID -->
 
-				{% block article_list %}
-					<!-- <a href="{% url 'article_list' %}">
-						<h2 class="section-heading">Articles</h2>
-					</a> -->
-					<section class="articles">
-						{% for article in articles|slice:":6" %}
-							<a class="article" href="{% url 'article_detail' slug=article.slug %}">
-								<h3 class="article-title">{{ article.title }}</h3>
-						        <!-- <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span> -->
-						    	{% if article.image %}
-						    		<img class="article-image" src="../../media/{{ article.image }}">
+				{% block project_list %}
+					<a href="{% url 'project_list' %}">
+						<h2 class="section-heading">Projects</h2>
+					</a>
+					<section class="cards">
+						{% for project in projects|slice:":2" %}
+						    <a class="card" href="{% url 'project_detail' slug=project.slug %}">
+						        <h3 class="card-title">{{ project.title }}</h3>
+						    	{% if project.image %}
+						    		<img class="card-image" src="../../media/{{ project.image }}">
 					    		{% endif %}
 						    </a>
 						{% endfor %}
 					</section>
 				{% endblock %}
 
-				{% block project_list %}
-					<a href="{% url 'project_list' %}">
-						<h2 class="section-heading">Projects</h2>
+				{% block article_list %}
+					<a href="{% url 'article_list' %}">
+						<h2 class="section-heading">Articles</h2>
 					</a>
-					<section class="projects">
-						{% for project in projects|slice:":6" %}
-						    <a class="article" href="{% url 'project_detail' slug=project.slug %}">
-						        <h3 class="article-title">{{ project.title }}</h3>
-						    	{% if project.image %}
-						    		<div class="article-image" style="background-image: url('../../media/{{ project.image }}');"></div>
+					<section class="cards">
+						{% for article in articles|slice:":2" %}
+							<a class="card" href="{% url 'article_detail' slug=article.slug %}">
+								<h3 class="card-title">{{ article.title }}</h3>
+						        <!-- <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span> -->
+						    	{% if article.image %}
+						    		<img class="card-image" src="../../media/{{ article.image }}">
 					    		{% endif %}
 						    </a>
 						{% endfor %}
@@ -81,9 +79,9 @@
 						<h2 class="section-heading">Positions</h2>
 					</a>
 					<section class="projects">
-						{% for position in positions %}
-						    <a class="article" href="{% url 'position_detail' slug=position.slug %}">
-						        <h3 class="article-title">{{ position.title }}</h3>
+						{% for position in positions|slice:":2" %}
+						    <a class="card" href="{% url 'position_detail' slug=position.slug %}">
+						        <h3 class="card-title">{{ position.title }}</h3>
 						        <span class="position-company">{{ position.company }}</span>
 						        <span class="position-dates">
 						        	{{ position.start_date|date:"M Y" }} &mdash;
@@ -94,7 +92,7 @@
 					        		{% endif %}
 						        </span>
 						    	{% if position.image %}
-						    		<div class="article-image" style="background-image: url('../../media/{{ position.image }}');"></div>
+						    		<div class="card-image" style="background-image: url('../../media/{{ position.image }}');"></div>
 					    		{% endif %}
 						    </a>
 						{% endfor %}
@@ -106,11 +104,11 @@
 						<h2 class="section-heading">Education</h2>
 					</a>
 					<section class="projects">
-						{% for education in educations %}
-						    <a class="article" href="{% url 'education_detail' slug=education.slug %}">
-						        <h3 class="article-title">{{ education.title }}</h3>
+						{% for education in educations|slice:":2" %}
+						    <a class="card" href="{% url 'education_detail' slug=education.slug %}">
+						        <h3 class="card-title">{{ education.title }}</h3>
 						    	{% if education.image %}
-						    		<div class="article-image" style="background-image: url('../../media/{{ education.image }}');"></div>
+						    		<div class="card-image" style="background-image: url('../../media/{{ education.image }}');"></div>
 					    		{% endif %}
 						    </a>
 						{% endfor %}
@@ -122,29 +120,6 @@
 		</main>
 
 	</body>
-
-	<script>
-		// var tooltips = document.querySelectorAll('.article-title');
-
-		// window.onmousemove = function (e) {
-		//     var x = (e.clientX - 0) + 'px',
-		//         y = (e.clientY - 60) + 'px';
-		//     for (var i = 0; i < tooltips.length; i++) {
-		//         tooltips[i].style.top = y;
-		//         tooltips[i].style.left = x;
-		//     }
-		// };
-
-
-		function headshotRotate() {
-			// var imgMargin =  
-			$('#headshot').css({'margin-left': '10px', 'transform': 'rotate(5deg)'});
-		};
-
-		$('#headshot').click(headshotRotate);
-
-
-	</script>
 
 	<!-- Vue.js -->
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
