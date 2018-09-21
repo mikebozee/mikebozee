@@ -55,6 +55,7 @@
 						    </a>
 						{% endfor %}
 					</section>
+					<a class="" href="{% url 'project_list' %}">View more</a>
 				{% endblock %}
 
 				{% block article_list %}
@@ -72,14 +73,15 @@
 						    </a>
 						{% endfor %}
 					</section>
+					<a class="" href="{% url 'article_list' %}">View more</a>
 				{% endblock %}
 
 				{% block position_list %}
 					<a href="{% url 'position_list' %}">
 						<h2 class="section-heading">Positions</h2>
 					</a>
-					<section class="projects">
-						{% for position in positions|slice:":2" %}
+					<section class="cards">
+						{% for position in positions %}
 						    <a class="card" href="{% url 'position_detail' slug=position.slug %}">
 						        <h3 class="card-title">{{ position.title }}</h3>
 						        <span class="position-company">{{ position.company }}</span>
@@ -103,7 +105,7 @@
 					<a href="{% url 'education_list' %}">
 						<h2 class="section-heading">Education</h2>
 					</a>
-					<section class="projects">
+					<section class="cards">
 						{% for education in educations|slice:":2" %}
 						    <a class="card" href="{% url 'education_detail' slug=education.slug %}">
 						        <h3 class="card-title">{{ education.title }}</h3>
