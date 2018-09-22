@@ -13,7 +13,9 @@ class Recommendation(models.Model):
 	slug = models.SlugField(max_length=50, unique=True)
 	image = models.ImageField(blank=True, null=True)
 	link = models.URLField(blank=True, null=True)
-	# position = models.ManyToManyField('positions.Position', blank=True, null=True)
+	positions = models.ManyToManyField('positions.Position', blank=True)
+	educations = models.ManyToManyField('educations.Education', blank=True)
+	projects = models.ManyToManyField('projects.Project', blank=True)
 
 	def __str__(self):
 		return self.first_name + ' ' + str(self.last_name)

@@ -18,7 +18,6 @@ class Position(models.Model):
 	created_date = models.DateTimeField(default=timezone.now)
 	slug = models.SlugField(max_length=50, unique=True)
 	image = models.ImageField(blank=True, null=True)
-	# recommendation = models.ManyToManyField('recommendations.Recommendation', blank=True, null=True)
 
 	tags = TaggableManager()
 
