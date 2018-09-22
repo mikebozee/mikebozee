@@ -151,7 +151,7 @@ a:active {
 	display: flex;
 	flex-direction: row;
 	align-items: stretch;
-	justify-content: space-between;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 }
 
@@ -167,6 +167,10 @@ a:active {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
+}
+
+.card--small {
+	width: 20%;
 }
 
 .card:hover,
@@ -275,6 +279,10 @@ article.card {
 .card-image {
 	width: 100%;
 	margin-top: 1.5rem;
+}
+
+.card-image--circle {
+	border-radius: 50%;
 }
 
 .view-more {

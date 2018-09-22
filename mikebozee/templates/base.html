@@ -27,60 +27,6 @@
 
 			{% block content %}
 
-				<!-- GRID -->
-
-				<!-- <section class="row">
-					<div class="cell">
-					</div>
-					<div class="cell">
-					</div>
-					<div class="cell">
-					</div>
-					<div class="cell">
-					</div>
-				</section> -->
-
-				<!-- GRID -->
-
-				{% block project_list %}
-					<section class="section">
-						<a href="{% url 'project_list' %}" class="section-heading">
-							<h2>Projects</h2>
-						</a>
-						<section class="cards">
-							{% for project in projects|slice:":4" %}
-							    <a class="card" href="{% url 'project_detail' slug=project.slug %}">
-							        <h3 class="card-title">{{ project.title }}</h3>
-							    	{% if project.image %}
-							    		<img class="card-image" src="../../media/{{ project.image }}">
-						    		{% endif %}
-							    </a>
-							{% endfor %}
-						</section>
-						<a class="view-more" href="{% url 'project_list' %}">View more</a>
-					</section>
-				{% endblock %}
-
-				{% block article_list %}
-					<section class="section">
-						<a href="{% url 'article_list' %}" class="section-heading">
-							<h2>Articles</h2>
-						</a>
-						<section class="cards">
-							{% for article in articles|slice:":4" %}
-								<a class="card" href="{% url 'article_detail' slug=article.slug %}">
-									<h3 class="card-title">{{ article.title }}</h3>
-							        <!-- <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span> -->
-							    	{% if article.image %}
-							    		<img class="card-image" src="../../media/{{ article.image }}">
-						    		{% endif %}
-							    </a>
-							{% endfor %}
-						</section>
-						<a class="view-more" href="{% url 'article_list' %}">View more</a>
-					</section>
-				{% endblock %}
-
 				{% block position_list %}
 					<section class="section">
 						<a href="{% url 'position_list' %}" class="section-heading">
@@ -108,6 +54,63 @@
 					</section>
 				{% endblock %}
 
+				{% block project_list %}
+					<section class="section">
+						<a href="{% url 'project_list' %}" class="section-heading">
+							<h2>Projects</h2>
+						</a>
+						<section class="cards">
+							{% for project in projects|slice:":4" %}
+							    <a class="card" href="{% url 'project_detail' slug=project.slug %}">
+							        <h3 class="card-title">{{ project.title }}</h3>
+							    	{% if project.image %}
+							    		<img class="card-image" src="../../media/{{ project.image }}">
+						    		{% endif %}
+							    </a>
+							{% endfor %}
+						</section>
+						<a class="view-more" href="{% url 'project_list' %}">View more</a>
+					</section>
+				{% endblock %}
+
+				{% block recommendation_list %}
+					<section class="section">
+						<a href="{% url 'recommendation_list' %}" class="section-heading">
+							<h2>Recommendations</h2>
+						</a>
+						<section class="cards">
+							{% for recommendation in recommendations %}
+							    <a class="card card--small" href="{% url 'recommendation_detail' slug=recommendation.slug %}">
+							        <h3 class="card-title">{{ recommendation.first_name }} {{ recommendation.last_name }}</h3>
+							    	{% if recommendation.image %}
+							    		<img class="card-image card-image--circle" src="../../media/{{ recommendation.image }}">
+						    		{% endif %}
+							    </a>
+							{% endfor %}
+						</section>
+					</section>
+				{% endblock %}
+
+				{% block article_list %}
+					<section class="section">
+						<a href="{% url 'article_list' %}" class="section-heading">
+							<h2>Articles</h2>
+						</a>
+						<section class="cards">
+							{% for article in articles|slice:":4" %}
+								<a class="card" href="{% url 'article_detail' slug=article.slug %}">
+									<h3 class="card-title">{{ article.title }}</h3>
+							        <!-- <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span> -->
+							    	{% if article.image %}
+							    		<img class="card-image" src="../../media/{{ article.image }}">
+						    		{% endif %}
+							    </a>
+							{% endfor %}
+						</section>
+						<a class="view-more" href="{% url 'article_list' %}">View more</a>
+					</section>
+				{% endblock %}
+
 				{% block education_list %}
 					<section class="section">
 						<a href="{% url 'education_list' %}" class="section-heading">
@@ -118,7 +121,7 @@
 							    <a class="card" href="{% url 'education_detail' slug=education.slug %}">
 							        <h3 class="card-title">{{ education.title }}</h3>
 							    	{% if education.image %}
-							    		<div class="card-image" style="background-image: url('../../media/{{ education.image }}');"></div>
+							    		<img class="card-image" src="../../media/{{ education.image }}">
 						    		{% endif %}
 							    </a>
 							{% endfor %}
