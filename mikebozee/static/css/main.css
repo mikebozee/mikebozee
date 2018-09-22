@@ -8,10 +8,10 @@ html {
 }
 
 body {
-	background-color: #fff;
-	font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+	background-color: #ededed;
+	font-family: 'Oswald', Helvetica, Arial, sans-serif;
 	margin: 0;
-	padding: 0;
+	padding: 20px;
 	font-size: 18px;
 	cursor: url('../../media/cursor-arrow-orange.svg') 1 1, default;
 }
@@ -100,19 +100,45 @@ a:active {
 	max-width: 1200px;
 }
 
+.section {
+	display: block;
+	background-color: #fff;
+	margin-top: 2rem;
+}
+
 .section-heading {
-	padding: 0 10px;
 	text-decoration: none;
+	display: block;
+	padding: 20px;
+	transition: background-color .4s ease-in;
+}
+
+.section-heading:hover,
+.section-heading:focus {
+	background-color: #5e00da;
 }
 
 .section-heading h2 {
 	font-size: 5rem;
-	color: #4C6085;
-	color: rgba(76, 96, 133, .5);
+	color: #a6afc0;
 	text-transform: uppercase;
 	font-weight: 700;
-	margin-top: 2rem;
+	margin: 0;
+	display: inline-block;
+	vertical-align: top;
+	transition: color .4s ease-in;
 }
+
+.section-heading:hover h2,
+.section-heading:focus h2 {
+	color: #2ef1d9;
+}
+
+/*.section-heading svg {
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 1rem;
+}*/
 
 
 /*
@@ -133,14 +159,11 @@ a:active {
 	text-decoration: none;
     display: inline-block;
     vertical-align: top;
-    margin: 12px;
-    font-size: 0;
-    width: calc(50% - 24px);
+    width: 50%;
     align-self: stretch;
     flex-grow: 0;
-	box-shadow: 0 0 0 1px rgba(0,0,0,.1);
 	padding: 20px;
-	transition: box-shadow .4s ease-in;
+	transition: background-color .4s ease-in;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -148,8 +171,7 @@ a:active {
 
 .card:hover,
 .card:focus {
-	box-shadow: 0 0 0 1px rgba(0,0,0,.15),
-				0 2px 3px rgba(0,0,0,.2);
+	background-color: #2ef1d9;
 }
 
 article.card {
@@ -174,8 +196,14 @@ article.card {
 	font-size: 2.5rem;
 	display: inline-block;
 	vertical-align: top;
- 	font-weight: 300;
+ 	font-weight: 200;
  	flex-grow: 1;
+ 	transition: color .4s ease-in;
+}
+
+.card:hover .card-title,
+.card:focus .card-title {
+	color: #5e00da;
 }
 
 .position-company {
@@ -250,22 +278,27 @@ article.card {
 }
 
 .view-more {
-	color: #5e00da;
-	margin: 1rem 33px 0 0;
-	float: right;
+	background-color: #a6afc0;
+	color: #2ef1d9;
+	display: block;
 	text-decoration: none;
-	transition: color .4s ease-in;
-	font-size: 1.2rem;
+	transition: color .4s ease-in, background-color .4s ease-in;
+	font-size: 1.5rem;
 	line-height: 1;
+	padding: 20px;
+	text-align: center;
+	font-weight: 500;
+	text-transform: uppercase;
 }
 
 .view-more:visited {
-	color: #5e00da;
+	color: #2ef1d9;
 }
 
 .view-more:hover,
 .view-more:focus {
-	color: #13C4A3;
+	color: #5e00da;
+	background-color: #2ef1d9;
 }
 
 @media (max-width: 800px) {
