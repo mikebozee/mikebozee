@@ -42,8 +42,8 @@
 				<!-- GRID -->
 
 				{% block project_list %}
-					<a href="{% url 'project_list' %}">
-						<h2 class="section-heading">Projects</h2>
+					<a href="{% url 'project_list' %}" class="section-heading">
+						<h2>Projects</h2>
 					</a>
 					<section class="cards">
 						{% for project in projects|slice:":2" %}
@@ -59,8 +59,8 @@
 				{% endblock %}
 
 				{% block article_list %}
-					<a href="{% url 'article_list' %}">
-						<h2 class="section-heading">Articles</h2>
+					<a href="{% url 'article_list' %}" class="section-heading">
+						<h2>Articles</h2>
 					</a>
 					<section class="cards">
 						{% for article in articles|slice:":2" %}
@@ -77,8 +77,8 @@
 				{% endblock %}
 
 				{% block position_list %}
-					<a href="{% url 'position_list' %}">
-						<h2 class="section-heading">Positions</h2>
+					<a href="{% url 'position_list' %}" class="section-heading">
+						<h2>Positions</h2>
 					</a>
 					<section class="cards">
 						{% for position in positions %}
@@ -102,8 +102,8 @@
 				{% endblock %}
 
 				{% block education_list %}
-					<a href="{% url 'education_list' %}">
-						<h2 class="section-heading">Education</h2>
+					<a href="{% url 'education_list' %}" class="section-heading">
+						<h2>Education</h2>
 					</a>
 					<section class="cards">
 						{% for education in educations|slice:":2" %}

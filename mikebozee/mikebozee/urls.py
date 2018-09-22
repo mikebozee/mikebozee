@@ -28,6 +28,7 @@ urlpatterns = [
     path('positions/', include('apps.positions.urls')),
     path('profiles/', include('apps.profiles.urls')),
     path('projects/', include('apps.projects.urls')),
+    path('recommendations/', include('apps.recommendations.urls')),
     path('admin/', admin.site.urls),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]

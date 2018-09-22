@@ -1,5 +1,3 @@
-import datetime
-
 from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
@@ -8,17 +6,14 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from taggit.managers import TaggableManager
 
 
-class Position(models.Model):
-	title = models.CharField(max_length=100)
-	company = models.CharField(max_length=100)
-	location = models.CharField(max_length=50)
-	start_date = models.DateField()
-	end_date = models.DateField(default=datetime.date.today, blank=True, null=True)
+class Recommendation(models.Model):
+	title = models.CharField(max_length=200)
 	text = RichTextUploadingField()
 	created_date = models.DateTimeField(default=timezone.now)
 	slug = models.SlugField(max_length=50, unique=True)
 	image = models.ImageField(blank=True, null=True)
-	# recommendation = models.ManyToManyField('recommendations.Recommendation', blank=True, null=True)
+	link = models.URLField(blank=True, null=True)
+	# position = models.ManyToManyField('positions.Position', blank=True, null=True)
 
 	tags = TaggableManager()
 
@@ -26,10 +21,10 @@ class Position(models.Model):
 		return self.title
 
 	def _get_unique_slug(self):
-		slug = slugify(self.title + self.company)
+		slug = slugify(self.title)
 		unique_slug = slug
 		num = 1
-		while Position.objects.filter(slug=unique_slug).exists():
+		while Recommendation.objects.filter(slug=unique_slug).exists():
 			unique_slug = '{}-{}'.format(slug, num)
 			num += 1
 		return unique_slug
@@ -37,4 +32,4 @@ class Position(models.Model):
 	def save(self, *args, **kwargs):
 		if not self.slug:
 			self.slug = self._get_unique_slug()
-		super().save(*args, **kwargs)
+		super().save(*args, **kwargs)	

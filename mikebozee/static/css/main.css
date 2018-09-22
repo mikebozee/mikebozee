@@ -97,18 +97,21 @@ a:active {
 
 #main {
 	margin: 0 auto;
-	max-width: 1100px;
-	padding: 0 5px;
+	max-width: 1200px;
 }
 
-h2.section-heading {
+.section-heading {
+	padding: 0 10px;
+	text-decoration: none;
+}
+
+.section-heading h2 {
 	font-size: 5rem;
 	color: #4C6085;
 	color: rgba(76, 96, 133, .5);
 	text-transform: uppercase;
-	margin: 0;
-	padding: 0 10px;
 	font-weight: 700;
+	margin-top: 2rem;
 }
 
 
@@ -161,14 +164,12 @@ article.card {
 	font-weight: 300;
 	margin: 0;
 	display: block;
-	width: 60%;
 	font-size: 2.5rem;
 	display: inline-block;
 	vertical-align: top;
 
 
  	font-weight: 300;
- 	margin: 1rem 0 1.5rem 0;
  	flex-grow: 1;
 }
 
@@ -240,6 +241,7 @@ article.card {
 
 .card-image {
 	width: 100%;
+	margin-top: 1.5rem;
 }
 
 @media (max-width: 800px) {

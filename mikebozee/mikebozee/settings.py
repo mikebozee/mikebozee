@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'apps.positions',
     'apps.profiles',
     'apps.projects',
+    'apps.recommendations',
     'taggit',
     'ckeditor',
     'ckeditor_uploader',
