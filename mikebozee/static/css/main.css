@@ -135,13 +135,21 @@ a:active {
     vertical-align: top;
     margin: 12px;
     font-size: 0;
-    width: 40%;
+    width: calc(50% - 24px);
     align-self: stretch;
-    flex-grow: 1;
-
+    flex-grow: 0;
+	box-shadow: 0 0 0 1px rgba(0,0,0,.1);
+	padding: 20px;
+	transition: box-shadow .4s ease-in;
 	display: flex;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	flex-direction: column;
+}
+
+.card:hover,
+.card:focus {
+	box-shadow: 0 0 0 1px rgba(0,0,0,.15),
+				0 2px 3px rgba(0,0,0,.2);
 }
 
 article.card {
@@ -161,14 +169,11 @@ article.card {
 	text-transform: uppercase;
 	line-height: 1.25;
 	color: #39A0ED;
-	font-weight: 300;
 	margin: 0;
 	display: block;
 	font-size: 2.5rem;
 	display: inline-block;
 	vertical-align: top;
-
-
  	font-weight: 300;
  	flex-grow: 1;
 }
@@ -242,6 +247,25 @@ article.card {
 .card-image {
 	width: 100%;
 	margin-top: 1.5rem;
+}
+
+.view-more {
+	color: #5e00da;
+	margin: 1rem 33px 0 0;
+	float: right;
+	text-decoration: none;
+	transition: color .4s ease-in;
+	font-size: 1.2rem;
+	line-height: 1;
+}
+
+.view-more:visited {
+	color: #5e00da;
+}
+
+.view-more:hover,
+.view-more:focus {
+	color: #13C4A3;
 }
 
 @media (max-width: 800px) {

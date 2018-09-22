@@ -12,7 +12,7 @@ class Profile(models.Model):
 		return self.first_name + ' ' + str(self.last_name)
 
 	def _get_unique_slug(self):
-		slug = slugify(self.title)
+		slug = slugify(self.first_name + ' ' + str(self.last_name))
 		unique_slug = slug
 		num = 1
 		while Profile.objects.filter(slug=unique_slug).exists():

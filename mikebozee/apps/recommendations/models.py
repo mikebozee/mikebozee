@@ -3,11 +3,11 @@ from django.utils import timezone
 from django.utils.text import slugify
 
 from ckeditor_uploader.fields import RichTextUploadingField
-from taggit.managers import TaggableManager
 
 
 class Recommendation(models.Model):
-	title = models.CharField(max_length=200)
+	first_name = models.CharField(max_length=50)
+	last_name = models.CharField(max_length=50, blank=True, null=True)
 	text = RichTextUploadingField()
 	created_date = models.DateTimeField(default=timezone.now)
 	slug = models.SlugField(max_length=50, unique=True)
@@ -15,13 +15,11 @@ class Recommendation(models.Model):
 	link = models.URLField(blank=True, null=True)
 	# position = models.ManyToManyField('positions.Position', blank=True, null=True)
 
-	tags = TaggableManager()
-
 	def __str__(self):
-		return self.title
+		return self.first_name + ' ' + str(self.last_name)
 
 	def _get_unique_slug(self):
-		slug = slugify(self.title)
+		slug = slugify(self.first_name + ' ' + str(self.last_name))
 		unique_slug = slug
 		num = 1
 		while Recommendation.objects.filter(slug=unique_slug).exists():
