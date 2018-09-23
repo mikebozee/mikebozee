@@ -11,7 +11,8 @@ class Recommendation(models.Model):
 	   ('Coworker', 'Coworker'),
 	   ('Client', 'Client'),
 	   ('Instructor', 'Instructor'),
-	   ('Vendor', 'Vendor')
+	   ('Mentor', 'Mentor'),
+	   ('Vendor', 'Vendor'),
 	)
 
 	first_name = models.CharField(max_length=50)
@@ -21,7 +22,7 @@ class Recommendation(models.Model):
 	slug = models.SlugField(max_length=50, unique=True)
 	image = models.ImageField(blank=True, null=True)
 	link = models.URLField(blank=True, null=True)
-	relationship = MultiSelectField(choices=RELATIONSHIP_CHOICES)
+	relationship = MultiSelectField(choices=RELATIONSHIP_CHOICES, blank=True)
 	positions = models.ManyToManyField('positions.Position', blank=True)
 	projects = models.ManyToManyField('projects.Project', blank=True)
 	educations = models.ManyToManyField('educations.Education', blank=True)

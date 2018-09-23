@@ -79,10 +79,11 @@
 							<h2>Recommendations</h2>
 						</a>
 						<h3 class="section-subheading">Direct supervisors</h3>
-						<h3 class="section-subheading">Coworkers</h3>
 						<h3 class="section-subheading">Clients</h3>
-						<h3 class="section-subheading">Vendors</h3>
 						<h3 class="section-subheading">Instructors</h3>
+						<h3 class="section-subheading">Coworkers</h3>
+						<h3 class="section-subheading">Mentors</h3>
+						<h3 class="section-subheading">Vendors</h3>
 						<section class="cards">
 							{% for recommendation in recommendations %}
 							    <a class="card card--small" href="{% url 'recommendation_detail' slug=recommendation.slug %}">
