@@ -134,11 +134,13 @@ a:active {
 	color: #2ef1d9;
 }
 
-/*.section-heading svg {
-	display: inline-block;
-	vertical-align: top;
-	margin-left: 1rem;
-}*/
+.section-subheading {
+	padding: 20px;
+	margin: 2rem 0 1rem 0;
+	font-size: 2rem;
+	text-transform: uppercase;;
+	font-weight: 500;
+}
 
 
 /*
