@@ -107,7 +107,7 @@
 						<h3 class="section-subheading">Instructors</h3>
 						<section class="cards">
 							{% for recommendation in recommendations %}
-								{% if 'Direct supervisor' in recommendation.get_relationship_display %}
+								{% if 'Instructor' in recommendation.get_relationship_display %}
 								    <a class="card card--small" href="{% url 'recommendation_detail' slug=recommendation.slug %}">
 								        <h3 class="card-title">{{ recommendation.first_name }} {{ recommendation.last_name }}</h3>
 								    	{% if recommendation.image %}
