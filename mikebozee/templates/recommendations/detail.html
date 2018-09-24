@@ -6,6 +6,7 @@
     	{% if recommendation.image %}
     		<img class="card-image card-image--circle" src="../../media/{{ recommendation.image }}">
 		{% endif %}
+		{{ recommendation.notes|safe }}
 		{{ recommendation.text|safe }}
 		<h3>Ask me about Mike's...</h3>
 		{% if recommendation.positions.count %}
