@@ -1,5 +1,29 @@
 {% extends 'recommendations/base.html' %}
 
 {% block recommendation_detail %}
-	<p>Ask me about... Projects, Educations, Positions listed here</p>
+	<a class="card card--small" href="{% url 'recommendation_detail' slug=recommendation.slug %}">
+        <h3 class="card-title">{{ recommendation.first_name }} {{ recommendation.last_name }}</h3>
+    	{% if recommendation.image %}
+    		<img class="card-image card-image--circle" src="../../media/{{ recommendation.image }}">
+		{% endif %}
+		<h3>Ask me about Mike's...</h3>
+		<h4>Positions:</h4>
+		{% if recommendation.positions %}
+    		{% for position in recommendation.positions.all %}
+    			<p>{{ position }}</p>
+    		{% endfor %}
+		{% endif %}
+		<h4>Projects:</h4>
+		{% if recommendation.projects %}
+    		{% for project in recommendation.projects.all %}
+    			<p>{{ project }}</p>
+    		{% endfor %}
+		{% endif %}
+		<h4>Educations:</h4>
+		{% if recommendation.educations %}
+    		{% for education in recommendation.educations.all %}
+    			<p>{{ education }}</p>
+    		{% endfor %}
+		{% endif %}
+    </a>
 {% endblock %}
