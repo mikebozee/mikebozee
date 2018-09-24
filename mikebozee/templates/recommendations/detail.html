@@ -11,19 +11,19 @@
 		{% if recommendation.positions.count %}
 			<h4>Positions:</h4>
     		{% for position in recommendation.positions.all %}
-    			<p>{{ position }}</p>
+    			<a href="{% url 'position_detail' slug=position.slug %}">{{ position }}</a>
     		{% endfor %}
 		{% endif %}
 		{% if recommendation.projects.count %}
 			<h4>Projects:</h4>
     		{% for project in recommendation.projects.all %}
-    			<p>{{ project }}</p>
+    			<a href="{% url 'project_detail' slug=project.slug %}">{{ project }}</a>
     		{% endfor %}
 		{% endif %}
 		{% if recommendation.educations.count %}
 			<h4>Educations:</h4>
     		{% for education in recommendation.educations.all %}
-    			<p>{{ education }}</p>
+    			<a href="{% url 'education_detail' slug=education.slug %}">{{ education }}</a>
     		{% endfor %}
 		{% endif %}
     </section>
