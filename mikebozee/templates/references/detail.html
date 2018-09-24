@@ -1,0 +1,31 @@
+{% extends 'references/base.html' %}
+
+{% block reference_detail %}
+	<section class="card card--full">
+        <h3 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h3>
+    	{% if reference.image %}
+    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
+		{% endif %}
+		{{ reference.notes|safe }}
+		{{ reference.text|safe }}
+		<h3>Ask me about Mike's...</h3>
+		{% if reference.positions.count %}
+			<h4>Positions:</h4>
+    		{% for position in reference.positions.all %}
+    			<a href="{% url 'position_detail' slug=position.slug %}">{{ position }}</a>
+    		{% endfor %}
+		{% endif %}
+		{% if reference.projects.count %}
+			<h4>Projects:</h4>
+    		{% for project in reference.projects.all %}
+    			<a href="{% url 'project_detail' slug=project.slug %}">{{ project }}</a>
+    		{% endfor %}
+		{% endif %}
+		{% if reference.educations.count %}
+			<h4>Educations:</h4>
+    		{% for education in reference.educations.all %}
+    			<a href="{% url 'education_detail' slug=education.slug %}">{{ education }}</a>
+    		{% endfor %}
+		{% endif %}
+    </section>
+{% endblock %}

@@ -73,19 +73,19 @@
 					</section>
 				{% endblock %}
 
-				{% block recommendation_list %}
+				{% block reference_list %}
 					<section class="section">
-						<a href="{% url 'recommendation_list' %}" class="section-heading">
-							<h2>Recommendations</h2>
+						<a href="{% url 'reference_list' %}" class="section-heading">
+							<h2>references</h2>
 						</a>
 						<h3 class="section-subheading">Direct supervisors</h3>
 						<section class="cards">
-							{% for recommendation in recommendations %}
-								{% if 'Direct supervisor' in recommendation.get_relationship_display %}
-								    <a class="card card--small" href="{% url 'recommendation_detail' slug=recommendation.slug %}">
-								        <h3 class="card-title">{{ recommendation.first_name }} {{ recommendation.last_name }}</h3>
-								    	{% if recommendation.image %}
-								    		<img class="card-image card-image--circle" src="../../media/{{ recommendation.image }}">
+							{% for reference in references %}
+								{% if 'Direct supervisor' in reference.get_relationship_display %}
+								    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
+								        <h3 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h3>
+								    	{% if reference.image %}
+								    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
 							    		{% endif %}
 								    </a>
 							    {% endif %}
@@ -93,12 +93,12 @@
 						</section>
 						<h3 class="section-subheading">Clients</h3>
 						<section class="cards">
-							{% for recommendation in recommendations %}
-								{% if 'Client' in recommendation.get_relationship_display %}
-								    <a class="card card--small" href="{% url 'recommendation_detail' slug=recommendation.slug %}">
-								        <h3 class="card-title">{{ recommendation.first_name }} {{ recommendation.last_name }}</h3>
-								    	{% if recommendation.image %}
-								    		<img class="card-image card-image--circle" src="../../media/{{ recommendation.image }}">
+							{% for reference in references %}
+								{% if 'Client' in reference.get_relationship_display %}
+								    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
+								        <h3 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h3>
+								    	{% if reference.image %}
+								    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
 							    		{% endif %}
 								    </a>
 							    {% endif %}
@@ -106,12 +106,12 @@
 						</section>
 						<h3 class="section-subheading">Instructors</h3>
 						<section class="cards">
-							{% for recommendation in recommendations %}
-								{% if 'Instructor' in recommendation.get_relationship_display %}
-								    <a class="card card--small" href="{% url 'recommendation_detail' slug=recommendation.slug %}">
-								        <h3 class="card-title">{{ recommendation.first_name }} {{ recommendation.last_name }}</h3>
-								    	{% if recommendation.image %}
-								    		<img class="card-image card-image--circle" src="../../media/{{ recommendation.image }}">
+							{% for reference in references %}
+								{% if 'Instructor' in reference.get_relationship_display %}
+								    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
+								        <h3 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h3>
+								    	{% if reference.image %}
+								    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
 							    		{% endif %}
 								    </a>
 							    {% endif %}
@@ -119,12 +119,12 @@
 						</section>
 						<h3 class="section-subheading">Coworkers</h3>
 						<section class="cards">
-							{% for recommendation in recommendations %}
-								{% if 'Coworker' in recommendation.get_relationship_display %}
-								    <a class="card card--small" href="{% url 'recommendation_detail' slug=recommendation.slug %}">
-								        <h3 class="card-title">{{ recommendation.first_name }} {{ recommendation.last_name }}</h3>
-								    	{% if recommendation.image %}
-								    		<img class="card-image card-image--circle" src="../../media/{{ recommendation.image }}">
+							{% for reference in references %}
+								{% if 'Coworker' in reference.get_relationship_display %}
+								    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
+								        <h3 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h3>
+								    	{% if reference.image %}
+								    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
 							    		{% endif %}
 								    </a>
 							    {% endif %}
@@ -132,12 +132,12 @@
 						</section>
 						<h3 class="section-subheading">Mentors</h3>
 						<section class="cards">
-							{% for recommendation in recommendations %}
-								{% if 'Mentor' in recommendation.get_relationship_display %}
-								    <a class="card card--small" href="{% url 'recommendation_detail' slug=recommendation.slug %}">
-								        <h3 class="card-title">{{ recommendation.first_name }} {{ recommendation.last_name }}</h3>
-								    	{% if recommendation.image %}
-								    		<img class="card-image card-image--circle" src="../../media/{{ recommendation.image }}">
+							{% for reference in references %}
+								{% if 'Mentor' in reference.get_relationship_display %}
+								    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
+								        <h3 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h3>
+								    	{% if reference.image %}
+								    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
 							    		{% endif %}
 								    </a>
 							    {% endif %}
@@ -145,12 +145,12 @@
 						</section>
 						<h3 class="section-subheading">Vendors</h3>
 						<section class="cards">
-							{% for recommendation in recommendations %}
-								{% if 'Vendor' in recommendation.get_relationship_display %}
-								    <a class="card card--small" href="{% url 'recommendation_detail' slug=recommendation.slug %}">
-								        <h3 class="card-title">{{ recommendation.first_name }} {{ recommendation.last_name }}</h3>
-								    	{% if recommendation.image %}
-								    		<img class="card-image card-image--circle" src="../../media/{{ recommendation.image }}">
+							{% for reference in references %}
+								{% if 'Vendor' in reference.get_relationship_display %}
+								    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
+								        <h3 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h3>
+								    	{% if reference.image %}
+								    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
 							    		{% endif %}
 								    </a>
 							    {% endif %}
@@ -158,11 +158,11 @@
 						</section>
 						<h3 class="section-subheading">All</h3>
 						<section class="cards">
-							{% for recommendation in recommendations %}
-							    <a class="card card--small" href="{% url 'recommendation_detail' slug=recommendation.slug %}">
-							        <h3 class="card-title">{{ recommendation.first_name }} {{ recommendation.last_name }}</h3>
-							    	{% if recommendation.image %}
-							    		<img class="card-image card-image--circle" src="../../media/{{ recommendation.image }}">
+							{% for reference in references %}
+							    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
+							        <h3 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h3>
+							    	{% if reference.image %}
+							    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
 						    		{% endif %}
 							    </a>
 							{% endfor %}

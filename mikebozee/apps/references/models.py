@@ -5,7 +5,7 @@ from django.utils.text import slugify
 from ckeditor_uploader.fields import RichTextUploadingField
 from multiselectfield import MultiSelectField
 
-class Recommendation(models.Model):
+class Reference(models.Model):
 	RELATIONSHIP_CHOICES = (
 	   ('Direct supervisor', 'Direct supervisor'),
 	   ('Coworker', 'Coworker'),
@@ -35,7 +35,7 @@ class Recommendation(models.Model):
 		slug = slugify(self.first_name + ' ' + str(self.last_name))
 		unique_slug = slug
 		num = 1
-		while Recommendation.objects.filter(slug=unique_slug).exists():
+		while Reference.objects.filter(slug=unique_slug).exists():
 			unique_slug = '{}-{}'.format(slug, num)
 			num += 1
 		return unique_slug
