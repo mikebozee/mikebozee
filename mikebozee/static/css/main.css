@@ -165,18 +165,25 @@ a:active {
     align-self: stretch;
     flex-grow: 0;
 	padding: 20px;
-	transition: background-color .4s ease-in;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
+}
+
+a.card {
+	transition: background-color .4s ease-in;
+}
+
+.card--full {
+	width: 100%;
 }
 
 .card--small {
 	width: 20%;
 }
 
-.card:hover,
-.card:focus {
+a.card:hover,
+a.card:focus {
 	background-color: #2ef1d9;
 }
 
@@ -207,8 +214,8 @@ article.card {
  	transition: color .4s ease-in;
 }
 
-.card:hover .card-title,
-.card:focus .card-title {
+a.card:hover .card-title,
+a.card:focus .card-title {
 	color: #5e00da;
 }
 
@@ -285,6 +292,10 @@ article.card {
 
 .card-image--circle {
 	border-radius: 50%;
+}
+
+.card--full .card-image {
+	max-width: 300px;
 }
 
 .view-more {

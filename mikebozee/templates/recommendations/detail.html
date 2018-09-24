@@ -1,11 +1,12 @@
 {% extends 'recommendations/base.html' %}
 
 {% block recommendation_detail %}
-	<a class="card card--small" href="{% url 'recommendation_detail' slug=recommendation.slug %}">
+	<section class="card card--full">
         <h3 class="card-title">{{ recommendation.first_name }} {{ recommendation.last_name }}</h3>
     	{% if recommendation.image %}
     		<img class="card-image card-image--circle" src="../../media/{{ recommendation.image }}">
 		{% endif %}
+		{{ recommendation.text|safe }}
 		<h3>Ask me about Mike's...</h3>
 		{% if recommendation.positions.count %}
 			<h4>Positions:</h4>
@@ -25,5 +26,5 @@
     			<p>{{ education }}</p>
     		{% endfor %}
 		{% endif %}
-    </a>
+    </section>
 {% endblock %}
