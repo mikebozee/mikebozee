@@ -7,20 +7,20 @@
     		<img class="card-image card-image--circle" src="../../media/{{ recommendation.image }}">
 		{% endif %}
 		<h3>Ask me about Mike's...</h3>
-		<h4>Positions:</h4>
-		{% if recommendation.positions %}
+		{% if recommendation.positions.count %}
+			<h4>Positions:</h4>
     		{% for position in recommendation.positions.all %}
     			<p>{{ position }}</p>
     		{% endfor %}
 		{% endif %}
-		<h4>Projects:</h4>
-		{% if recommendation.projects %}
+		{% if recommendation.projects.count %}
+			<h4>Projects:</h4>
     		{% for project in recommendation.projects.all %}
     			<p>{{ project }}</p>
     		{% endfor %}
 		{% endif %}
-		<h4>Educations:</h4>
-		{% if recommendation.educations %}
+		{% if recommendation.educations.count %}
+			<h4>Educations:</h4>
     		{% for education in recommendation.educations.all %}
     			<p>{{ education }}</p>
     		{% endfor %}
