@@ -29,6 +29,7 @@ urlpatterns = [
     path('profiles/', include('apps.profiles.urls')),
     path('projects/', include('apps.projects.urls')),
     path('references/', include('apps.references.urls')),
+    path('stages/', include('apps.stages.urls')),
     path('admin/', admin.site.urls),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]

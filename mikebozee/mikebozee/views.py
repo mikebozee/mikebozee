@@ -7,6 +7,7 @@ from apps.positions.models import Position
 from apps.profiles.models import Profile
 from apps.projects.models import Project
 from apps.references.models import Reference
+from apps.stages.models import Stage
 
 def index(request, template='base.html'):
 	context = {
@@ -16,5 +17,6 @@ def index(request, template='base.html'):
 		'profiles':   	Profile.objects.all(),
 		'projects':   	Project.objects.all(),
 		'references':	Reference.objects.all(),
+		'stages':		Stage.objects.all(),
 	}
 	return render(request, template, context)

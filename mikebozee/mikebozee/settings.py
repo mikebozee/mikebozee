@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'apps.profiles',
     'apps.projects',
     'apps.references',
+    'apps.stages',
     'taggit',
     'ckeditor',
     'ckeditor_uploader',
