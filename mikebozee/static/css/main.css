@@ -33,6 +33,17 @@ a:active {
 
 /*https://colordrop.io/color.php?id=17797*/
 
+#jump-nav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#jump-nav li {
+	display: inline-block;
+	padding: 10px 20px;
+}
+
 
 
 /*
@@ -227,7 +238,7 @@ a.card:focus .card-title {
 	display: block;
 }
 
-.position-dates {
+.card-dates {
 	font-size: 1rem;
 	line-height: 1.25;
 	color: #202124;

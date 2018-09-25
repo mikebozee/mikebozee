@@ -15,7 +15,7 @@ class StageAdminForm(forms.ModelForm):
 
 
 class StageAdmin(admin.ModelAdmin):
-	prepopulated_fields = {"slug": ("title",)}
+	prepopulated_fields = {"slug": ("title", "location",)}
 	form = StageAdminForm
 
 

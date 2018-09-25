@@ -11,7 +11,7 @@ class Stage(models.Model):
 	title = models.CharField(max_length=100)
 	location = models.CharField(max_length=50)
 	start_date = models.DateField()
-	end_date = models.DateField(default=datetime.date.today, blank=True, null=True)
+	end_date = models.DateField(blank=True, null=True)
 	text = RichTextUploadingField()
 	created_date = models.DateTimeField(default=timezone.now)
 	slug = models.SlugField(max_length=50, unique=True)
@@ -20,7 +20,7 @@ class Stage(models.Model):
 		return self.title
 
 	def _get_unique_slug(self):
-		slug = slugify(self.title + self.company)
+		slug = slugify(self.title + self.location)
 		unique_slug = slug
 		num = 1
 		while Stage.objects.filter(slug=unique_slug).exists():
