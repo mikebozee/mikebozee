@@ -332,6 +332,10 @@ a.card:focus .card-title {
 	max-width: 300px;
 }
 
+.card-logo {
+	max-width: 70px;
+}
+
 .view-more {
 	background-color: #2ef1d9;
 	color: #5e00da;
