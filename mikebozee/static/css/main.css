@@ -11,18 +11,18 @@ body {
 	background-color: #ededed;
 	font-family: 'Oswald', Helvetica, Arial, sans-serif;
 	margin: 0;
-	padding: 20px;
+	padding: 20px 20px 40px 20px;
 	font-size: 18px;
 	cursor: url('../../media/cursor-arrow-orange.svg') 1 1, default;
 }
 
 ::selection {
-	background: #D73B4B;
-	color: #F4DF6B;
+	background: #2ef1d9;
+	color: #5e00da;
 }
 ::-moz-selection {
-	background: #D73B4B;
-	color: #F4DF6B;
+	background: #2ef1d9;
+	color: #5e00da;
 }
 
 a:hover,
@@ -37,11 +37,27 @@ a:active {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	text-align: center;
+	font-size: 0;
+	background-color: #2ef1d9;
 }
 
 #jump-nav li {
 	display: inline-block;
-	padding: 10px 20px;
+	padding: 15px 30px;
+	color: #5e00da;
+	cursor: url('../../media/cursor-hand-orange.svg') 1 1, pointer;
+	text-transform: uppercase;
+	font-size: 1.3rem;
+	transition: color .4s ease-in,
+				background-color .4s ease-in;
+	font-weight: 300;
+}
+
+#jump-nav li:hover,
+#jump-nav li:focus {
+	color: #2ef1d9;
+	background-color: #5e00da;;
 }
 
 #intro {
@@ -75,32 +91,6 @@ a:active {
 	text-transform: uppercase;
 	display: block;
 }
-
-
-/*
- COLUMNS
-*/
-
-.row {
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	align-items: stretch;
-}
-
-.cell {
-	display: inline-block;
-	vertical-align: top;
-	flex-grow: 1;
-	align-self: stretch;
-
-	min-height: 100px;
-	border: 1px solid black;
-}
-
-.cell
 
 
 
@@ -146,6 +136,9 @@ a:active {
 	display: block;
 	background-color: #fff;
 	margin-top: 2rem;
+
+	border-radius: 10px 10px 0 0;
+	overflow: hidden;
 }
 
 .section-heading {
@@ -153,6 +146,8 @@ a:active {
 	display: block;
 	padding: 20px;
 	transition: background-color .4s ease-in;
+
+	background-color: #5e00da;
 }
 
 .section-heading:hover,
@@ -169,6 +164,8 @@ a:active {
 	display: inline-block;
 	vertical-align: top;
 	transition: color .4s ease-in;
+
+	color: #2ef1d9;
 }
 
 .section-heading:hover h2,
@@ -341,27 +338,27 @@ a.card:focus .card-title {
 }
 
 .view-more {
-	background-color: #a6afc0;
-	color: #2ef1d9;
+	background-color: #2ef1d9;
+	color: #5e00da;
 	display: block;
 	text-decoration: none;
 	transition: color .4s ease-in, background-color .4s ease-in;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	line-height: 1;
-	padding: 20px;
+	padding: 15px 20px;
 	text-align: center;
 	font-weight: 500;
 	text-transform: uppercase;
 }
 
 .view-more:visited {
-	color: #2ef1d9;
+	color: #5e00da;
 }
 
 .view-more:hover,
 .view-more:focus {
-	color: #5e00da;
-	background-color: #2ef1d9;
+	color: #2ef1d9;
+	background-color: #5e00da;
 }
 
 @media (max-width: 800px) {

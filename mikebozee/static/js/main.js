@@ -6,3 +6,20 @@ function rotateJobTitle() {
               .delay(3000).fadeOut(800, rotateJobTitle);
 }
 $(rotateJobTitle);
+
+
+
+
+
+
+
+function moveSectionToTop(section) {
+	var sectionId = section.getAttribute('data-section')
+	var sectionElement = '#' + sectionId;
+	$(sectionElement).prependTo('#sections');
+}
+
+// function moveSectionToTop(animal) {
+//     var animalType = animal.getAttribute("data-section");
+//     alert("The " + animal.innerHTML + " is a " + animalType + ".");
+// }
