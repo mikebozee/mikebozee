@@ -44,6 +44,37 @@ a:active {
 	padding: 10px 20px;
 }
 
+#intro {
+	margin: 40px 0;
+	text-align: center;
+}
+
+.intro-big {
+	font-size: 3rem;
+	margin: 0;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.intro-big .emoji {
+	font-size: 5rem;
+	font-weight: normal;
+}
+
+.intro-small {
+	font-size: 1.5rem;
+	margin: 0;
+	font-weight: 400;
+	/*text-transform: uppercase;*/
+}
+
+#job-title-rotate {
+	font-weight: 400;
+	color: #5e00da;
+	font-size: 2rem;
+	text-transform: uppercase;
+	display: block;
+}
 
 
 /*
