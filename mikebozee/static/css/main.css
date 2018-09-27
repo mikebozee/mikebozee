@@ -136,7 +136,6 @@ a:active {
 	display: block;
 	background-color: #fff;
 	margin-top: 2rem;
-
 	border-radius: 10px 10px 0 0;
 	overflow: hidden;
 }
@@ -144,33 +143,29 @@ a:active {
 .section-heading {
 	text-decoration: none;
 	display: block;
-	padding: 20px;
+	padding: 40px 20px;
 	transition: background-color .4s ease-in;
-
 	background-color: #5e00da;
 }
 
 .section-heading:hover,
 .section-heading:focus {
-	background-color: #5e00da;
+	background-color: #2ef1d9;
 }
 
 .section-heading h2 {
 	font-size: 5rem;
-	color: #a6afc0;
 	text-transform: uppercase;
 	font-weight: 700;
 	margin: 0;
-	display: inline-block;
-	vertical-align: top;
 	transition: color .4s ease-in;
-
 	color: #2ef1d9;
+	line-height: 1;
 }
 
 .section-heading:hover h2,
 .section-heading:focus h2 {
-	color: #2ef1d9;
+	color: #5e00da;
 }
 
 .section-subheading {

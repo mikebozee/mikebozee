@@ -1,3 +1,5 @@
+
+// Rotate through intended job titles text.
 var jobTitles = ["Software Development Engineer", "Web Development Engineer", "Web Application Developer"];
 
 function rotateJobTitle() {
@@ -12,14 +14,9 @@ $(rotateJobTitle);
 
 
 
-
+// Clicking onnav item moves the related section to top.
 function moveSectionToTop(section) {
 	var sectionId = section.getAttribute('data-section')
 	var sectionElement = '#' + sectionId;
 	$(sectionElement).prependTo('#sections');
 }
-
-// function moveSectionToTop(animal) {
-//     var animalType = animal.getAttribute("data-section");
-//     alert("The " + animal.innerHTML + " is a " + animalType + ".");
-// }
