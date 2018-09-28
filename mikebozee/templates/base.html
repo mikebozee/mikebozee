@@ -50,19 +50,22 @@
 							<section class="cards">
 								{% for position in positions %}
 								    <a class="card" href="{% url 'position_detail' slug=position.slug %}">
-								        <h3 class="card-title">{{ position.title }}</h3>
-								        <span class="position-company">{{ position.company }}</span>
-								        <span class="card-dates">
-								        	{{ position.start_date|date:"M Y" }} &mdash;
-								        	{% if position.end_date %}
-								        		{{ position.end_date|date:"M Y" }}
-							        		{% else %}
-							        			Present
-							        		{% endif %}
-								        </span>
-								    	{% if position.logo %}
-								    		<img class="card-logo" src="../../media/{{ position.logo }}">
-							    		{% endif %}
+								    	<div class="card-left">
+									        <h3 class="card-title">{{ position.title }}</h3>
+									        <span class="position-company">{{ position.company }}</span>
+									        <span class="card-dates">
+									        	{{ position.start_date|date:"M Y" }} &mdash;
+									        	{% if position.end_date %}
+									        		{{ position.end_date|date:"M Y" }}
+								        		{% else %}
+								        			Present
+								        		{% endif %}
+								        		// {{ position.location }}
+									        </span>
+									    	{% if position.logo %}
+									    		<img class="card-logo" src="../../media/{{ position.logo }}" alt="{{position.company}} logo">
+								    		{% endif %}
+								    	</div>
 								    </a>
 								{% endfor %}
 							</section>
@@ -101,7 +104,7 @@
 							<section class="cards">
 								{% for project in projects|slice:":4" %}
 								    <a class="card" href="{% url 'project_detail' slug=project.slug %}">
-								        <h3 class="card-title">{{ project.title }}</h3>
+								        <h3 class="card-title card-title--grow">{{ project.title }}</h3>
 								    	{% if project.image %}
 								    		<img class="card-image" src="../../media/{{ project.image }}">
 							    		{% endif %}
@@ -122,9 +125,9 @@
 								{% for reference in references %}
 									{% if 'Direct supervisor' in reference.get_relationship_display %}
 									    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
-									        <h3 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h3>
+									        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
 									    	{% if reference.image %}
-									    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
+									    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
 								    		{% endif %}
 									    </a>
 								    {% endif %}
@@ -135,9 +138,9 @@
 								{% for reference in references %}
 									{% if 'Instructor' in reference.get_relationship_display %}
 									    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
-									        <h3 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h3>
+									        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
 									    	{% if reference.image %}
-									    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
+									    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
 								    		{% endif %}
 									    </a>
 								    {% endif %}
@@ -148,9 +151,9 @@
 								{% for reference in references %}
 									{% if 'Coworker' in reference.get_relationship_display %}
 									    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
-									        <h3 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h3>
+									        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
 									    	{% if reference.image %}
-									    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
+									    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
 								    		{% endif %}
 									    </a>
 								    {% endif %}
@@ -161,9 +164,9 @@
 								{% for reference in references %}
 									{% if 'Mentor' in reference.get_relationship_display %}
 									    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
-									        <h3 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h3>
+									        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
 									    	{% if reference.image %}
-									    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
+									    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
 								    		{% endif %}
 									    </a>
 								    {% endif %}
@@ -174,9 +177,9 @@
 								{% for reference in references %}
 									{% if 'Client' in reference.get_relationship_display %}
 									    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
-									        <h3 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h3>
+									        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
 									    	{% if reference.image %}
-									    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
+									    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
 								    		{% endif %}
 									    </a>
 								    {% endif %}
@@ -187,9 +190,9 @@
 								{% for reference in references %}
 									{% if 'Vendor' in reference.get_relationship_display %}
 									    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
-									        <h3 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h3>
+									        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
 									    	{% if reference.image %}
-									    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
+									    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
 								    		{% endif %}
 									    </a>
 								    {% endif %}
@@ -199,9 +202,9 @@
 							<section class="cards">
 								{% for reference in references %}
 								    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
-								        <h3 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h3>
+								        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
 								    	{% if reference.image %}
-								    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
+								    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
 							    		{% endif %}
 								    </a>
 								{% endfor %}
@@ -217,10 +220,10 @@
 							<section class="cards">
 								{% for article in articles|slice:":4" %}
 									<a class="card" href="{% url 'article_detail' slug=article.slug %}">
-										<h3 class="card-title">{{ article.title }}</h3>
+										<h3 class="card-title card-title--grow">{{ article.title }}</h3>
 								        <!-- <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span> -->
 								    	{% if article.image %}
-								    		<img class="card-image" src="../../media/{{ article.image }}">
+								    		<img class="card-image" src="../../media/{{ article.image }}" alt="{{article.title}}">
 							    		{% endif %}
 								    </a>
 								{% endfor %}

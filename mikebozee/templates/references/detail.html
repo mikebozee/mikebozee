@@ -6,8 +6,13 @@
     	{% if reference.image %}
     		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
 		{% endif %}
-		{{ reference.notes|safe }}
-		{{ reference.text|safe }}
+		{% for relationship in reference.relationship %}
+			{{ relationship }}
+		{% endfor %}
+		<div class="card-text">
+			{{ reference.notes|safe }}
+			{{ reference.text|safe }}
+		</div>
 		<h3>Ask me about Mike's...</h3>
 		{% if reference.positions.count %}
 			<h4>Positions:</h4>

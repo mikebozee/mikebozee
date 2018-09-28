@@ -52,6 +52,10 @@ a:active {
 	transition: color .4s ease-in,
 				background-color .4s ease-in;
 	font-weight: 300;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;	
 }
 
 #jump-nav li:hover,
@@ -227,6 +231,12 @@ article.card {
 	width: 100%;
 }
 
+.card-left {
+	display: block;
+	padding-right: 110px;
+	position: relative;
+}
+
 .published-date {
 	display: block;
 	color: #4C6085;
@@ -244,8 +254,11 @@ article.card {
 	display: inline-block;
 	vertical-align: top;
  	font-weight: 200;
- 	flex-grow: 1;
  	transition: color .4s ease-in;
+}
+
+.card-title--grow {
+	flex-grow: 1;
 }
 
 a.card:hover .card-title,
@@ -272,7 +285,12 @@ a.card:focus .card-title {
 .card-text * {
 	font-size: 1.5rem;
 	line-height: 1.7;
-	font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+}
+
+.card-text strong {
+	color: #5e00da;
+	text-transform: uppercase;
+	font-size: 1.4rem;
 }
 
 .card-text a {
@@ -297,7 +315,6 @@ a.card:focus .card-title {
 .card-text p,
 .card-text li {
 	color: #202124;
-	color: #9a0000;
 }
 
 .card-text > p > img {
@@ -333,7 +350,10 @@ a.card:focus .card-title {
 }
 
 .card-logo {
-	max-width: 70px;
+	width: 70px;
+	position: absolute;
+	top: 0;
+	right: 20px;
 }
 
 .view-more {
