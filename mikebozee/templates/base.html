@@ -112,14 +112,14 @@
 								    </a>
 								{% endfor %}
 							</section>
-							<a class="view-more" href="{% url 'project_list' %}">View more</a>
+							<a class="view-all" href="{% url 'project_list' %}">View all</a>
 						</section>
 					{% endblock %}
 
 					{% block reference_list %}
 						<section class="section" id="references">
 							<a href="{% url 'reference_list' %}" class="section-heading">
-								<h2>references</h2>
+								<h2>References</h2>
 							</a>
 							<h3 class="section-subheading">Direct supervisors</h3>
 							<section class="cards">
@@ -229,7 +229,7 @@
 								    </a>
 								{% endfor %}
 							</section>
-							<a class="view-more" href="{% url 'article_list' %}">View more</a>
+							<a class="view-all" href="{% url 'article_list' %}">View all</a>
 						</section>
 					{% endblock %}
 

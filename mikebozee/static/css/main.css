@@ -358,7 +358,7 @@ a.card:focus .card-title {
 	right: 20px;
 }
 
-.view-more {
+.view-all {
 	background-color: #2ef1d9;
 	color: #5e00da;
 	display: block;
@@ -372,12 +372,12 @@ a.card:focus .card-title {
 	text-transform: uppercase;
 }
 
-.view-more:visited {
+.view-all:visited {
 	color: #5e00da;
 }
 
-.view-more:hover,
-.view-more:focus {
+.view-all:hover,
+.view-all:focus {
 	color: #2ef1d9;
 	background-color: #5e00da;
 }

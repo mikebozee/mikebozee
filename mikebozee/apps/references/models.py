@@ -41,6 +41,9 @@ class Reference(models.Model):
 			num += 1
 		return unique_slug
 
+	def full_name(reference):
+		return "%s %s" % (reference.first_name, reference.last_name)
+
 	def save(self, *args, **kwargs):
 		if not self.slug:
 			self.slug = self._get_unique_slug()
