@@ -11,9 +11,10 @@ body {
 	background-color: #ededed;
 	font-family: 'Oswald', Helvetica, Arial, sans-serif;
 	margin: 0;
-	padding: 0 20px 40px 20px;
+	padding: 40px 20px;
 	font-size: 18px;
 	cursor: url('../../media/cursor-arrow-orange.svg') 1 1, default;
+	color: #333;
 }
 
 ::selection {
@@ -108,29 +109,38 @@ a:active {
 	text-align: center;
 }
 
+.header-bottom {
+	display: block;
+}
+
+.header-tagline {
+	display: block;
+	font-size: 1.5rem;
+}
+
 .home-link {
 	text-decoration: none;
 	display: inline-block;
-	text-align: center;
-	background-color: #2ef1d9;
-	padding: 40px 20px 20px 20px;
 	
 }
 
 .home-link h1 {
 	text-transform: uppercase;
-	font-weight: 500;
-	color: #5e00da;
-	font-size: 4rem;
+	font-weight: 600;
+	font-size: 2rem;
 	line-height: 1;
 	margin: 0;
+	color: #333;
 }
 
 #headshot {
 	border-radius: 50%;
 	width: 130px;
 	height: 130px;
-	margin-top: 20px;
+}
+
+.social-icon {
+	text-decoration: none;
 }
 
 /*
