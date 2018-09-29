@@ -1,14 +1,20 @@
 {% extends 'projects/base.html' %}
 
 {% block project_list %}
-	<section class="projects">
-		{% for project in projects %}
-		    <a class="article" href="{% url 'project_detail' slug=project.slug %}">
-		        <h3 class="article-title">{{ project.title }}</h3>
-		    	{% if project.image %}
-		    		<div class="article-image" style="background-image: url('../../media/{{ project.image }}');"></div>
-	    		{% endif %}
-		    </a>
-		{% endfor %}
+	<section class="section" id="projects">
+		<a href="{% url 'project_list' %}" class="section-heading">
+			<h2>Projects</h2>
+		</a>
+		<section class="cards">
+			{% for project in projects %}
+			    <a class="card" href="{% url 'project_detail' slug=project.slug %}">
+			        <h3 class="card-title card-title--grow">{{ project.title }}</h3>
+			    	{% if project.image %}
+			    		<img class="card-image" src="../../media/{{ project.image }}">
+		    		{% endif %}
+			    </a>
+			{% endfor %}
+		</section>
+		<a class="view-more" href="{% url 'project_list' %}">View more</a>
 	</section>
 {% endblock %}
