@@ -7,6 +7,7 @@ from taggit.managers import TaggableManager
 
 
 class Article(models.Model):
+	published = models.BooleanField(default=False)
 	author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 	title = models.CharField(max_length=200)
 	text = RichTextUploadingField()

@@ -7,6 +7,7 @@ from .models import Reference
 
 class ReferenceAdmin(admin.ModelAdmin):
 	prepopulated_fields = {"slug": ("first_name", "last_name",)}
+	list_display = ('first_name', 'last_name', 'published')
 	formfield_overrides = {
         models.ManyToManyField: {'widget': CheckboxSelectMultiple},
     }

@@ -15,6 +15,7 @@ class Reference(models.Model):
 	   ('Vendor', 'Vendor'),
 	)
 
+	published = models.BooleanField(default=False)
 	first_name = models.CharField(max_length=50)
 	last_name = models.CharField(max_length=50, blank=True, null=True)
 	text = RichTextUploadingField()

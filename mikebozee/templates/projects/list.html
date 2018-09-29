@@ -2,9 +2,9 @@
 
 {% block project_list %}
 	<section class="section" id="projects">
-		<a href="{% url 'project_list' %}" class="section-heading">
+		<div class="section-heading">
 			<h2>Projects</h2>
-		</a>
+		</div>
 		<section class="cards">
 			{% for project in projects %}
 			    <a class="card" href="{% url 'project_detail' slug=project.slug %}">
@@ -15,6 +15,5 @@
 			    </a>
 			{% endfor %}
 		</section>
-		<a class="view-more" href="{% url 'project_list' %}">View more</a>
 	</section>
 {% endblock %}

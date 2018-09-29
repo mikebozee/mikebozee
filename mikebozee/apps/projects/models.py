@@ -7,6 +7,7 @@ from taggit.managers import TaggableManager
 
 
 class Project(models.Model):
+	published = models.BooleanField(default=False)
 	title = models.CharField(max_length=200)
 	text = RichTextUploadingField()
 	created_date = models.DateTimeField(default=timezone.now)

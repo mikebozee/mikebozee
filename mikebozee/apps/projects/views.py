@@ -5,7 +5,7 @@ from .models import Project
 
 
 def project_list(request):
-	projects = Project.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+	projects = Project.objects.filter(published=True, published_date__lte=timezone.now()).order_by('published_date')
 	return render(request, 'projects/list.html', {'projects': projects})
 
 

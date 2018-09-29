@@ -5,7 +5,7 @@ from .models import Reference
 
 
 def reference_list(request):
-	references = Reference.objects.all()
+	references = Reference.objects.filter(published=True)
 	return render(request, 'references/list.html', {'references': references})
 
 

@@ -5,7 +5,7 @@ from .models import Article
 
 
 def article_list(request):
-	articles = Article.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+	articles = Article.objects.filter(published=True, published_date__lte=timezone.now()).order_by('published_date')
 	return render(request, 'articles/list.html', {'articles': articles})
 
 

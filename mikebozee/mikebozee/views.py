@@ -11,12 +11,12 @@ from apps.stages.models import Stage
 
 def index(request, template='base.html'):
 	context = {
-		'articles':   	Article.objects.all(),
+		'articles':   	Article.objects.filter(published=True, published_date__lte=timezone.now()).order_by('published_date'),
 		'educations': 	Education.objects.all(),
 		'positions':  	Position.objects.all(),
 		'profiles':   	Profile.objects.all(),
-		'projects':   	Project.objects.all(),
-		'references':	Reference.objects.all(),
+		'projects':   	Project.objects.filter(published=True),
+		'references':	Reference.objects.filter(published=True),
 		'stages':		Stage.objects.all(),
 	}
 	return render(request, template, context)
