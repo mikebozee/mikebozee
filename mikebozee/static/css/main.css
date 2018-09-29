@@ -11,7 +11,7 @@ body {
 	background-color: #ededed;
 	font-family: 'Oswald', Helvetica, Arial, sans-serif;
 	margin: 0;
-	padding: 20px 20px 40px 20px;
+	padding: 0 20px 40px 20px;
 	font-size: 18px;
 	cursor: url('../../media/cursor-arrow-orange.svg') 1 1, default;
 }
@@ -104,27 +104,33 @@ a:active {
 
 .header {
 	margin: 0 auto;
-	max-width: 1100px;
-	padding: 15px;
-	height: 184px;
+	max-width: 1200px;
+	text-align: center;
 }
 
-.logo-link {
-	font-size: 3rem;
-	font-weight: 700;
+.home-link {
 	text-decoration: none;
-	/*color: #36F1CD;*/
-	color: #13C4A3;
+	display: inline-block;
+	text-align: center;
+	background-color: #2ef1d9;
+	padding: 40px 20px 20px 20px;
+	
+}
+
+.home-link h1 {
 	text-transform: uppercase;
-	font-weight: 900;
+	font-weight: 500;
 	color: #5e00da;
+	font-size: 4rem;
+	line-height: 1;
+	margin: 0;
 }
 
 #headshot {
 	border-radius: 50%;
-	overflow: hidden;
-	width: 150px;
-	height: 150px;	
+	width: 130px;
+	height: 130px;
+	margin-top: 20px;
 }
 
 /*

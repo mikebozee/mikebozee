@@ -16,9 +16,10 @@
 	</head>
 	<body>
 		<header class="header">
-			<!-- <h1>Aug 2018: continuous deployments in progress.</h1> -->
-			<a class="logo-link"href="{% url 'index' %}">Mike Bozee</a>
-			<img id="headshot" src="../../media/mike-bozee-headshot.jpg" alt="Mike Bozee headshot">
+			<a class="home-link"href="{% url 'index' %}">
+				<h1>Mike Bozee</h1>
+				<img id="headshot" src="../../media/mike-bozee-headshot.jpg" alt="Mike Bozee headshot">
+			</a>
 		</header>
 
 		<main id="main">
@@ -134,7 +135,7 @@
 								    {% endif %}
 								{% endfor %}
 							</section>
-							<h3 class="section-subheading">Instructors</h3>
+							<!-- <h3 class="section-subheading">Instructors</h3>
 							<section class="cards">
 								{% for reference in references %}
 									{% if 'Instructor' in reference.get_relationship_display %}
@@ -209,7 +210,7 @@
 							    		{% endif %}
 								    </a>
 								{% endfor %}
-							</section>
+							</section> -->
 						</section>
 					{% endblock %}
 
