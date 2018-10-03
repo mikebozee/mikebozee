@@ -103,7 +103,7 @@ body {
 
 .header {
 	margin: 0 auto;
-	max-width: 1200px;
+	max-width: 1110px;
 	text-align: center;
 }
 
@@ -147,7 +147,7 @@ body {
 
 #main {
 	margin: 0 auto;
-	max-width: 1200px;
+	max-width: 1110px;
 }
 
 #sections {
@@ -222,15 +222,14 @@ body {
     align-self: stretch;
     flex-grow: 0;*/
 	padding: 20px;
-	/*display: flex;
+	display: flex;
 	flex-wrap: wrap;
-	flex-direction: column;*/
+	flex-direction: column;
 	background-color: #fff;
 
 	border-bottom: 1px solid #DDDDDD;
 	width: 100%;
 	margin-bottom: 10px;
-	display: block;
 }
 
 a.card {
@@ -244,8 +243,9 @@ a.card {
 }
 
 .card--small {
-	width: 25%;
-	margin-left: 10px;
+	width: calc(25% - 10px);
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
 .card-small:first-of-type {

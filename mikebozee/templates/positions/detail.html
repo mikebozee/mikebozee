@@ -10,4 +10,20 @@
 			<div class="article-text">{{ position.text|safe }}</div>
 	    </article>
     </section>
+
+
+
+
+<section class="cards">
+	{% for reference in references %}
+		{% if position in reference.positions %}
+		    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
+		        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
+		    	{% if reference.image %}
+		    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
+	    		{% endif %}
+		    </a>
+	    {% endif %}
+	{% endfor %}
+</section>
 {% endblock %}
