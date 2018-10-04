@@ -29,13 +29,13 @@ function moveSectionToTop(section) {
 
 
 
-var $btns = $('.btn').click(function() {
+var $referencesButtons = $('.btn').click(function() {
   if (this.id == 'all') {
-    $('#references > .cards').fadeIn(450);
+    $('#references-cards > .card').fadeIn(450);
   } else {
     var $el = $('.' + this.id).fadeIn(450);
-    $('#references > .cards').not($el).hide();
+    $('#references-cards > .card').not($el).hide();
   }
-  $btns.removeClass('active');
+  $referencesButtons.removeClass('active');
   $(this).addClass('active');
 })

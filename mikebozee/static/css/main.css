@@ -296,7 +296,10 @@ a.card {
 }
 
 .sections--full .card--small {
-	width: calc((100% / 6) - 10px);
+	width: calc((100% / 8) - 4px);
+	margin-left: 2px;
+	margin-right: 2px;
+	margin-bottom: 2px;
 }
 
 .card-small:first-of-type {
