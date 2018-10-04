@@ -1,28 +1,102 @@
 {% extends 'positions/base.html' %}
 
 {% block position_detail %}
-	<section class="article-wrapper">
-		<article class="article">
-	        <h1 class="article-title">{{ position.title }}</h1>
-	    	{% if position.image %}
-	    		<div class="article-image" style="background-image: url('../../media/{{ position.image }}');"></div>
-			{% endif %}
-			<div class="article-text">{{ position.text|safe }}</div>
-	    </article>
-    </section>
+<main id="main">
+	<section id="sections">
+			<section class="article-wrapper">
+				<article class="article">
+			        <h1 class="article-title">{{ position.title }}</h1>
+			    	{% if position.image %}
+			    		<div class="article-image" style="background-image: url('../../media/{{ position.image }}');"></div>
+					{% endif %}
+					<div class="article-text">{{ position.text|safe }}</div>
+			    </article>
+		    </section>
 
-
-
-
-<section class="cards">
-	{% for reference in position.references.all %}
-	    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
-	        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
-	    	{% if reference.image %}
-	    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
-    		{% endif %}
-	    </a>
-	{% endfor %}
-</section>
+		<section class="section" id="references">
+			<div class="section-heading">
+				<h2>References</h2>
+			</div>
+			<h3 class="section-subheading">Direct supervisors</h3>
+			<section class="cards">
+				{% for reference in position.references.all %}
+					{% if 'Direct supervisor' in reference.get_relationship_display %}
+					    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
+					        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
+					    	{% if reference.image %}
+					    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
+				    		{% endif %}
+					    </a>
+				    {% endif %}
+				{% endfor %}
+			</section>
+			<h3 class="section-subheading">Instructors</h3>
+			<section class="cards">
+				{% for reference in position.references.all %}
+					{% if 'Instructor' in reference.get_relationship_display %}
+					    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
+					        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
+					    	{% if reference.image %}
+					    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
+				    		{% endif %}
+					    </a>
+				    {% endif %}
+				{% endfor %}
+			</section>
+			<h3 class="section-subheading">Coworkers</h3>
+			<section class="cards">
+				{% for reference in position.references.all %}
+					{% if 'Coworker' in reference.get_relationship_display %}
+					    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
+					        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
+					    	{% if reference.image %}
+					    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
+				    		{% endif %}
+					    </a>
+				    {% endif %}
+				{% endfor %}
+			</section>
+			<h3 class="section-subheading">Mentors</h3>
+			<section class="cards">
+				{% for reference in position.references.all %}
+					{% if 'Mentor' in reference.get_relationship_display %}
+					    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
+					        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
+					    	{% if reference.image %}
+					    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
+				    		{% endif %}
+					    </a>
+				    {% endif %}
+				{% endfor %}
+			</section>
+			<h3 class="section-subheading">Clients</h3>
+			<section class="cards">
+				{% for reference in position.references.all %}
+					{% if 'Client' in reference.get_relationship_display %}
+					    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
+					        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
+					    	{% if reference.image %}
+					    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
+				    		{% endif %}
+					    </a>
+				    {% endif %}
+				{% endfor %}
+			</section>
+			<h3 class="section-subheading">Vendors</h3>
+			<section class="cards">
+				{% for reference in position.references.all %}
+					{% if 'Vendor' in reference.get_relationship_display %}
+					    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
+					        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
+					    	{% if reference.image %}
+					    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
+				    		{% endif %}
+					    </a>
+				    {% endif %}
+				{% endfor %}
+			</section>
+		</section>
+	</section>
+</main>
 
 {% endblock %}
