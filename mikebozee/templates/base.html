@@ -7,11 +7,6 @@
 		<title>Mike Bozee // Full-stack Development</title>
 		<!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet"> -->
 		<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
-		<script
-			src="https://code.jquery.com/jquery-3.3.1.min.js"
-			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			crossorigin="anonymous"></script>
-		<script src="{% static 'js/main.js' %}" type="text/javascript"></script>
 		<!-- <script src="{% static 'js/vendor/in.js' %}" type="text/javascript"></script> -->
 		<link href="{% static 'lightbox2/css/lightbox.css' %}" rel="stylesheet type="text/css">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
@@ -171,11 +166,20 @@
 
 					{% block reference_list %}
 						<section class="section" id="references">
+
+<button class="active btn" id="all">Show All</button>
+<button class="btn" id="direct-supervisors">Direct supervisors</button>
+<button class="btn" id="instructors">Instructors</button>
+<button class="btn" id="coworkers">Coworkers</button>
+<button class="btn" id="mentors">Mentors</button>
+<button class="btn" id="clients">Clients</button>
+<button class="btn" id="vendors">Vendors</button>
+
 							<a href="{% url 'reference_list' %}" class="section-heading">
 								<h2>References</h2>
 							</a>
 							<h3 class="section-subheading">Direct supervisors</h3>
-							<section class="cards">
+							<section class="cards direct-supervisors">
 								{% for reference in references %}
 									{% if 'Direct supervisor' in reference.get_relationship_display %}
 									    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
@@ -188,7 +192,7 @@
 								{% endfor %}
 							</section>
 							<h3 class="section-subheading">Instructors</h3>
-							<section class="cards">
+							<section class="cards instructors">
 								{% for reference in references %}
 									{% if 'Instructor' in reference.get_relationship_display %}
 									    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
@@ -201,7 +205,7 @@
 								{% endfor %}
 							</section>
 							<h3 class="section-subheading">Coworkers</h3>
-							<section class="cards">
+							<section class="cards coworkers">
 								{% for reference in references %}
 									{% if 'Coworker' in reference.get_relationship_display %}
 									    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
@@ -214,7 +218,7 @@
 								{% endfor %}
 							</section>
 							<h3 class="section-subheading">Mentors</h3>
-							<section class="cards">
+							<section class="cards mentors">
 								{% for reference in references %}
 									{% if 'Mentor' in reference.get_relationship_display %}
 									    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
@@ -227,7 +231,7 @@
 								{% endfor %}
 							</section>
 							<h3 class="section-subheading">Clients</h3>
-							<section class="cards">
+							<section class="cards clients">
 								{% for reference in references %}
 									{% if 'Client' in reference.get_relationship_display %}
 									    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
@@ -240,7 +244,7 @@
 								{% endfor %}
 							</section>
 							<h3 class="section-subheading">Vendors</h3>
-							<section class="cards">
+							<section class="cards vendors">
 								{% for reference in references %}
 									{% if 'Vendor' in reference.get_relationship_display %}
 									    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
@@ -310,6 +314,11 @@
 
 		</main>
 
+		<script
+			src="https://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin="anonymous"></script>
+		<script src="{% static 'js/main.js' %}" type="text/javascript"></script>
 		<script src="{% static 'lightbox2/js/lightbox.js' %}" type="text/javascript"></script>
 
 	</body>

@@ -20,3 +20,22 @@ function moveSectionToTop(section) {
 	var sectionElement = '#' + sectionId;
 	$(sectionElement).prependTo('#sections');
 }
+
+
+
+
+
+
+
+
+
+var $btns = $('.btn').click(function() {
+  if (this.id == 'all') {
+    $('#references > .cards').fadeIn(450);
+  } else {
+    var $el = $('.' + this.id).fadeIn(450);
+    $('#references > .cards').not($el).hide();
+  }
+  $btns.removeClass('active');
+  $(this).addClass('active');
+})
