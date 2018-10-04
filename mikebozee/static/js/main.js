@@ -29,13 +29,14 @@ function moveSectionToTop(section) {
 
 
 
-var $referencesButtons = $('.btn').click(function() {
-  if (this.id == 'all') {
-    $('#references-cards > .card').fadeIn(450);
-  } else {
-    var $el = $('.' + this.id).fadeIn(450);
-    $('#references-cards > .card').not($el).hide();
-  }
-  $referencesButtons.removeClass('active');
-  $(this).addClass('active');
-})
+
+// ISOTOPE cards filter
+// init Isotope
+var $grid = $('.references-cards').isotope({
+  // options
+});
+// filter items on button click
+$('.btn-grp').on( 'click', 'button', function() {
+  var filterValue = $(this).attr('data-filter');
+  $grid.isotope({ filter: filterValue });
+});

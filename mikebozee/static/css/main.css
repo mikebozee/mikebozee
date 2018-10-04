@@ -256,6 +256,10 @@ body {
 	flex-wrap: wrap;
 }
 
+.references-cards {
+	overflow: hidden;
+}
+
 .card {
 	text-decoration: none;
     /*display: inline-block;
@@ -275,7 +279,7 @@ body {
 }
 
 a.card {
-	transition: all 250ms ease;
+	transition: box-shadow 250ms ease;
 }
 
 .sections--full .card:not(.card--full):not(.card--small) {
@@ -308,7 +312,6 @@ a.card {
 
 a.card:hover,
 a.card:focus {
-	/*background-color: #2ef1d9;*/
 	box-shadow: 0 0 8px rgba(0,0,0,0.2);
 }
 

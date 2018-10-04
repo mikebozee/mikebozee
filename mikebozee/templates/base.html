@@ -166,19 +166,20 @@
 
 					{% block reference_list %}
 						<section class="section" id="references">
-
-<button class="active btn" id="all">Show All</button>
-<button class="btn" id="direct-supervisor">Direct supervisors</button>
-<button class="btn" id="instructor">Instructors</button>
-<button class="btn" id="coworker">Coworkers</button>
-<button class="btn" id="mentor">Mentors</button>
-<button class="btn" id="client">Clients</button>
-<button class="btn" id="vendor">Vendors</button>
+<div class="btn-grp">
+<button class="active btn" data-filter="*">Show all</button>
+<button class="btn" data-filter=".direct-supervisor">Direct supervisors</button>
+<button class="btn" data-filter=".instructor">Instructors</button>
+<button class="btn" data-filter=".coworker">Coworkers</button>
+<button class="btn" data-filter=".mentor">Mentors</button>
+<button class="btn" data-filter=".client">Clients</button>
+<button class="btn" data-filter=".vendor">Vendors</button>
+</div>
 
 							<a href="{% url 'reference_list' %}" class="section-heading">
 								<h2>References</h2>
 							</a>
-							<section class="cards" id="references-cards">
+							<section class="cards references-cards" data-isotope='{ "itemSelector": ".card", "layoutMode": "fitRows" }'>
 								{% for reference in references %}
 									{% if 'Direct supervisor' in reference.get_relationship_display %}
 									    <a class="card card--small direct-supervisor" href="{% url 'reference_detail' slug=reference.slug %}">
@@ -245,17 +246,6 @@
 								    {% endif %}
 								{% endfor %}
 							</section>
-							<!-- <h3 class="section-subheading">All</h3>
-							<section class="cards">
-								{% for reference in references %}
-								    <a class="card card--small" href="{% url 'reference_detail' slug=reference.slug %}">
-								        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
-								    	{% if reference.image %}
-								    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
-							    		{% endif %}
-								    </a>
-								{% endfor %}
-							</section> -->
 						</section>
 					{% endblock %}
 
@@ -307,8 +297,9 @@
 			src="https://code.jquery.com/jquery-3.3.1.min.js"
 			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 			crossorigin="anonymous"></script>
-		<script src="{% static 'js/main.js' %}" type="text/javascript"></script>
+		<script src="{% static 'js/vendor/isotope-3.0.6.pkgd.min.js' %}" type="text/javascript"></script>
 		<script src="{% static 'lightbox2/js/lightbox.js' %}" type="text/javascript"></script>
+		<script src="{% static 'js/main.js' %}" type="text/javascript"></script>
 
 	</body>
 </html>
