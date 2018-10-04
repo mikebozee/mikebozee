@@ -3,6 +3,8 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Mike Bozee // Full-stack Development</title>
 		<!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet"> -->
 		<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
 		<script
@@ -16,56 +18,60 @@
 	</head>
 	<body>
 		<header class="header">
-			<img id="headshot" src="../../media/mike-bozee-headshot.jpg" alt="Mike Bozee headshot">
-			<div class="header-bottom">
-				<a class="home-link"href="{% url 'index' %}">
-					<h1>Mike Bozee</h1>
-				</a>
-			</div>
-			<span class="header-tagline">Full-stack Development // Python, JavaScript, UI Design</span>
+			<div class="header-inner">
+				<div class="header-bottom">
+					<a class="home-link"href="{% url 'index' %}">
+						<h1>Mike Bozee</h1>
+					</a>
+				</div>
+				<span class="header-tagline">Full-stack Development // Python, JavaScript, UI Design</span>
 
-			<a class="social-icon" href="https://www.linkedin.com/in/mikebozee/" target="_blank" aria-label="View Mike's LinkedIn">
-				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-					<g id="Outline_Icons">
-						<g>
-							
-							<circle fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="12" cy="12" r="11.5"/>
-							<path fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" d="M15,12.5c-0.276,0-0.5,0.223-0.5,0.5v3.5
-								h-3c0,0,0.031-6.478,0-7h3v0.835c0,0,0.457-0.753,1.707-0.753c1.55,0,2.293,1.12,2.293,3.296V16.5h-3V13
-								C15.5,12.723,15.275,12.5,15,12.5z"/>
-							<rect x="7.5" y="9.5" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" width="2" height="7"/>
-							<circle fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" cx="8.5" cy="6.5" r="1"/>
-						</g>
-					</g>
-					<g id="Frames-24px">
-						<rect fill="none" width="24" height="24"/>
-					</g>
-				</svg>
-			</a>
-
-			<a class="social-icon" href="mailto:mike@mikebozee.com" target="_blank" aria-label="Send Mike an email">
-				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-					<g id="Outline_Icons">
-						<g>
-							
-							<circle fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="12" cy="12" r="11.5"/>
+				<a class="social-icon" href="https://www.linkedin.com/in/mikebozee/" target="_blank" aria-label="View Mike's LinkedIn">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+						<g id="Outline_Icons">
 							<g>
-								<polygon fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" points="18.5,8.196 12,11.586 5.5,8.196 
-									5.5,6.5 18.5,6.5 			"/>
-								<polygon fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" points="5.5,10.456 12,13.847 
-									18.5,10.456 18.5,17.5 5.5,17.5 			"/>
 								
-									<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" x1="13.669" y1="12.954" x2="18.5" y2="15.827"/>
-								
-									<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" x1="10.331" y1="12.954" x2="5.5" y2="15.827"/>
+								<circle fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="12" cy="12" r="11.5"/>
+								<path fill="none" stroke="#ffffff" stroke-linejoin="round" stroke-miterlimit="10" d="M15,12.5c-0.276,0-0.5,0.223-0.5,0.5v3.5
+									h-3c0,0,0.031-6.478,0-7h3v0.835c0,0,0.457-0.753,1.707-0.753c1.55,0,2.293,1.12,2.293,3.296V16.5h-3V13
+									C15.5,12.723,15.275,12.5,15,12.5z"/>
+								<rect x="7.5" y="9.5" fill="none" stroke="#ffffff" stroke-linejoin="round" stroke-miterlimit="10" width="2" height="7"/>
+								<circle fill="none" stroke="#ffffff" stroke-linejoin="round" stroke-miterlimit="10" cx="8.5" cy="6.5" r="1"/>
 							</g>
 						</g>
-					</g>
-					<g id="Frames-24px">
-						<rect fill="none" width="24" height="24"/>
-					</g>
+						<g id="Frames-24px">
+							<rect fill="none" width="24" height="24"/>
+						</g>
 					</svg>
-			</a>
+				</a>
+
+				<a class="social-icon" href="mailto:mike@mikebozee.com" target="_blank" aria-label="Send Mike an email">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+						<g id="Outline_Icons">
+							<g>
+								
+								<circle fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="12" cy="12" r="11.5"/>
+								<g>
+									<polygon fill="none" stroke="#ffffff" stroke-linejoin="round" stroke-miterlimit="10" points="18.5,8.196 12,11.586 5.5,8.196 
+										5.5,6.5 18.5,6.5 			"/>
+									<polygon fill="none" stroke="#ffffff" stroke-linejoin="round" stroke-miterlimit="10" points="5.5,10.456 12,13.847 
+										18.5,10.456 18.5,17.5 5.5,17.5 			"/>
+									
+										<line fill="none" stroke="#ffffff" stroke-linejoin="round" stroke-miterlimit="10" x1="13.669" y1="12.954" x2="18.5" y2="15.827"/>
+									
+										<line fill="none" stroke="#ffffff" stroke-linejoin="round" stroke-miterlimit="10" x1="10.331" y1="12.954" x2="5.5" y2="15.827"/>
+								</g>
+							</g>
+						</g>
+						<g id="Frames-24px">
+							<rect fill="none" width="24" height="24"/>
+						</g>
+						</svg>
+				</a>
+			</div>
+			<div id="headshot">
+				<img src="../../media/mike-bozee-headshot.jpg" alt="Mike Bozee headshot">
+			</div>
 		</header>
 
 		<main id="main">
