@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.utils.text import slugify
 
 from ckeditor_uploader.fields import RichTextUploadingField
+from multiselectfield import MultiSelectField
 from taggit.managers import TaggableManager
 
 
@@ -19,6 +20,7 @@ class Position(models.Model):
 	slug = models.SlugField(max_length=50, unique=True)
 	image = models.ImageField(blank=True, null=True)
 	logo = models.ImageField(blank=True, null=True)
+	references = models.ManyToManyField('references.Reference', blank=True)
 
 	tags = TaggableManager()
 
