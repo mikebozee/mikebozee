@@ -15,7 +15,7 @@ class PositionAdminForm(forms.ModelForm):
 	image = RichTextUploadingField()
 	class Meta:
 		model = Position
-		fields = ['title', 'company', 'location', 'start_date', 'end_date', 'text', 'created_date', 'slug', 'image', 'logo', 'references', 'tags']
+		fields = ['title', 'company', 'location', 'start_date', 'end_date', 'text', 'created_date', 'slug', 'image', 'logo', 'projects', 'references', 'tags']
 
 
 class PositionAdmin(admin.ModelAdmin):

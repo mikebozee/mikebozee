@@ -20,6 +20,7 @@ class Position(models.Model):
 	slug = models.SlugField(max_length=50, unique=True)
 	image = models.ImageField(blank=True, null=True)
 	logo = models.ImageField(blank=True, null=True)
+	projects = models.ManyToManyField('projects.Project', blank=True)
 	references = models.ManyToManyField('references.Reference', blank=True)
 
 	tags = TaggableManager()

@@ -2,17 +2,38 @@
 
 {% block position_detail %}
 <main id="main">
-	<section id="sections">
-			<section class="article-wrapper">
-				<article class="article">
-			        <h1 class="article-title">{{ position.title }}</h1>
-			    	{% if position.image %}
-			    		<div class="article-image" style="background-image: url('../../media/{{ position.image }}');"></div>
-					{% endif %}
-					<div class="article-text">{{ position.text|safe }}</div>
-			    </article>
-		    </section>
+	<section id="sections" class="sections--full">
+		<section class="card card--full">
+	        <h1 class="article-title">{{ position.title }}</h1>
+	    	{% if position.image %}
+	    		<img class="card-image" src="../../media/{{ position.image }}">
+			{% endif %}
+			<div class="card-text">{{ position.text|safe }}</div>
+	    </section>
 
+
+
+	    <!-- PROJECTS -->
+		<section class="section" id="projects">
+			<div class="section-heading">
+				<h2>Projects</h2>
+			</div>
+			<section class="cards">
+				{% for project in position.projects.all %}
+				    <a class="card" href="{% url 'project_detail' slug=project.slug %}">
+				        <h3 class="card-title card-title--grow">{{ project.title }}</h3>
+				    	{% if project.image %}
+				    		<img class="card-image" src="../../media/{{ project.image }}" alt="{{project.title}}">
+			    		{% endif %}
+				    </a>
+				{% endfor %}
+			</section>
+		</section>
+		<!-- /PROJECTS -->
+
+
+
+	    <!-- REFERENCES -->
 		<section class="section" id="references">
 			<div class="section-heading">
 				<h2>References</h2>
@@ -96,6 +117,10 @@
 				{% endfor %}
 			</section>
 		</section>
+		<!-- /REFERENCES -->
+
+
+
 	</section>
 </main>
 
