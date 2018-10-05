@@ -504,6 +504,61 @@ a.card:focus .card-title {
 	color: #5e00da;
 }
 
+.dots {
+	width: 100%;
+	font-size: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: flex-start;
+	margin-top: 20px;
+}
+
+.dot {
+	align-self: stretch;
+	flex-grow: 0;
+	display: inline-block;
+	vertical-align: top;
+	width: calc((100% / 6) - 4px);
+	height: auto;
+	padding-top: calc((100% / 6) - 4px);
+	border-radius: 50%;
+	background-color: #5e00da;
+	margin: 2px;
+}
+
+button .dot {
+	margin: 0;
+	width: 15px;
+	height: 15px;
+	padding-top: 0;
+}
+
+.dot-direct-supervisor {
+	background-color: red;
+}
+
+.dot-instructor {
+	background-color: orange;
+}
+
+.dot-coworker {
+	background-color: blue;
+}
+
+.dot-mentor {
+	background-color: green;
+}
+
+.dot-client {
+	background-color: gold;
+}
+
+.dot-vendor {
+	background-color: pink;
+}
+
 @media (max-width: 800px) {
 	.cards {
 		padding: 0 15px;

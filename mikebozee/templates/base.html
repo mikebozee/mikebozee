@@ -168,12 +168,12 @@
 						<section class="section" id="references">
 <div class="btn-grp">
 <button class="active btn" data-filter="*">Show all</button>
-<button class="btn" data-filter=".direct-supervisor">Direct supervisors</button>
-<button class="btn" data-filter=".instructor">Instructors</button>
-<button class="btn" data-filter=".coworker">Coworkers</button>
-<button class="btn" data-filter=".mentor">Mentors</button>
-<button class="btn" data-filter=".client">Clients</button>
-<button class="btn" data-filter=".vendor">Vendors</button>
+<button class="btn" data-filter=".direct-supervisor"><div class="dot dot-direct-supervisor"></div> Direct supervisors</button>
+<button class="btn" data-filter=".instructor"><div class="dot dot-insturctor"></div> Instructors</button>
+<button class="btn" data-filter=".coworker"><div class="dot dot-coworker"></div> Coworkers</button>
+<button class="btn" data-filter=".mentor"><div class="dot dot-mentor"></div> Mentors</button>
+<button class="btn" data-filter=".client"><div class="dot dot-client"></div> Clients</button>
+<button class="btn" data-filter=".vendor"><div class="dot dot-vendor"></div> Vendors</button>
 </div>
 
 							<a href="{% url 'reference_list' %}" class="section-heading">
@@ -181,6 +181,20 @@
 							</a>
 							<section class="cards references-cards" data-isotope='{ "itemSelector": ".card", "layoutMode": "fitRows" }'>
 								{% for reference in references %}
+								    <a class="card card--small {{ reference.relationship|join:' '|slugify }}" href="{% url 'reference_detail' slug=reference.slug %}">
+								        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
+								    	{% if reference.image %}
+								    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
+							    		{% endif %}
+							    		<div class="dots">
+								    		{% for relationship in reference.relationship %}
+								    			<div class="dot dot-{{ relationship|slugify }}"></div>
+								    		{% endfor %}
+								    	</div>
+								    </a>
+								{% endfor %}
+
+								<!-- {% for reference in references %}
 									{% if 'Direct supervisor' in reference.get_relationship_display %}
 									    <a class="card card--small direct-supervisor" href="{% url 'reference_detail' slug=reference.slug %}">
 									        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
@@ -244,7 +258,7 @@
 								    		{% endif %}
 									    </a>
 								    {% endif %}
-								{% endfor %}
+								{% endfor %} -->
 							</section>
 						</section>
 					{% endblock %}
