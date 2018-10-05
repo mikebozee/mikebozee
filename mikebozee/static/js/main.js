@@ -33,8 +33,13 @@ function moveSectionToTop(section) {
 // ISOTOPE cards filter
 // init Isotope
 var $grid = $('.references-cards').isotope({
-  // options
+  // options...
 });
+// layout Isotope after each image loads
+$grid.imagesLoaded().progress( function() {
+  $grid.isotope('layout');
+});
+
 // filter items on button click
 $('.btn-grp').on( 'click', 'button', function() {
   var filterValue = $(this).attr('data-filter');
