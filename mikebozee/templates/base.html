@@ -167,19 +167,21 @@
 
 					{% block reference_list %}
 						<section class="section" id="references">
-<div class="btn-grp">
-<button class="active btn" data-filter="*">Show all</button>
-<button class="btn" data-filter=".direct-supervisor"><div class="dot dot-direct-supervisor"></div> Direct supervisors</button>
-<button class="btn" data-filter=".instructor"><div class="dot dot-insturctor"></div> Instructors</button>
-<button class="btn" data-filter=".coworker"><div class="dot dot-coworker"></div> Coworkers</button>
-<button class="btn" data-filter=".mentor"><div class="dot dot-mentor"></div> Mentors</button>
-<button class="btn" data-filter=".client"><div class="dot dot-client"></div> Clients</button>
-<button class="btn" data-filter=".vendor"><div class="dot dot-vendor"></div> Vendors</button>
-</div>
 
 							<a href="{% url 'reference_list' %}" class="section-heading">
 								<h2>References</h2>
 							</a>
+							
+							<div class="filter-btn-grp">
+								<button class="filter-btn" data-filter="*">All</button>
+								<button class="filter-btn" data-filter=".direct-supervisor"><div class="dot dot-direct-supervisor"></div> Direct supervisors</button>
+								<button class="filter-btn" data-filter=".instructor"><div class="dot dot-insturctor"></div> Instructors</button>
+								<button class="filter-btn" data-filter=".coworker"><div class="dot dot-coworker"></div> Coworkers</button>
+								<button class="filter-btn" data-filter=".mentor"><div class="dot dot-mentor"></div> Mentors</button>
+								<button class="filter-btn" data-filter=".client"><div class="dot dot-client"></div> Clients</button>
+								<button class="filter-btn" data-filter=".vendor"><div class="dot dot-vendor"></div> Vendors</button>
+							</div>
+
 							<section class="cards references-cards" data-isotope='{ "itemSelector": ".card", "layoutMode": "fitRows" }'>
 								{% for reference in references %}
 								    <a class="card card--small {{ reference.relationship|slugify_relationships }}" href="{% url 'reference_detail' slug=reference.slug %}">

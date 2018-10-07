@@ -32,16 +32,16 @@ function moveSectionToTop(section) {
 
 // ISOTOPE cards filter
 // init Isotope
-var $grid = $('.references-cards').isotope({
+var $referencesGrid = $('.references-cards').isotope({
   // options...
 });
 // layout Isotope after each image loads
-$grid.imagesLoaded().progress( function() {
-  $grid.isotope('layout');
+$referencesGrid.imagesLoaded().progress( function() {
+  $referencesGrid.isotope('layout');
 });
 
 // filter items on button click
-$('.btn-grp').on( 'click', 'button', function() {
+$('.filter-btn-grp').on( 'click', 'button', function() {
   var filterValue = $(this).attr('data-filter');
-  $grid.isotope({ filter: filterValue });
+  $referencesGrid.isotope({ filter: filterValue });
 });

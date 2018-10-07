@@ -504,6 +504,39 @@ a.card:focus .card-title {
 	color: #5e00da;
 }
 
+.filter-btn-grp {
+	margin: 20px 0;
+	font-size: 0;
+}
+
+.filter-btn {
+
+    display: inline-block;
+    margin: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: 0;
+    border-radius: 4px;
+    border: none;
+    background-color: #5e00da;
+    color: #fff;
+    transition: background-color .4s ease-in;
+    font-weight: 400;
+    line-height: 1;
+    font-size: 1rem;	
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.filter-btn + .filter-btn {
+	margin-left: 5px;
+}
+
+.filter-btn:hover,
+.filter-btn:focus {
+	background-color: #8f47ef;
+}
+
 .dots {
 	width: 100%;
 	font-size: 0;
@@ -513,6 +546,7 @@ a.card:focus .card-title {
 	align-items: stretch;
 	justify-content: flex-start;
 	margin-top: 20px;
+	display: none;
 }
 
 .dot {
@@ -526,6 +560,7 @@ a.card:focus .card-title {
 	border-radius: 50%;
 	background-color: #5e00da;
 	margin: 2px;
+	display: none;
 }
 
 button .dot {
