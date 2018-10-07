@@ -1,3 +1,4 @@
+{% load references_filters %}
 {% load static %}
 
 <html lang="en">
@@ -181,7 +182,7 @@
 							</a>
 							<section class="cards references-cards" data-isotope='{ "itemSelector": ".card", "layoutMode": "fitRows" }'>
 								{% for reference in references %}
-								    <a class="card card--small {{ reference.relationship|join:' '|slugify }}" href="{% url 'reference_detail' slug=reference.slug %}">
+								    <a class="card card--small {{ reference.relationship|slugify_relationships }}" href="{% url 'reference_detail' slug=reference.slug %}">
 								        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
 								    	{% if reference.image %}
 								    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
