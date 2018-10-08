@@ -206,16 +206,13 @@ body {
 }
 
 .section-heading {
-	text-decoration: none;
-	display: block;
-	padding: 40px 20px;
-	transition: background-color .4s ease-in;
-	background-color: #5e00da;
-}
-
-.section-heading:hover,
-.section-heading:focus {
-	background-color: #2ef1d9;
+	color: #5e00da;
+	font-size: 5rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin: 0;
+	line-height: 1;
+	margin: 100px 0 20px 0;
 }
 
 .section-heading h2 {
