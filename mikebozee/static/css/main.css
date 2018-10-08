@@ -215,21 +215,6 @@ body {
 	margin: 100px 0 20px 0;
 }
 
-.section-heading h2 {
-	font-size: 5rem;
-	text-transform: uppercase;
-	font-weight: 700;
-	margin: 0;
-	transition: color .4s ease-in;
-	color: #2ef1d9;
-	line-height: 1;
-}
-
-.section-heading:hover h2,
-.section-heading:focus h2 {
-	color: #5e00da;
-}
-
 .section-subheading {
 	padding: 20px;
 	margin: 2rem 0 1rem 0;
@@ -279,7 +264,7 @@ a.card {
 	transition: box-shadow 250ms ease;
 }
 
-.sections--full .card:not(.card--full):not(.card--small) {
+.sections--full .card:not(.card--full):not(.card--medium):not(.card--small) {
 	width: calc(50% - 10px);
 	margin-left: 5px;
 	margin-right: 5px;
@@ -290,7 +275,21 @@ a.card {
 	display: block;
 }
 
+.card--medium {
+	width: -webkit-calc((100% / 3) - 10px);
+	width: -moz-calc((100% / 3) - 10px);
+	width: -ms-calc((100% / 3) - 10px);
+	width: -o-calc((100% / 3) - 10px);
+	width: calc((100% / 3) - 10px);
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
 .card--small {
+	width: -webkit-calc(25% - 10px);
+	width: -moz-calc(25% - 10px);
+	width: -ms-calc(25% - 10px);
+	width: -o-calc(25% - 10px);
 	width: calc(25% - 10px);
 	margin-left: 5px;
 	margin-right: 5px;
@@ -347,10 +346,20 @@ article.card {
 	flex-grow: 1;
 }
 
-/*a.card:hover .card-title,
-a.card:focus .card-title {
-	color: #5e00da;
-}*/
+.first-name {
+	display: block;
+	text-transform: uppercase;
+	font-weight: 900;
+	line-height: 1;
+}
+
+.last-name {
+	display: block;
+	font-weight: 300;
+	line-height: 1;
+	font-size: 1rem;
+	opacity: .8;
+}
 
 .position-company {
 	font-size: 1rem;
