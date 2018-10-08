@@ -153,7 +153,7 @@
 
 							<section class="cards">
 								{% for project in projects %}
-								    <a class="card card--medium" href="{% url 'project_detail' slug=project.slug %}">
+								    <a class="card card--medium card--no-padding" href="{% url 'project_detail' slug=project.slug %}">
 								        <h3 class="card-title card-title--grow">{{ project.title }}</h3>
 								    	{% if project.image %}
 								    		<img class="card-image" src="../../media/{{ project.image }}">
@@ -209,7 +209,7 @@
 
 							<section class="cards">
 								{% for article in articles %}
-									<a class="card card--medium" href="{% url 'article_detail' slug=article.slug %}">
+									<a class="card card--medium card--no-padding" href="{% url 'article_detail' slug=article.slug %}">
 										<h3 class="card-title card-title--grow">{{ article.title }}</h3>
 								        <!-- <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span> -->
 								    	{% if article.image %}

@@ -230,7 +230,6 @@ body {
 
 .cards {
 	display: block;
-
 	display: flex;
 	flex-direction: row;
 	align-items: stretch;
@@ -244,24 +243,23 @@ body {
 
 .card {
 	text-decoration: none;
-    /*display: inline-block;
-    vertical-align: top;
-    width: 50%;
-    align-self: stretch;
-    flex-grow: 0;*/
 	padding: 20px;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
 	background-color: #fff;
-
 	border-bottom: 1px solid #DDDDDD;
 	width: 100%;
 	margin-bottom: 10px;
+	position: relative;
 }
 
 a.card {
 	transition: box-shadow 250ms ease;
+}
+
+.card--no-padding::after {
+	opacity: 0.45;
 }
 
 .sections--full .card:not(.card--full):not(.card--medium):not(.card--small) {
@@ -306,6 +304,36 @@ a.card {
 	margin-left: 0;
 }
 
+.card--no-padding {
+	padding: 0;
+	margin: 1px;
+	width: -webkit-calc((100% / 3) - 2px );
+	width: -moz-calc((100% / 3) - 2px );
+	width: -ms-calc((100% / 3) - 2px );
+	width: -o-calc((100% / 3) - 2px );
+	width: calc((100% / 3) - 2px );
+}
+
+.card--no-padding::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #292f33;
+    opacity: 0.3;
+    -ms-transition: 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    transition: 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+.card--no-padding:hover::after,
+.card--no-padding:focus::after {
+	opacity: 0.45;
+}
+
 a.card:hover,
 a.card:focus {
 	box-shadow: 0 0 8px rgba(0,0,0,0.2);
@@ -340,6 +368,20 @@ article.card {
 	vertical-align: top;
  	font-weight: 400;
  	transition: color .4s ease-in;
+}
+
+.card--no-padding .card-title {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	padding: 15px;
+	line-height: 1;
+	color: #fff;
+	text-shadow: 1px 1px rgba(0,0,0,.5);
+    background-color: rgba(0,0,0,.4);
+	z-index: 2;
+	font-weight: 700;
 }
 
 .card-title--grow {
@@ -436,6 +478,10 @@ article.card {
 .card-image {
 	width: 100%;
 	margin-top: 1.5rem;
+}
+
+.card--no-padding .card-image {
+	margin-top: 0;
 }
 
 .card-image--circle {
