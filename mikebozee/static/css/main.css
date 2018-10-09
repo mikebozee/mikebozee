@@ -9,7 +9,6 @@ html {
 
 body {
 	background-color: #efeff1;
-	/*font-family: 'Oswald', Helvetica, Arial, sans-serif;*/
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin: 0;
 	padding-bottom: 50px;
@@ -29,8 +28,6 @@ body {
 	background: #2ef1d9;
 	color: #5e00da;
 }
-
-/*https://colordrop.io/color.php?id=17797*/
 
 #jump-nav {
 	list-style: none;
