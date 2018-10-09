@@ -88,7 +88,7 @@ body {
 
 .skills-summary {
 	font-size: 1rem;
-	margin: 40px 0 0 0;
+	margin: 50px 0 0 0;
 	font-weight: 400;
 	padding: 20px;
 	background-color: #fff;
@@ -97,9 +97,10 @@ body {
 
 .skills-summar-header {
 	display: block;
-	font-size: 1.25rem;
+	font-size: 1.4rem;
 	text-transform: uppercase;
 	margin-bottom: 5px;
+	font-weight: 700;
 }
 
 #job-title-rotate {
@@ -222,6 +223,10 @@ body {
 	overflow: hidden;
 }
 
+.section:first-of-type {
+	margin-top: 0;
+}
+
 .section-heading {
 	color: #5e00da;
 	font-size: 5rem;
@@ -230,6 +235,12 @@ body {
 	margin: 0;
 	line-height: 1;
 	margin: 100px 0 20px 0;
+	background-color: #2ef1d9;
+	padding: 25px 20px 20px 20px;
+}
+
+.section:first-of-type .section-heading {
+	margin-top: 50px;
 }
 
 .section-subheading {
@@ -387,6 +398,11 @@ article.card {
  	transition: color .4s ease-in;
 }
 
+h1.card-title {
+	font-size: 3rem;
+	font-weight: 300;
+}
+
 .card--no-padding .card-title {
 	position: absolute;
 	width: 100%;
@@ -444,9 +460,8 @@ article.card {
 }
 
 .card-text strong {
-	color: #5e00da;
 	text-transform: uppercase;
-	font-size: 1.4rem;
+	font-size: 1.3rem;
 }
 
 .card-text a {
@@ -663,13 +678,85 @@ button .dot {
 	background-color: pink;
 }
 
+.relationships-tags-container {
+	display: block;
+	margin-top: 30px;
+}
+
+.relationships-tag {
+	display: inline-block;
+	margin-right: 30px;
+	padding: 10px 20px;
+	border: 1px solid #333;
+	border-radius: 3px;
+}
+
+.reference-image {
+	max-width: 200px;
+}
+
+.article-image {
+	display: block;
+}
+
+.card--full .article-image .card-image {
+	max-width: 600px;
+}
+
+.reference-link {
+	margin-top: 20px;
+	display: inline-block;
+}
+
+.ask-about {
+	color: #5e00da;
+}
+
+@media (max-width: 1200px) {
+	.sections--full .card--small {
+		width: calc(20% - 4px);
+	}
+}
+
 @media (max-width: 800px) {
 	.cards {
 		padding: 0 15px;
 	}
-	.card {
+	.card,
+	.sections--full .card:not(.card--full):not(.card--medium):not(.card--small) {
 		margin-left: 0;
 		margin-right: 0;
 		width: 100%;
+	}
+	.section-heading {
+		font-size: 2rem;
+	}
+	.sections--full .card--small {
+		width: calc((100% / 3) - 4px);
+	}
+	.intro-big {
+		font-size: 2rem;
+	}
+	.intro-big .emoji {
+		font-size: 3rem;
+	}
+	.intro-small {
+		font-size: 1rem;
+	}
+	#job-title-rotate {
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-width: 500px) {
+	.sections--full .card--small {
+		width: calc(50% - 4px);
+	}
+	body {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.intro-big .emoji {
+		display: block;
 	}
 }

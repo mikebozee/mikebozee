@@ -4,9 +4,11 @@
     <section class="card card--full">
     	<span class="published-date">{{ article.published_date|date:"M j, Y" }}</span>
 		<h1 class="card-title">{{ article.title }}</h1>
-		{% if article.image %}
-    		<img class="card-image" src="../../media/{{ article.image }}" alt="{{article.title}}">
-		{% endif %}
+		<div class="article-image">
+			{% if article.image %}
+	    		<img class="card-image" src="../../media/{{ article.image }}" alt="{{article.title}}">
+			{% endif %}
+		</div>
 		<div class="card-text">
 			{{ article.text|safe }}
 		</div>

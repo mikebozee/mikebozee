@@ -2,18 +2,25 @@
 
 {% block reference_detail %}
 	<section class="card card--full">
-        <h3 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h3>
-    	{% if reference.image %}
-    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
+        <h1 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h1>
+        <div class="reference-image">
+	    	{% if reference.image %}
+	    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
+			{% endif %}
+		</div>
+		{% if reference.link %}
+			<a href="{{ reference.link }}" target="_blank" class="reference-link">View {{ reference.first_name }} {{ reference.last_name }}'s LinkedIn</a>
 		{% endif %}
-		{% for relationship in reference.relationship %}
-			{{ relationship }}
-		{% endfor %}
+		<div class="relationships-tags-container">
+			{% for relationship in reference.relationship %}
+				<span class="relationships-tag">{{ relationship }}</span>
+			{% endfor %}
+		</div>
 		<div class="card-text">
 			{{ reference.notes|safe }}
 			{{ reference.text|safe }}
 		</div>
-		<h3>Ask me about Mike's...</h3>
+		<h2 class="ask-about">Ask me about Mike's...</h2>
 		{% if reference.positions.count %}
 			<h4>Positions:</h4>
 			<div class="related-pills">

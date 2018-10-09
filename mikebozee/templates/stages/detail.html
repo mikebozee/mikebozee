@@ -1,4 +1,10 @@
 {% extends 'stages/base.html' %}
 
 {% block stage_detail %}
+    <section class="card card--full">
+		<h1 class="card-title">{{ stage.title }}</h1>
+		<div class="card-text">
+			{{ stage.text|safe }}
+		</div>
+    </section>
 {% endblock %}
