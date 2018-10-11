@@ -331,15 +331,19 @@ a.card {
 
 .card--no-padding {
 	padding: 0;
-	margin: 1px;
-	width: -webkit-calc((100% / 3) - 2px );
-	width: -moz-calc((100% / 3) - 2px );
-	width: -ms-calc((100% / 3) - 2px );
-	width: -o-calc((100% / 3) - 2px );
-	width: calc((100% / 3) - 2px );
+	margin: 25px;
+	width: -webkit-calc((100% / 2) - 50px );
+	width: -moz-calc((100% / 2) - 50px );
+	width: -ms-calc((100% / 2) - 2px );
+	width: -o-calc((100% / 2) - 2px );
+	width: calc((100% / 2) - 50px );
+	border-radius: 15px;
+	background: none;
+	box-shadow: none;
+	border: none;
 }
 
-.card--no-padding::after {
+/*.card--no-padding::after {
     content: '';
     position: absolute;
     top: 0;
@@ -352,16 +356,16 @@ a.card {
     opacity: 0.3;
     -ms-transition: 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
     transition: 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940);
-}
-
-.card--no-padding:hover::after,
-.card--no-padding:focus::after {
-	opacity: 0.45;
-}
+}*/
 
 a.card:hover,
 a.card:focus {
 	box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+a.card.card--no-padding,
+a.card.card--no-padding {
+	box-shadow: none;
 }
 
 article.card {
@@ -401,17 +405,23 @@ h1.card-title {
 }
 
 .card--no-padding .card-title {
-	position: absolute;
-	width: 100%;
-	bottom: 0;
-	left: 0;
-	padding: 15px;
+	/*position: absolute;*/
+	/*width: 100%;*/
+	/*bottom: 0;*/
+	/*left: 0;*/
+	/*padding: 15px;*/
 	line-height: 1;
-	color: #fff;
-	text-shadow: 1px 1px rgba(0,0,0,.5);
-    background-color: rgba(0,0,0,.4);
-	z-index: 2;
+	/*color: #fff;*/
+	/*text-shadow: 1px 1px rgba(0,0,0,.5);*/
+    /*background-color: rgba(0,0,0,.4);*/
+	/*z-index: 2;*/
 	font-weight: 700;
+
+	display: block;
+	text-align: center;
+	margin-top: 50px;
+	color: #59687c;
+	font-size: 1.4rem;
 }
 
 .card-title--grow {
@@ -511,6 +521,9 @@ h1.card-title {
 
 .card--no-padding .card-image {
 	margin-top: 0;
+
+	border-radius: 15px;
+	box-shadow: 0 5px 12px rgba(0,0,0,0.2);
 }
 
 .card-image--circle {

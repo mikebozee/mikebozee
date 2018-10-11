@@ -208,11 +208,11 @@
 							<section class="cards">
 								{% for article in articles %}
 									<a class="card card--medium card--no-padding" href="{% url 'article_detail' slug=article.slug %}">
-										<h3 class="card-title card-title--grow">{{ article.title }}</h3>
 								        <!-- <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span> -->
 								    	{% if article.image %}
 								    		<img class="card-image" src="../../media/{{ article.image }}" alt="{{article.title}}">
 							    		{% endif %}
+							    		<h3 class="card-title card-title--grow">{{ article.title }}</h3>
 								    </a>
 								{% endfor %}
 							</section>
