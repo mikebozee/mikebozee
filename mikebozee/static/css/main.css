@@ -283,9 +283,9 @@ a.card {
 	transition: box-shadow 250ms ease;
 }
 
-.card--no-padding::after {
+/*.card--no-padding::after {
 	opacity: 0.45;
-}
+}*/
 
 .sections--full .card:not(.card--full):not(.card--medium):not(.card--small) {
 	width: calc(50% - 10px);
@@ -319,10 +319,10 @@ a.card {
 }
 
 .sections--full .card--small {
-	width: calc((100% / 8) - 4px);
-	margin-left: 2px;
-	margin-right: 2px;
-	margin-bottom: 2px;
+	width: calc((100% / 6) - 50px);
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-bottom: 25px;
 }
 
 .card-small:first-of-type {
@@ -334,8 +334,8 @@ a.card {
 	margin: 25px;
 	width: -webkit-calc((100% / 2) - 50px );
 	width: -moz-calc((100% / 2) - 50px );
-	width: -ms-calc((100% / 2) - 2px );
-	width: -o-calc((100% / 2) - 2px );
+	width: -ms-calc((100% / 2) - 50px );
+	width: -o-calc((100% / 2) - 50px );
 	width: calc((100% / 2) - 50px );
 	border-radius: 15px;
 	background: none;
@@ -528,6 +528,11 @@ h1.card-title {
 
 .card-image--circle {
 	border-radius: 50%;
+}
+
+.sections--full .card--small .card-image--circle {
+	border-radius: 15px;
+	box-shadow: 0 5px 12px rgba(0,0,0,0.2);
 }
 
 .card--full .card-image {

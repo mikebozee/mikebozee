@@ -180,19 +180,19 @@
 
 							<section class="cards references-cards" data-isotope='{ "itemSelector": ".card", "layoutMode": "fitRows" }'>
 								{% for reference in references %}
-								    <a class="card card--small {{ reference.relationship|slugify_relationships }}" href="{% url 'reference_detail' slug=reference.slug %}">
-								        <h3 class="card-title card-title--grow">
-								        	<span class="first-name">{{ reference.first_name }}</span>
-								        	<span class="last-name">{{ reference.last_name }}</span>
-							        	</h3>
+								    <a class="card card--small card--no-padding {{ reference.relationship|slugify_relationships }}" href="{% url 'reference_detail' slug=reference.slug %}">
 								    	{% if reference.image %}
 								    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
 							    		{% endif %}
-							    		<div class="dots">
+							    		<h3 class="card-title card-title--grow">
+								        	<span class="first-name">{{ reference.first_name }}</span>
+								        	<span class="last-name">{{ reference.last_name }}</span>
+							        	</h3>
+							    		<!-- <div class="dots">
 								    		{% for relationship in reference.relationship %}
 								    			<div class="dot dot-{{ relationship|slugify }}"></div>
 								    		{% endfor %}
-								    	</div>
+								    	</div> -->
 								    </a>
 								{% endfor %}
 							</section>
