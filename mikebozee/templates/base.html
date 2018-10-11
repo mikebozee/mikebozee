@@ -152,10 +152,10 @@
 							<section class="cards">
 								{% for project in projects %}
 								    <a class="card card--medium card--no-padding" href="{% url 'project_detail' slug=project.slug %}">
-								        <h3 class="card-title card-title--grow">{{ project.title }}</h3>
 								    	{% if project.image %}
 								    		<img class="card-image" src="../../media/{{ project.image }}">
 							    		{% endif %}
+							    		<h3 class="card-title card-title--grow">{{ project.title }}</h3>
 								    </a>
 								{% endfor %}
 							</section>
