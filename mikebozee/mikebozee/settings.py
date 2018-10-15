@@ -191,9 +191,3 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'Advanced',
     }
 }
-
-
-SECURE_SSL_REDIRECT = False
-SESSION_COOKIE_SECURE = False
-SESSION_COOKIE_HTTPONLY= False
-CSRF_COOKIE_SECURE = False
