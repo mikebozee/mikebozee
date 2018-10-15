@@ -38,16 +38,16 @@ POSTGRESQL_HOST = os.environ.get('POSTGRESQL_HOST')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '*',
+    'mikebozee.us-west-2.elasticbeanstalk.com',
+    '54.70.21.208',  # IP for mikebozee.us-west-2.elasticbeanstalk.com
+    'elasticbeanstalk.com',
+    '.elasticbeanstalk.com',
+    'mikebozee.com',
     'localhost',
     'localhost:8000',
     '127.0.0.1',
     '127.0.0.1:8000',
     '34.209.212.33',
-    'elasticbeanstalk.com',
-    'mikebozee.us-west-2.elasticbeanstalk.com',
-    '54.70.21.208',  # IP for mikebozee.us-west-2.elasticbeanstalk.com
-    'mikebozee.com',
 ]
 
 
