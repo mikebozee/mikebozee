@@ -32,6 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 POSTGRESQL_NAME = os.environ.get('POSTGRESQL_NAME')
 POSTGRESQL_USER = os.environ.get('POSTGRESQL_USER')
 POSTGRESQL_PASSWORD = os.environ.get('POSTGRESQL_PASSWORD')
+POSTGRESQL_HOST = os.environ.get('POSTGRESQL_HOST')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -121,7 +122,7 @@ DATABASES = {
         'NAME': POSTGRESQL_NAME,
         'USER': POSTGRESQL_USER,
         'PASSWORD': POSTGRESQL_PASSWORD,
-        'HOST': '127.0.0.1',
+        'HOST': POSTGRESQL_HOST,
         'PORT': '5432',
     }
 }
