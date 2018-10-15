@@ -45,7 +45,7 @@ ALLOWED_HOSTS = [
     '34.209.212.33',
     'elasticbeanstalk.com',
     'mikebozee.us-west-2.elasticbeanstalk.com',
-    '54.70.21.208', # IP for mikebozee.us-west-2.elasticbeanstalk.com
+    '54.70.21.208',  # IP for mikebozee.us-west-2.elasticbeanstalk.com
     'mikebozee.com',
 ]
 
