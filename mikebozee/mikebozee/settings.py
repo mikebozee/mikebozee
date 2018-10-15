@@ -35,7 +35,7 @@ POSTGRESQL_PASSWORD = os.environ.get('POSTGRESQL_PASSWORD')
 POSTGRESQL_HOST = os.environ.get('POSTGRESQL_HOST')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '*',
