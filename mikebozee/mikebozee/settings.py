@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
-from mikebozee import secret_settings
+# from mikebozee import secret_settings
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,11 +23,15 @@ PROJECT_ROOT = os.path.dirname(__file__)
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = secret_settings.SECRET_KEY
+# SECRET_KEY = secret_settings.SECRET_KEY
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
-POSTGRESQL_NAME = secret_settings.POSTGRESQL_NAME
-POSTGRESQL_USER = secret_settings.POSTGRESQL_USER
-POSTGRESQL_PASSWORD = secret_settings.POSTGRESQL_PASSWORD
+# POSTGRESQL_NAME = secret_settings.POSTGRESQL_NAME
+# POSTGRESQL_USER = secret_settings.POSTGRESQL_USER
+# POSTGRESQL_PASSWORD = secret_settings.POSTGRESQL_PASSWORD
+POSTGRESQL_NAME = os.environ.get('POSTGRESQL_NAME')
+POSTGRESQL_USER = os.environ.get('POSTGRESQL_USER')
+POSTGRESQL_PASSWORD = os.environ.get('POSTGRESQL_PASSWORD')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
