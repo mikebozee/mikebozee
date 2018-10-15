@@ -35,7 +35,7 @@ POSTGRESQL_PASSWORD = os.environ.get('POSTGRESQL_PASSWORD')
 POSTGRESQL_HOST = os.environ.get('POSTGRESQL_HOST')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '*',
@@ -191,3 +191,9 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'Advanced',
     }
 }
+
+
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+SESSION_COOKIE_HTTPONLY= False
+CSRF_COOKIE_SECURE = False
