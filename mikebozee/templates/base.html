@@ -1,3 +1,4 @@
+{% load projects_filters %}
 {% load references_filters %}
 {% load static %}
 
@@ -151,7 +152,7 @@
 							<h2 class="section-heading">Top Projects</h2>
 
 							<section class="cards">
-								{% for project in projects %}
+								{% for project in projects|sort_projects:'priority' %}
 								    <a class="card card--medium card--no-padding" href="{% url 'project_detail' slug=project.slug %}">
 								    	<h3 class="card-title card-title--grow">{{ project.title }}</h3>
 								    	{% if project.image %}

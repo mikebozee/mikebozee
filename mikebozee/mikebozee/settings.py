@@ -105,6 +105,7 @@ TEMPLATES = [
 
             'libraries':{
                 'references_filters': 'apps.references.templatetags.references_filters',
+                'projects_filters': 'apps.projects.templatetags.projects_filters',
             }
         },
     },
