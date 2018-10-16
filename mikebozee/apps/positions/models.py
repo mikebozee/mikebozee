@@ -25,6 +25,9 @@ class Position(models.Model):
 
 	tags = TaggableManager()
 
+	class Meta:
+		ordering = ['-start_date']
+
 	def __str__(self):
 		return self.title
 
