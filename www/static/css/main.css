@@ -225,15 +225,13 @@ body {
 }
 
 .section-heading {
-	color: #5e00da;
-	font-size: 5rem;
-	text-transform: uppercase;
-	font-weight: 700;
-	margin: 0;
-	line-height: 1;
-	margin: 100px 0 20px 0;
-	background-color: #2ef1d9;
-	padding: 25px 20px 20px 20px;
+	color: #202124;
+	font-size: 44px;
+	font-weight: 400;
+	line-height: 1.2;
+	margin: 100px 0 15px 0;
+	padding: 0 20px;
+	letter-spacing: -.5px;
 }
 
 .section:first-of-type .section-heading {
@@ -380,7 +378,7 @@ h1.card-title {
 	margin-top: 40px;
 	color: #414141;
 	font-size: 22px;
-	margin-bottom: 12px;
+	margin: 0 0 12px 0;
 }
 
 .card-title--grow {
