@@ -176,7 +176,7 @@
 							<h2 class="section-heading">Top Projects</h2>
 
 							<section class="cards">
-								{% for project in projects|sort_projects:'priority' %}
+								{% for project in projects|sort_projects:'priority'|slice:':3' %}
 								    <a class="card card--medium card--no-padding" href="{% url 'project_detail' slug=project.slug %}">
 								    	<h3 class="card-title card-title--grow">{{ project.title }}</h3>
 								    	{% if project.image %}
@@ -185,7 +185,20 @@
 								    </a>
 								{% endfor %}
 							</section>
-							<!-- <a class="view-all" href="{% url 'project_list' %}">View all</a> -->
+
+							<h2 class="section-heading">All Projects</h2>
+
+							<section class="cards cards--minor">
+								{% for project in projects|sort_projects:'priority'|slice:'3:' %}
+								    <a class="card card--medium card--no-padding card--minor" href="{% url 'project_detail' slug=project.slug %}">
+								    	<h3 class="card-title card-title--grow">{{ project.title }}</h3>
+								    	{% if project.image %}
+								    		<img class="card-image" src="../../media/{{ project.image }}">
+							    		{% endif %}
+								    </a>
+								{% endfor %}
+							</section>
+
 						</section>
 					{% endblock %}
 
