@@ -16,6 +16,9 @@ class Stage(models.Model):
 	created_date = models.DateTimeField(default=timezone.now)
 	slug = models.SlugField(max_length=50, unique=True)
 
+	class Meta:
+		ordering = ['start_date']
+
 	def __str__(self):
 		return self.title
 
