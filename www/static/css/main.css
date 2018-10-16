@@ -260,6 +260,10 @@ body {
 	flex-wrap: wrap;
 }
 
+.cards.cards--minor {
+	margin-top: 40px;
+}
+
 .references-cards {
 	overflow: hidden;
 }
@@ -275,10 +279,6 @@ body {
 	margin-bottom: 10px;
 	position: relative;
 }
-
-/*.card--no-padding::after {
-	opacity: 0.45;
-}*/
 
 .sections--full .card:not(.card--full):not(.card--medium):not(.card--small) {
 	width: calc(50% - 10px);
@@ -335,6 +335,24 @@ body {
 	border: none;
 }
 
+.card--no-padding.card--minor {
+	width: 50%;
+	border-top: 1px solid #d7d7d7;
+	padding: 30px 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	width: -webkit-calc((100% / 2) - 50px );
+	width: -moz-calc((100% / 2) - 50px );
+	width: -ms-calc((100% / 2) - 50px );
+	width: -o-calc((100% / 2) - 50px );
+	width: calc((100% / 2) - 50px );
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
 article.card {
 	margin: 0 auto;
 	max-width: 1100px;
@@ -379,6 +397,18 @@ h1.card-title {
 	color: #414141;
 	font-size: 22px;
 	margin: 0 0 12px 0;
+}
+
+.card--no-padding.card--minor .card-title {
+	color: #414141;
+	line-height: 1.25;
+	font-size: 32px;
+	align-self: flex-start;
+	flex-grow: 0;
+	vertical-align: top;
+	display: inline-block;
+	font-weight: 400;
+	padding-right: 50px;
 }
 
 .card-title--grow {
@@ -478,6 +508,14 @@ h1.card-title {
 
 .card--no-padding .card-image {
 	margin-top: 0;
+}
+
+.card--no-padding.card--minor .card-image {
+	width: 190px;
+	align-self: flex-end;
+	vertical-align: top;
+	display: inline-block;
+	flex-grow: 0;
 }
 
 .card-image--circle {
@@ -685,6 +723,9 @@ button .dot {
 	.sections--full .card--small {
 		width: calc(20% - 4px);
 	}
+	.card--no-padding.card--minor {
+		width: 100%;
+	}
 }
 
 @media (max-width: 800px) {
@@ -717,6 +758,13 @@ button .dot {
 	}
 }
 
+@media (max-width: 600px) {
+	.card--no-padding.card--minor .card-title {
+		font-size: 24px;
+		padding-right: 30px;
+	}
+}
+
 @media (max-width: 500px) {
 	.sections--full .card--small {
 		width: calc(50% - 4px);
@@ -727,5 +775,14 @@ button .dot {
 	}
 	.intro-big .emoji {
 		display: block;
+	}
+	.card--no-padding.card--minor {
+		flex-direction: column;
+	}
+	.card--no-padding.card--minor .card-title {
+		padding-right: 0;
+	}
+	.card--no-padding.card--minor .card-image {
+		align-self: flex-start;
 	}
 }
