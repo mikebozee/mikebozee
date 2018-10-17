@@ -17,6 +17,8 @@ class Education(models.Model):
 	created_date = models.DateTimeField(default=timezone.now)
 	slug = models.SlugField(max_length=50, unique=True)
 	image = models.ImageField(blank=True, null=True)
+	projects = models.ManyToManyField('projects.Project', blank=True)
+	references = models.ManyToManyField('references.Reference', blank=True)
 	priority = models.IntegerField(blank=True, null=True)
 
 	tags = TaggableManager()
