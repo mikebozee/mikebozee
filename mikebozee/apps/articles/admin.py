@@ -13,7 +13,7 @@ class ArticleAdminForm(forms.ModelForm):
 	image = RichTextUploadingField()
 	class Meta:
 		model = Article
-		fields = ['published', 'author', 'title', 'text', 'created_date', 'published_date', 'slug', 'image', 'tags']
+		fields = ['published', 'author', 'title', 'text', 'priority', 'created_date', 'published_date', 'slug', 'image', 'tags']
 
 
 class ArticleAdmin(admin.ModelAdmin):

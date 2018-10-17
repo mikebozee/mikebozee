@@ -15,6 +15,7 @@ class Article(models.Model):
 	published_date = models.DateTimeField(blank=True, null=True)
 	slug = models.SlugField(max_length=50, unique=True)
 	image = models.ImageField(blank=True, null=True)
+	priority = models.IntegerField(blank=True, null=True)
 
 	tags = TaggableManager()
 
