@@ -281,9 +281,14 @@ body {
 }
 
 .sections--full .card:not(.card--full):not(.card--medium):not(.card--small) {
-	width: calc(50% - 10px);
-	margin-left: 5px;
-	margin-right: 5px;
+	width: -webkit-calc((100% / 3) - 50px);
+	width: -moz-calc((100% / 3) - 50px);
+	width: -ms-calc((100% / 3) - 50px);
+	width: -o-calc((100% / 3) - 50px);
+	width: calc((100% / 3) - 50px);
+	margin: 0 25px;
+	border-top: 1px solid #d7d7d7;
+	padding: 30px 0;
 }
 
 .card--full {
@@ -361,7 +366,7 @@ article.card {
 
 .card-left {
 	display: block;
-	padding-right: 110px;
+	padding-right: 90px;
 	position: relative;
 }
 
@@ -532,7 +537,7 @@ h1.card-title {
 }
 
 .card-logo {
-	width: 70px;
+	width: 60px;
 	position: absolute;
 	top: 50%;
 	right: 0;
