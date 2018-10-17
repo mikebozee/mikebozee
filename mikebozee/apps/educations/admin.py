@@ -25,6 +25,7 @@ class EducationAdminForm(forms.ModelForm):
 			'created_date',
 			'slug',
 			'image',
+			'logo',
 			'projects',
 			'references',
 			'tags']
