@@ -13,7 +13,7 @@ class EducationAdminForm(forms.ModelForm):
 	image = RichTextUploadingField()
 	class Meta:
 		model = Education
-		fields = ['title', 'institution', 'location', 'date', 'text', 'created_date', 'slug', 'image', 'tags']
+		fields = ['title', 'institution', 'location', 'date', 'text', 'priority', 'created_date', 'slug', 'image', 'tags']
 
 
 class EducationAdmin(admin.ModelAdmin):

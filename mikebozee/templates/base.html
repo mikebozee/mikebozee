@@ -1,5 +1,6 @@
 {% load projects_filters %}
 {% load references_filters %}
+{% load educations_filters %}
 {% load static %}
 
 <html lang="en">
@@ -266,7 +267,7 @@
 							<h2 class="section-heading">Education</h2>
 							
 							<section class="cards">
-								{% for education in educations %}
+								{% for education in educations|sort_educations:'priority' %}
 								    <a class="card" href="{% url 'education_detail' slug=education.slug %}">
 								        <h3 class="card-title">{{ education.title }}</h3>
 								    	{% if education.image %}
