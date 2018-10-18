@@ -2,48 +2,50 @@
 
 {% block reference_detail %}
 	<section class="card card--full">
-        <h1 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h1>
-        <div class="reference-image">
-	    	{% if reference.image %}
-	    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
+		<div class="section-inner">
+	        <h1 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h1>
+	        <div class="reference-image">
+		    	{% if reference.image %}
+		    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}">
+				{% endif %}
+			</div>
+			{% if reference.link %}
+				<a href="{{ reference.link }}" target="_blank" class="reference-link">View {{ reference.first_name }} {{ reference.last_name }}'s LinkedIn</a>
+			{% endif %}
+			<div class="relationships-tags-container">
+				{% for relationship in reference.relationship %}
+					<span class="relationships-tag">{{ relationship }}</span>
+				{% endfor %}
+			</div>
+			<div class="card-text">
+				{{ reference.notes|safe }}
+				{{ reference.text|safe }}
+			</div>
+			<h2 class="ask-about">Ask me about Mike's...</h2>
+			{% if reference.positions.count %}
+				<h4>Positions:</h4>
+				<div class="related-pills">
+		    		{% for position in reference.positions.all %}
+		    			<a class="related-pill" href="{% url 'position_detail' slug=position.slug %}">{{ position }}</a>
+		    		{% endfor %}
+		    	</div>
+			{% endif %}
+			{% if reference.projects.count %}
+				<h4>Projects:</h4>
+				<div class="related-pills">
+		    		{% for project in reference.projects.all %}
+		    			<a class="related-pill" href="{% url 'project_detail' slug=project.slug %}">{{ project }}</a>
+		    		{% endfor %}
+		    	</div>
+			{% endif %}
+			{% if reference.educations.count %}
+				<h4>Educations:</h4>
+				<div class="related-pills">
+		    		{% for education in reference.educations.all %}
+		    			<a class="related-pill" href="{% url 'education_detail' slug=education.slug %}">{{ education }}</a>
+		    		{% endfor %}
+		    	</div>
 			{% endif %}
 		</div>
-		{% if reference.link %}
-			<a href="{{ reference.link }}" target="_blank" class="reference-link">View {{ reference.first_name }} {{ reference.last_name }}'s LinkedIn</a>
-		{% endif %}
-		<div class="relationships-tags-container">
-			{% for relationship in reference.relationship %}
-				<span class="relationships-tag">{{ relationship }}</span>
-			{% endfor %}
-		</div>
-		<div class="card-text">
-			{{ reference.notes|safe }}
-			{{ reference.text|safe }}
-		</div>
-		<h2 class="ask-about">Ask me about Mike's...</h2>
-		{% if reference.positions.count %}
-			<h4>Positions:</h4>
-			<div class="related-pills">
-	    		{% for position in reference.positions.all %}
-	    			<a class="related-pill" href="{% url 'position_detail' slug=position.slug %}">{{ position }}</a>
-	    		{% endfor %}
-	    	</div>
-		{% endif %}
-		{% if reference.projects.count %}
-			<h4>Projects:</h4>
-			<div class="related-pills">
-	    		{% for project in reference.projects.all %}
-	    			<a class="related-pill" href="{% url 'project_detail' slug=project.slug %}">{{ project }}</a>
-	    		{% endfor %}
-	    	</div>
-		{% endif %}
-		{% if reference.educations.count %}
-			<h4>Educations:</h4>
-			<div class="related-pills">
-	    		{% for education in reference.educations.all %}
-	    			<a class="related-pill" href="{% url 'education_detail' slug=education.slug %}">{{ education }}</a>
-	    		{% endfor %}
-	    	</div>
-		{% endif %}
     </section>
 {% endblock %}

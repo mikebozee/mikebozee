@@ -2,9 +2,11 @@
 
 {% block project_detail %}
 	<section class="card card--full">
-		<h1 class="card-title">{{ project.title }}</h1>
-		<div class="card-text">
-			{{ project.text|safe }}
+		<div class="section-inner">
+			<h1 class="card-title">{{ project.title }}</h1>
+			<div class="card-text">
+				{{ project.text|safe }}
+			</div>
 		</div>
     </section>
 {% endblock %}

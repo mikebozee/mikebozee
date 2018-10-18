@@ -2,9 +2,11 @@
 
 {% block stage_detail %}
     <section class="card card--full">
-		<h1 class="card-title">{{ stage.title }}</h1>
-		<div class="card-text">
-			{{ stage.text|safe }}
+    	<div class="section-inner">
+			<h1 class="card-title">{{ stage.title }}</h1>
+			<div class="card-text">
+				{{ stage.text|safe }}
+			</div>
 		</div>
     </section>
 {% endblock %}

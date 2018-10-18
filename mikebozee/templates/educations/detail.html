@@ -2,12 +2,14 @@
 
 {% block education_detail %}
 	<section class="card card--full">
-		<h1 class="card-title">{{ education.title }}</h1>
-    	{% if education.image %}
-    		<img class="card-image" src="../../media/{{ education.image }}">
-		{% endif %}
-		<div class="card-text">
-			{{ education.text|safe }}
+		<div class="section-inner">
+			<h1 class="card-title">{{ education.title }}</h1>
+	    	{% if education.image %}
+	    		<img class="card-image" src="../../media/{{ education.image }}">
+			{% endif %}
+			<div class="card-text">
+				{{ education.text|safe }}
+			</div>
 		</div>
     </section>
 {% endblock %}

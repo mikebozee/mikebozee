@@ -125,87 +125,101 @@
 				<section id="sections" class="sections--full">
 
 					{% block position_list %}
-						<section class="section" id="positions">
+						<section class="section section-color1" id="positions">
 
-							<h2 class="section-heading">Experience</h2>
+							<div class="section-inner">
 
-							<section class="cards">
-								{% for position in positions %}
-								    <a class="card" href="{% url 'position_detail' slug=position.slug %}">
-								    	<div class="card-left">
-									        <h3 class="card-title">{{ position.title }}</h3>
-									        <span class="position-company">{{ position.company }}</span>
-									        <span class="card-dates">
-									        	{{ position.start_date|date:"M Y" }} &ndash;
-									        	{% if position.end_date %}
-									        		{{ position.end_date|date:"M Y" }}
-								        		{% else %}
-								        			Present
-								        		{% endif %}
-								        		// {{ position.location }}
-									        </span>
-									    	{% if position.logo %}
-									    		<img class="card-logo" src="../../media/{{ position.logo }}" alt="{{position.company}} logo">
-								    		{% endif %}
-								    	</div>
-								    </a>
-								{% endfor %}
-							</section>
+								<h2 class="section-heading">Experience</h2>
+
+								<section class="cards">
+									{% for position in positions %}
+									    <a class="card" href="{% url 'position_detail' slug=position.slug %}">
+									    	<div class="card-left">
+										        <h3 class="card-title">{{ position.title }}</h3>
+										        <span class="position-company">{{ position.company }}</span>
+										        <span class="card-dates">
+										        	{{ position.start_date|date:"M Y" }} &ndash;
+										        	{% if position.end_date %}
+										        		{{ position.end_date|date:"M Y" }}
+									        		{% else %}
+									        			Present
+									        		{% endif %}
+									        		// {{ position.location }}
+										        </span>
+										    	{% if position.logo %}
+										    		<img class="card-logo" src="../../media/{{ position.logo }}" alt="{{position.company}} logo">
+									    		{% endif %}
+									    	</div>
+									    </a>
+									{% endfor %}
+								</section>
+
+							</div>
+
 						</section>
 					{% endblock %}
 
 					{% block stage_list %}
 						<section class="section" id="stages">
 
-							<h2 class="section-heading">Career Stage Goals</h2>
+							<div class="section-inner">
 
-							<section class="cards">
-								{% for stage in stages %}
-								    <a class="card" href="{% url 'stage_detail' slug=stage.slug %}">
-								        <h3 class="card-title">{{ stage.title }}</h3>
-								        <h3 class="position-company">{{ stage.location }}</h3>
-								        <span class="card-dates">
-								        	{{ stage.start_date|date:"M Y" }} &mdash;
-								        	{% if stage.end_date %}
-								        		{{ stage.end_date|date:"M Y" }}
-							        		{% else %}
-							        			Present
-							        		{% endif %}
-								        </span>
-								    </a>
-								{% endfor %}
-							</section>
+								<h2 class="section-heading">Career Stage Goals</h2>
+
+								<section class="cards">
+									{% for stage in stages %}
+									    <a class="card" href="{% url 'stage_detail' slug=stage.slug %}">
+									        <h3 class="card-title">{{ stage.title }}</h3>
+									        <h3 class="position-company">{{ stage.location }}</h3>
+									        <span class="card-dates">
+									        	{{ stage.start_date|date:"M Y" }} &mdash;
+									        	{% if stage.end_date %}
+									        		{{ stage.end_date|date:"M Y" }}
+								        		{% else %}
+								        			Present
+								        		{% endif %}
+									        </span>
+									    </a>
+									{% endfor %}
+								</section>
+
+							</div>
+
 						</section>
 					{% endblock %}
 
 					{% block project_list %}
-						<section class="section" id="projects">
+						<section class="section section-color2" id="projects">
 
-							<h2 class="section-heading">Top Projects</h2>
+							<div class="section-inner">
 
-							<section class="cards">
-								{% for project in projects|sort_projects:'priority'|slice:':3' %}
-								    <a class="card card--medium card--no-padding" href="{% url 'project_detail' slug=project.slug %}">
-								    	<h3 class="card-title card-title--grow">{{ project.title }}</h3>
-								    	{% if project.image %}
-								    		<img class="card-image" src="../../media/{{ project.image }}">
-							    		{% endif %}
-								    </a>
-								{% endfor %}
-							</section>
+								<h2 class="section-heading">Top Projects</h2>
 
-							<h2 class="section-heading">All Projects</h2>
+								<section class="cards">
+									{% for project in projects|sort_projects:'priority'|slice:':3' %}
+									    <a class="card card--medium card--no-padding" href="{% url 'project_detail' slug=project.slug %}">
+									    	<h3 class="card-title card-title--grow">{{ project.title }}</h3>
+									    	{% if project.image %}
+									    		<img class="card-image" src="../../media/{{ project.image }}">
+								    		{% endif %}
+									    </a>
+									{% endfor %}
+								</section>
 
-							<section class="cards cards--minor">
-								{% for project in projects|sort_projects:'priority'|slice:'3:' %}
-								    <a class="card card--medium card--no-padding card--minor" href="{% url 'project_detail' slug=project.slug %}">
-								    	<h3 class="card-title card-title--grow">{{ project.title }}</h3>
-								    	{% if project.image %}
-								    		<img class="card-image" src="../../media/{{ project.image }}">
-							    		{% endif %}
-								    </a>
-								{% endfor %}
-							</section>
+								<h2 class="section-heading">All Projects</h2>
+
+								<section class="cards cards--minor">
+									{% for project in projects|sort_projects:'priority'|slice:'3:' %}
+									    <a class="card card--medium card--no-padding card--minor" href="{% url 'project_detail' slug=project.slug %}">
+									    	<h3 class="card-title card-title--grow">{{ project.title }}</h3>
+									    	{% if project.image %}
+									    		<img class="card-image" src="../../media/{{ project.image }}">
+								    		{% endif %}
+									    </a>
+									{% endfor %}
+								</section>
+
+							</div>
 
 						</section>
 					{% endblock %}
@@ -213,82 +227,96 @@
 					{% block reference_list %}
 						<section class="section" id="references">
 
-							<h2 class="section-heading">References</h2>
+							<div class="section-inner">
 
-							<div class="filter-btn-grp">
-								<button class="filter-btn" data-filter="*">All</button>
-								<button class="filter-btn" data-filter=".direct-supervisor"><div class="dot dot-direct-supervisor"></div> Direct supervisors</button>
-								<button class="filter-btn" data-filter=".instructor"><div class="dot dot-insturctor"></div> Instructors</button>
-								<!-- <button class="filter-btn" data-filter=".coworker"><div class="dot dot-coworker"></div> Coworkers</button> -->
-								<button class="filter-btn" data-filter=".mentor"><div class="dot dot-mentor"></div> Mentors</button>
-								<button class="filter-btn" data-filter=".client"><div class="dot dot-client"></div> Clients</button>
-								<!-- <button class="filter-btn" data-filter=".vendor"><div class="dot dot-vendor"></div> Vendors</button> -->
+								<h2 class="section-heading">References</h2>
+
+								<div class="filter-btn-grp">
+									<button class="filter-btn" data-filter="*">All</button>
+									<button class="filter-btn" data-filter=".direct-supervisor"><div class="dot dot-direct-supervisor"></div> Direct supervisors</button>
+									<button class="filter-btn" data-filter=".instructor"><div class="dot dot-insturctor"></div> Instructors</button>
+									<!-- <button class="filter-btn" data-filter=".coworker"><div class="dot dot-coworker"></div> Coworkers</button> -->
+									<button class="filter-btn" data-filter=".mentor"><div class="dot dot-mentor"></div> Mentors</button>
+									<button class="filter-btn" data-filter=".client"><div class="dot dot-client"></div> Clients</button>
+									<!-- <button class="filter-btn" data-filter=".vendor"><div class="dot dot-vendor"></div> Vendors</button> -->
+								</div>
+
+								<section class="cards references-cards" data-isotope='{ "itemSelector": ".card", "layoutMode": "fitRows" }'>
+									{% for reference in references|sort_references:'priority' %}
+									    <a class="card card--small card--no-padding {{ reference.relationship|slugify_relationships }}" href="{% url 'reference_detail' slug=reference.slug %}">
+									    	{% if reference.image %}
+									    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
+								    		{% endif %}
+								    		<h3 class="card-title card-title--grow">
+									        	<span class="first-name">{{ reference.first_name }}</span>
+									        	<span class="last-name">{{ reference.last_name }}</span>
+								        	</h3>
+								    		<!-- <div class="dots">
+									    		{% for relationship in reference.relationship %}
+									    			<div class="dot dot-{{ relationship|slugify }}"></div>
+									    		{% endfor %}
+									    	</div> -->
+									    </a>
+									{% endfor %}
+								</section>
+
 							</div>
-
-							<section class="cards references-cards" data-isotope='{ "itemSelector": ".card", "layoutMode": "fitRows" }'>
-								{% for reference in references|sort_references:'priority' %}
-								    <a class="card card--small card--no-padding {{ reference.relationship|slugify_relationships }}" href="{% url 'reference_detail' slug=reference.slug %}">
-								    	{% if reference.image %}
-								    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
-							    		{% endif %}
-							    		<h3 class="card-title card-title--grow">
-								        	<span class="first-name">{{ reference.first_name }}</span>
-								        	<span class="last-name">{{ reference.last_name }}</span>
-							        	</h3>
-							    		<!-- <div class="dots">
-								    		{% for relationship in reference.relationship %}
-								    			<div class="dot dot-{{ relationship|slugify }}"></div>
-								    		{% endfor %}
-								    	</div> -->
-								    </a>
-								{% endfor %}
-							</section>
 
 						</section>
 					{% endblock %}
 
 					{% block article_list %}
-						<section class="section" id="articles">
+						<section class="section section-color1" id="articles">
 
-							<h2 class="section-heading">Top Articles</h2>
+							<div class="section-inner">
 
-							<section class="cards">
-								{% for article in articles|sort_articles:'priority' %}
-									<a class="card card--medium card--no-padding" href="{% url 'article_detail' slug=article.slug %}">
-										<h3 class="card-title card-title--grow">{{ article.title }}</h3>
-								        <!-- <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span> -->
-								    	{% if article.image %}
-								    		<img class="card-image" src="../../media/{{ article.image }}" alt="{{article.title}}">
-							    		{% endif %}
-								    </a>
-								{% endfor %}
-							</section>
-							<!-- <a class="view-all" href="{% url 'article_list' %}">View all</a> -->
+								<h2 class="section-heading">Top Articles</h2>
+
+								<section class="cards">
+									{% for article in articles|sort_articles:'priority' %}
+										<a class="card card--medium card--no-padding" href="{% url 'article_detail' slug=article.slug %}">
+											<h3 class="card-title card-title--grow">{{ article.title }}</h3>
+									        <!-- <span class="published-date">{{ article.published_date|date:"M j, Y" }}</span> -->
+									    	{% if article.image %}
+									    		<img class="card-image" src="../../media/{{ article.image }}" alt="{{article.title}}">
+								    		{% endif %}
+									    </a>
+									{% endfor %}
+								</section>
+
+							</div>
+
 						</section>
 					{% endblock %}
 
 					{% block education_list %}
 						<section class="section" id="educations">
 
+							<div class="section-inner">
+
 							<h2 class="section-heading">Education</h2>
 
-							<section class="cards">
-								{% for education in educations|sort_educations:'priority' %}
-								    <a class="card" href="{% url 'education_detail' slug=education.slug %}">
-								    	<div class="card-left">
-									        <h3 class="card-title">{{ education.title }}</h3>
-									        <span class="position-company">{{ education.institution }}</span>
-									        <span class="card-dates">
-									        	{{ education.date|date:"M Y" }}
-								        		// {{ education.location }}
-									        </span>
-									    	{% if education.logo %}
-									    		<img class="card-logo" src="../../media/{{ education.logo }}" alt="{{education.institution}} logo">
-								    		{% endif %}
-								    	</div>
-								    </a>
-								{% endfor %}
-							</section>
+								<section class="cards">
+									{% for education in educations|sort_educations:'priority' %}
+									    <a class="card" href="{% url 'education_detail' slug=education.slug %}">
+									    	<div class="card-left">
+										        <h3 class="card-title">{{ education.title }}</h3>
+										        <span class="position-company">{{ education.institution }}</span>
+										        <span class="card-dates">
+										        	{{ education.date|date:"M Y" }}
+									        		// {{ education.location }}
+										        </span>
+										    	{% if education.logo %}
+										    		<img class="card-logo" src="../../media/{{ education.logo }}" alt="{{education.institution}} logo">
+									    		{% endif %}
+									    	</div>
+									    </a>
+									{% endfor %}
+								</section>
+
+							</div>
+
+						</section>
 					{% endblock %}
 
 				</section>
