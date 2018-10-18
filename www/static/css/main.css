@@ -798,6 +798,16 @@ button .dot {
 	#job-title-rotate {
 		font-size: 1.5rem;
 	}
+	.card--no-padding.card--minor {
+		flex-direction: column;
+	}
+	.card--no-padding.card--minor .card-title {
+		padding-right: 0;
+	}
+	.card--no-padding.card--minor .card-image {
+		align-self: flex-start;
+		width: 100%;
+	}
 }
 
 @media (max-width: 600px) {
