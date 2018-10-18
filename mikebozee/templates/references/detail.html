@@ -1,8 +1,8 @@
 {% extends 'references/base.html' %}
 
 {% block reference_detail %}
-	<section class="card card--full">
-		<div class="section-inner">
+	<div class="section-inner">
+		<section class="card card--full">
 	        <h1 class="card-title">{{ reference.first_name }} {{ reference.last_name }}</h1>
 	        <div class="reference-image">
 		    	{% if reference.image %}
@@ -46,6 +46,6 @@
 		    		{% endfor %}
 		    	</div>
 			{% endif %}
-		</div>
-    </section>
+   		</section>
+   	</div>
 {% endblock %}

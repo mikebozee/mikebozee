@@ -1,8 +1,8 @@
 {% extends 'articles/base.html' %}
 
 {% block article_detail %}
-    <section class="card card--full">
-    	<div class="section-inner">
+	<div class="section-inner">
+	    <section class="card card--full">
 	    	<span class="published-date">{{ article.published_date|date:"M j, Y" }}</span>
 			<h1 class="card-title">{{ article.title }}</h1>
 			<div class="article-image">
@@ -13,6 +13,6 @@
 			<div class="card-text">
 				{{ article.text|safe }}
 			</div>
-		</div>
-    </section>
+	    </section>
+    </div>
 {% endblock %}

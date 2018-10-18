@@ -1,12 +1,12 @@
 {% extends 'projects/base.html' %}
 
 {% block project_detail %}
-	<section class="card card--full">
-		<div class="section-inner">
+	<div class="section-inner">
+		<section class="card card--full">
 			<h1 class="card-title">{{ project.title }}</h1>
 			<div class="card-text">
 				{{ project.text|safe }}
 			</div>
-		</div>
-    </section>
+    	</section>
+    </div>
 {% endblock %}
