@@ -178,6 +178,10 @@ body {
 	margin-top: 3px;
 }
 
+.header-contact--bold {
+	font-weight: 900;
+}
+
 .home-link {
 	text-decoration: none;
 	display: inline-block;
