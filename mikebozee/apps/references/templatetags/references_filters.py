@@ -17,3 +17,8 @@ def slugify_relationships(value):
 		relationships_string = relationships_string + ' ' + relationship
 
 	return relationships_string
+
+
+@register.filter(name='sort_references')
+def sort_references(queryset, order):
+	return queryset.order_by(order)
