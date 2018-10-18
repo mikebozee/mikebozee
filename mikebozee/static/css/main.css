@@ -140,6 +140,15 @@ body {
 	background-color: rgba(0, 0, 0, .4);
 }
 
+.header a,
+.header a:visited,
+.header a:hover,
+.header a:focus,
+.header a:active {
+	color: #fff;
+	text-decoration: none;
+}
+
 .header-inner {
 	margin: 0 auto;
 	max-width: 1280px;
@@ -162,6 +171,10 @@ body {
 	display: block;
 	font-size: 1.2rem;
 	margin-top: 5px;
+}
+
+.header-contact + .header-contact {
+	margin-top: 3px;
 }
 
 .home-link {
