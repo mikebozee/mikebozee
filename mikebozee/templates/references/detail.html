@@ -1,5 +1,11 @@
 {% extends 'references/base.html' %}
 
+{% block title %}{{ reference.first_name }} {{ reference.last_name }} // Mike Bozee{% endblock %}
+
+{% block mikebozee %}
+	<span>Mike Bozee</span>
+{% endblock %}
+
 {% block reference_detail %}
 	<div class="section-inner">
 		<section class="card card--full">
@@ -23,7 +29,7 @@
 			</div>
 			<h2 class="ask-about">Ask me about Mike's...</h2>
 			{% if reference.positions.count %}
-				<h4>Positions:</h4>
+				<h3>Positions:</h3>
 				<div class="related-pills">
 		    		{% for position in reference.positions.all %}
 		    			<a class="related-pill" href="{% url 'position_detail' slug=position.slug %}">{{ position }}</a>
@@ -31,7 +37,7 @@
 		    	</div>
 			{% endif %}
 			{% if reference.projects.count %}
-				<h4>Projects:</h4>
+				<h3>Projects:</h3>
 				<div class="related-pills">
 		    		{% for project in reference.projects.all %}
 		    			<a class="related-pill" href="{% url 'project_detail' slug=project.slug %}">{{ project }}</a>
@@ -39,7 +45,7 @@
 		    	</div>
 			{% endif %}
 			{% if reference.educations.count %}
-				<h4>Educations:</h4>
+				<h3>Educations:</h3>
 				<div class="related-pills">
 		    		{% for education in reference.educations.all %}
 		    			<a class="related-pill" href="{% url 'education_detail' slug=education.slug %}">{{ education }}</a>

@@ -8,8 +8,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Mike Bozee // Full-stack Development</title>
-		<link rel="icon" type="image/png" href="media/favicon.ico">
+		<title>
+			{% block title %}Mike Bozee // Full-stack Development{% endblock %}
+		</title>
+		<link rel="icon" type="image/png" href="{{ BASE_DIR }}/media/favicon.ico">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900" rel="stylesheet">
 		<link href="{% static 'lightbox2/css/lightbox.css' %}" rel="stylesheet type="text/css">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
@@ -19,7 +21,7 @@
 			<div class="header-inner">
 				<div class="header-bottom">
 					<a class="home-link"href="{% url 'index' %}">
-						<h1>Mike Bozee</h1>
+						{% block mikebozee %}<h1>Mike Bozee</h1>{% endblock %}
 					</a>
 				</div>
 				<span class="header-tagline">Full-stack Development // Python, JavaScript, UI Design</span>

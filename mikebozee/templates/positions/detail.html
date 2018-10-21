@@ -1,87 +1,93 @@
 {% extends 'positions/base.html' %}
 {% load references_filters %}
 
+{% block title %}{{ position.title }} // Mike Bozee{% endblock %}
+
+{% block mikebozee %}
+	<span>Mike Bozee</span>
+{% endblock %}
+
 {% block position_detail %}
 <main id="main">
 	<section id="sections" class="sections--full">
 		<div class="section-inner">
-		<section class="card card--full">
-	        <h1 class="article-title">{{ position.title }}</h1>
+			<section class="card card--full">
+		        <h1 class="card-title">{{ position.title }}</h1>
 
-	        <span class="card-dates">
-	        	{{ position.start_date|date:"M Y" }} &ndash;
-	        	{% if position.end_date %}
-	        		{{ position.end_date|date:"M Y" }}
-        		{% else %}
-        			Present
-        		{% endif %}
-        		// {{ position.location }}
-        	</span>
+		        <span class="card-dates">
+		        	{{ position.start_date|date:"M Y" }} &ndash;
+		        	{% if position.end_date %}
+		        		{{ position.end_date|date:"M Y" }}
+	        		{% else %}
+	        			Present
+	        		{% endif %}
+	        		// {{ position.location }}
+	        	</span>
 
-	    	{% if position.image %}
-	    		<img class="card-image" src="../../media/{{ position.image }}">
+		    	{% if position.image %}
+		    		<img class="card-image" src="../../media/{{ position.image }}">
+				{% endif %}
+				<div class="card-text">{{ position.text|safe }}</div>
+		    </section>
+
+
+
+		    <!-- PROJECTS -->
+		    {% if position.projects.count %}
+				<section class="section" id="projects">
+
+					<h2 class="section-heading">Projects</h2>
+
+					<section class="cards">
+						{% for project in position.projects.all %}
+						    <a class="card" href="{% url 'project_detail' slug=project.slug %}">
+						        <h3 class="card-title card-title--grow">{{ project.title }}</h3>
+						    	{% if project.image %}
+						    		<img class="card-image" src="../../media/{{ project.image }}" alt="{{project.title}}">
+					    		{% endif %}
+						    </a>
+						{% endfor %}
+					</section>
+				</section>
 			{% endif %}
-			<div class="card-text">{{ position.text|safe }}</div>
-	    </section>
+			<!-- /PROJECTS -->
 
 
 
-	    <!-- PROJECTS -->
-	    {% if position.projects.count %}
-			<section class="section" id="projects">
+		    <!-- REFERENCES -->
+		    {% if position.references.count %}
+				<section class="section" id="references">
 
-				<h2 class="section-heading">Projects</h2>
+					<h2 class="section-heading">References</h2>
+					
+					<!-- <div class="filter-btn-grp">
+						<button class="filter-btn" data-filter="*">All</button>
+						<button class="filter-btn" data-filter=".direct-supervisor"><div class="dot dot-direct-supervisor"></div> Direct supervisors</button>
+						<button class="filter-btn" data-filter=".instructor"><div class="dot dot-insturctor"></div> Instructors</button>
+						<button class="filter-btn" data-filter=".coworker"><div class="dot dot-coworker"></div> Coworkers</button>
+						<button class="filter-btn" data-filter=".mentor"><div class="dot dot-mentor"></div> Mentors</button>
+						<button class="filter-btn" data-filter=".client"><div class="dot dot-client"></div> Clients</button>
+						<button class="filter-btn" data-filter=".vendor"><div class="dot dot-vendor"></div> Vendors</button>
+					</div> -->
 
-				<section class="cards">
-					{% for project in position.projects.all %}
-					    <a class="card" href="{% url 'project_detail' slug=project.slug %}">
-					        <h3 class="card-title card-title--grow">{{ project.title }}</h3>
-					    	{% if project.image %}
-					    		<img class="card-image" src="../../media/{{ project.image }}" alt="{{project.title}}">
-				    		{% endif %}
-					    </a>
-					{% endfor %}
+					<section class="cards references-cards" data-isotope='{ "itemSelector": ".card", "layoutMode": "fitRows" }'>
+						{% for reference in position.references.all %}
+						    <a class="card card--small {{ reference.relationship|slugify_relationships }}" href="{% url 'reference_detail' slug=reference.slug %}">
+						        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
+						    	{% if reference.image %}
+						    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
+					    		{% endif %}
+					    		<div class="dots">
+						    		{% for relationship in reference.relationship %}
+						    			<div class="dot dot-{{ relationship|slugify }}"></div>
+						    		{% endfor %}
+						    	</div>
+						    </a>
+						{% endfor %}
+					</section>
 				</section>
-			</section>
-		{% endif %}
-		<!-- /PROJECTS -->
-
-
-
-	    <!-- REFERENCES -->
-	    {% if position.references.count %}
-			<section class="section" id="references">
-
-				<h2 class="section-heading">References</h2>
-				
-				<!-- <div class="filter-btn-grp">
-					<button class="filter-btn" data-filter="*">All</button>
-					<button class="filter-btn" data-filter=".direct-supervisor"><div class="dot dot-direct-supervisor"></div> Direct supervisors</button>
-					<button class="filter-btn" data-filter=".instructor"><div class="dot dot-insturctor"></div> Instructors</button>
-					<button class="filter-btn" data-filter=".coworker"><div class="dot dot-coworker"></div> Coworkers</button>
-					<button class="filter-btn" data-filter=".mentor"><div class="dot dot-mentor"></div> Mentors</button>
-					<button class="filter-btn" data-filter=".client"><div class="dot dot-client"></div> Clients</button>
-					<button class="filter-btn" data-filter=".vendor"><div class="dot dot-vendor"></div> Vendors</button>
-				</div> -->
-
-				<section class="cards references-cards" data-isotope='{ "itemSelector": ".card", "layoutMode": "fitRows" }'>
-					{% for reference in position.references.all %}
-					    <a class="card card--small {{ reference.relationship|slugify_relationships }}" href="{% url 'reference_detail' slug=reference.slug %}">
-					        <h3 class="card-title card-title--grow">{{ reference.first_name }} {{ reference.last_name }}</h3>
-					    	{% if reference.image %}
-					    		<img class="card-image card-image--circle" src="../../media/{{ reference.image }}" alt="{{reference.first_name}} {{reference.last_name}} headshot">
-				    		{% endif %}
-				    		<div class="dots">
-					    		{% for relationship in reference.relationship %}
-					    			<div class="dot dot-{{ relationship|slugify }}"></div>
-					    		{% endfor %}
-					    	</div>
-					    </a>
-					{% endfor %}
-				</section>
-			</section>
-		{% endif %}
-		<!-- /REFERENCES -->
+			{% endif %}
+			<!-- /REFERENCES -->
 
 
 		</div>

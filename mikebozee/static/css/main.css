@@ -187,13 +187,14 @@ body {
 	
 }
 
-.home-link h1 {
+.home-link h1,
+.home-link span {
+	display: block;
 	text-transform: uppercase;
 	font-weight: 900;
 	font-size: 3rem;
 	line-height: 1;
 	margin: 0;
-	/*color: #333;*/
 	color: #fff;
 }
 
@@ -378,6 +379,7 @@ body {
 .card--full {
 	width: 100%;
 	display: block;
+	box-shadow: none;
 }
 
 .card--medium {
@@ -434,12 +436,6 @@ body {
 	width: -o-calc((100% / 2) - 30px );
 	width: calc((100% / 2) - 30px );
 	margin: 15px;
-}
-
-article.card {
-	margin: 0 auto;
-	max-width: 1100px;
-	width: 100%;
 }
 
 .card-left {
@@ -633,6 +629,7 @@ h1.card-title {
 	-webkit-transform: translate(0, -50%);
 	-ms-transform: translate(0, -50%);
 	transform: translate(0, -50%);
+	background-color: #fff;
 }
 
 .view-all {
@@ -671,8 +668,8 @@ h1.card-title {
 .related-pill {
 	text-decoration: none;
 	border-radius: 3px;
-	border: 1px solid #5e00da;
-	color: #5e00da;
+	border: 1px solid #007bff;
+	color: #007bff;
 	padding: 7px;
 	font-size: 1rem;
 	font-weight: 600;
@@ -685,7 +682,7 @@ h1.card-title {
 
 .related-pill:visited,
 .related-pill:active {
-	color: #5e00da;
+	color: #007bff;
 }
 
 .filter-btn-grp {
