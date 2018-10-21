@@ -219,6 +219,29 @@ body {
 	text-decoration: none;
 }
 
+.back-home--container {
+	display: block;
+	margin-top: -70px;
+	margin-bottom: 60px;
+}
+
+.back-home {
+	background-color: #6ed1cc;
+	color: #1B5552;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-radius: 3px;
+	display: inline-block;
+	padding: 5px 15px;
+}
+
+.back-home:visited,
+.back-home:hover,
+.back-homme:focus,
+.back-home:active {
+	color: #1B5552;
+}
+
 /*
  GLOBAL LAYOUT
 */

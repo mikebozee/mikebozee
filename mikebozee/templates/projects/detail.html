@@ -9,6 +9,9 @@
 {% block project_detail %}
 	<div class="section-inner">
 		<section class="card card--full">
+			<div class="back-home--container">
+				<a class="back-home" href="{% url 'index' %}">&#8678; Home</a>
+			</div>
 			<h1 class="card-title">{{ project.title }}</h1>
 			<div class="card-text">
 				{{ project.text|safe }}
