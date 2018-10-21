@@ -11,7 +11,6 @@ body {
 	background-color: #fff;
 	font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	margin: 0;
-	padding-bottom: 50px;
 	font-size: 18px;
 	color: #333;
 }
@@ -240,12 +239,7 @@ body {
 
 .section {
 	display: block;
-	margin-top: 2rem;
 	padding: 30px 0;
-}
-
-.section:first-of-type {
-	margin-top: 0;
 }
 
 .section-color1 {
@@ -256,12 +250,40 @@ body {
 	background-color: #74b1cb;
 }
 
-.section-color1 .card {
+.section-bg1 {
+	background-image: url(../../media/header-bg.svg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-width: 4px 0;
+    border-style: solid;
+    border-color: #fff;
+    position: relative;
+}
+
+.section-bg1:last-of-type {
+	border-bottom-width: 0;
+	padding-bottom: 80px;
+}
+
+.section-bg1::before {
+	content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.section-color1 .card,
+.section-color2 .card {
 	background-color: rgba(255, 255, 255, .3);
 }
 
-.section-color2 .card {
-	background-color: rgba(255, 255, 255, .3);
+.section-bg1 .card {
+	background-color: rgba(255, 255, 255, .98);
 }
 
 .section-inner {
@@ -277,6 +299,7 @@ body {
 	margin: 100px 0 15px 0;
 	padding: 0 20px;
 	letter-spacing: -.5px;
+	position: relative;
 }
 
 .section:first-of-type .section-heading {
@@ -289,6 +312,11 @@ body {
 
 .section-color2 .section-heading {
 	color: #1F4151;
+}
+
+.section-bg1 .section-heading {
+	color: #fff;
+	text-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 
 .section-subheading {
@@ -855,10 +883,6 @@ button .dot {
 		width: -ms-calc(50% - 4px);
 		width: -o-calc(50% - 4px);
 		width: calc(50% - 4px);
-	}
-	body {
-		padding-left: 10px;
-		padding-right: 10px;
 	}
 	.intro-big .emoji {
 		display: block;
